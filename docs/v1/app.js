@@ -30,10 +30,10 @@ const chantBtn = $("chant-btn");
 let stageTimer, closeTimer;
 
 // Seconds at which each prayer line appears: on its own, and in time with audio/chant.mp3
-// (chant at 1.2× speed: lines are sung from 1.1 s, 6.3 s and 11.7 s, and end at 16.3 s)
+// (chant at normal speed: lines are sung from 1.1 s, 7.4 s and 13.8 s, and end at 19.4 s)
 const LINES_QUICK = [0.2, 1.2, 2.2];
-const LINES_CHANT = [1.0, 6.2, 11.6];
-const CHANT_END = 16.4;
+const LINES_CHANT = [1.0, 7.3, 13.7];
+const CHANT_END = 19.5;
 
 function restartAnimations(delays) {
   opening.querySelectorAll(".mantra--opening li, .opening__glow").forEach(el => {

@@ -85,6 +85,13 @@ section { padding: 64px 16px; }
 .hero__ctas { display: flex; gap: 8px; justify-content: center; }
 .hero__ctas .btn { padding: 10px 14px; font-size: clamp(.86rem, 3.9vw, 1rem); white-space: nowrap; }
 @media (max-width: 340px) { .hero__ctas { flex-wrap: wrap; } }
+/* Short screens (in-app browsers such as WhatsApp's, smaller iPhones): title on one line */
+@media (max-width: 719px) and (max-height: 640px) {
+  .hero__logo { width: 42px; }
+  .title { font-size: clamp(2.4rem, 12vw, 3.1rem); }
+  .title br { display: none; }
+  .tagline { font-size: 1rem; }
+}
 .scroll-cue { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); color: #fff; text-decoration: none; font-size: 2rem; opacity: .7; }
 
 /* ---------- Prayer ---------- */

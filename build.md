@@ -95,14 +95,13 @@ curiosity and teaching with humility and compassion.
   3. `npm run render`, then `npm run render:og`
   4. Copy `out/guiding-lights.mp4` to `../docs/v1/film/` and `out/og.jpg` to
      `../docs/v1/img/`.
-  The website chant is the same chant sped up to **1.2×** (1.25× tried and judged too fast, 2026-10-25; pitch kept, via ffmpeg
-  `atempo`; the video stays at normal speed). In `video/`:
-  1. `ffmpeg -i audio/chant-source.wav -af atempo=1.2 audio/chant-source-1.2x.wav`
-  2. `node audio/make-soundtrack.js audio/chant-source-1.2x.wav 1.2` (writes only
-     `audio/chant-web.wav`)
-  3. `ffmpeg -i audio/chant-web.wav -c:a libmp3lame -b:a 128k ../docs/v1/audio/chant.mp3`
-  If the speed changes, update `LINES_CHANT` and `CHANT_END` in `docs/v1/app.js` to the
-  new times at which each line is sung.
+  The website chant plays at **normal speed** (user's decision, 2026-10-25, after
+  trying 1.2× and 1.25×). Step 2 above also writes `audio/chant-web.wav`; convert it with
+  `ffmpeg -i audio/chant-web.wav -c:a libmp3lame -b:a 128k ../docs/v1/audio/chant.mp3`.
+  A sped-up version is possible without changing pitch: `ffmpeg -af atempo=1.2` on
+  `chant-source.wav`, then `node audio/make-soundtrack.js <that file> 1.2` (writes only
+  `chant-web.wav`). If the speed changes, update `LINES_CHANT` and `CHANT_END` in
+  `docs/v1/app.js` to the new times at which each line is sung.
 - The date card says "BY INVITATION". The closing card shows nbn.sskzmoba.org: the
   bare address shows the holding page until the site goes live, so share the video
   publicly only after launch (or with the /v1/ link during review).
@@ -123,8 +122,8 @@ One page that scrolls, in this order:
      visitors who have reduced motion turned on.
    - Timings (set in `docs/v1/app.js`): without sound, the lines appear at 0.2 / 1.2 /
      2.2 s, the portrait at 4.2 s, and the site at 8 s. After "Play chant", the lines
-     restart in time with the chant (1.0 / 6.2 / 11.6 s), the portrait follows at
-     16.4 s, and the site opens 2.5 s after the chant ends.
+     restart in time with the chant (1.0 / 7.3 / 13.7 s), the portrait follows at
+     19.5 s, and the site opens 2.5 s after the chant ends.
    - Audio source to decide: best is a recording by an alumnus, teacher or the
      school, made for this. Never a clip taken from YouTube (copyright).
 2. **Guiding Lights hero:** title, tagline, date, time, venue, and the school photo as
@@ -241,6 +240,10 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
       two-column list (time | session). Page at 375×667 went from 6,938 to about 6,000
       px; programme from 1.8 to 1.3 screens. No snap scrolling or forced one-screen
       sections (readability first). Desktop unchanged.
+- [x] Website chant back to normal speed (user, 2026-10-25). Short screens (height
+      ≤ 640 px, e.g. WhatsApp in-app browser on iPhone) show "Guiding Lights" on one line
+      so both buttons fit; checked 360×460 to 412×730. CSS/JS links carry `?v=N`: raise
+      it after every CSS/JS edit so phones do not use a cached old file.
 - [ ] Organising group reviews /v1/; collect feedback
 - [ ] Collect remaining inputs above; fill in the yellow boxes
 - [ ] Revised poster + programme card
