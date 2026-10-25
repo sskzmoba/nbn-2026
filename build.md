@@ -236,6 +236,11 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
       buttons side by side; title, date, venue and both buttons fit on phones from
       360×600 up (checked 360×560 to 412×730; also iPhone SE in Safari, 375×548).
       Website chant back to 1.2×.
+- [x] Mobile sections tightened (2026-10-25): phone-only rules (< 720 px) in styles.css:
+      section padding 64 → 44 px, smaller NBN photo, compact cards, programme as a
+      two-column list (time | session). Page at 375×667 went from 6,938 to about 6,000
+      px; programme from 1.8 to 1.3 screens. No snap scrolling or forced one-screen
+      sections (readability first). Desktop unchanged.
 - [ ] Organising group reviews /v1/; collect feedback
 - [ ] Collect remaining inputs above; fill in the yellow boxes
 - [ ] Revised poster + programme card
