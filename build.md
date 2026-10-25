@@ -12,7 +12,9 @@ curiosity and teaching with humility and compassion.
 
 ## Programme facts (from flyer + programme card + WhatsApp concept note, 2026-10-25)
 - **Date:** Saturday, 21 November 2026, 10:00 AM – 3:00 PM (programme begins 10:30 AM)
-- **Venue:** Cariappa Auditorium, Pangode Military Station, Thiruvananthapuram
+- **Venue:** Cariappa Auditorium, Pangode, Thiruvananthapuram. (It is inside the
+  Pangode military station, but public text says only "Cariappa Auditorium, Pangode"
+  — user's wish, 2026-10-25.)
 - **Schedule:**
   - 10:00–10:30 Arrival, registration, meet & greet (tea and snacks)
   - 10:30–11:00 Inaugural session: 10:30 welcome and tribute to N. B. N. Sir;
@@ -92,7 +94,14 @@ curiosity and teaching with humility and compassion.
   3. `npm run render`, then `npm run render:og`
   4. Copy `out/guiding-lights.mp4` to `../docs/v1/film/` and `out/og.jpg` to
      `../docs/v1/img/`.
-  The website chant: ffmpeg `audio/chant-web.wav` → `../docs/v1/audio/chant.mp3` (128k MP3).
+  The website chant is the same chant sped up to **1.2×** (pitch kept, via ffmpeg
+  `atempo`; the video stays at normal speed). In `video/`:
+  1. `ffmpeg -i audio/chant-source.wav -af atempo=1.2 audio/chant-source-1.2x.wav`
+  2. `node audio/make-soundtrack.js audio/chant-source-1.2x.wav 1.2` (writes only
+     `audio/chant-web.wav`)
+  3. `ffmpeg -i audio/chant-web.wav -c:a libmp3lame -b:a 128k ../docs/v1/audio/chant.mp3`
+  If the speed changes, update `LINES_CHANT` and `CHANT_END` in `docs/v1/app.js` to the
+  new times at which each line is sung.
 - The date card says "BY INVITATION". The closing card shows nbn.sskzmoba.org: the
   bare address shows the holding page until the site goes live, so share the video
   publicly only after launch (or with the /v1/ link during review).
@@ -109,8 +118,12 @@ One page that scrolls, in this order:
    "Darkness to light" leads straight into the name **Guiding Lights**.
    - Chant audio plays **only when the visitor taps "Play chant"**. Phones block
      autoplay with sound, and many people will open the link in public.
-   - A Skip button. The opening plays once per visit and is cut short for visitors
-     who have reduced motion turned on.
+   - A "Skip intro ›" button. The opening plays once per visit and is cut short for
+     visitors who have reduced motion turned on.
+   - Timings (set in `docs/v1/app.js`): without sound, the lines appear at 0.2 / 1.2 /
+     2.2 s, the portrait at 4.2 s, and the site at 8 s. After "Play chant", the lines
+     restart in time with the chant (1.0 / 6.2 / 11.6 s), the portrait follows at
+     16.4 s, and the site opens 2.5 s after the chant ends.
    - Audio source to decide: best is a recording by an alumnus, teacher or the
      school, made for this. Never a clip taken from YouTube (copyright).
 2. **Guiding Lights hero:** title, tagline, date, time, venue, and the school photo as
@@ -213,6 +226,9 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
 - [x] Repo created, Pages from `docs/`, DNS CNAME added, HTTPS certificate issued and
       enforced; review copy published at
       https://nbn.sskzmoba.org/v1/ (2026-10-25, user's request)
+- [x] Round 2 changes (2026-10-25): website chant 1.2× with faster text, "Enter" →
+      "Skip intro", "Military Station" removed from site, calendar file and video
+      (video re-rendered); share section trimmed to the WhatsApp button
 - [ ] Organising group reviews /v1/; collect feedback
 - [ ] Collect remaining inputs above; fill in the yellow boxes
 - [ ] Revised poster + programme card

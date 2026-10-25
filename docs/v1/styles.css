@@ -49,9 +49,6 @@ section { padding: 64px 16px; }
 .mantra .en { display: block; font-size: .9rem; letter-spacing: .04em; opacity: .65; }
 .mantra--opening { position: relative; transition: opacity 1s ease, transform 1s ease; }
 .mantra--opening li { opacity: 0; transform: translateY(10px); animation: rise 1.2s ease forwards; }
-.mantra--opening li:nth-child(1) { animation-delay: .3s; }
-.mantra--opening li:nth-child(2) { animation-delay: 1.9s; }
-.mantra--opening li:nth-child(3) { animation-delay: 3.5s; }
 .mantra--opening li:nth-child(2) .deva { color: #ffd38a; text-shadow: 0 0 24px rgba(255,190,90,.55); }
 @keyframes rise { to { opacity: 1; transform: none; } }
 .opening.stage2 .mantra--opening { opacity: 0; transform: translateY(-20px); }

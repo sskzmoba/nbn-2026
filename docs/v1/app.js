@@ -29,24 +29,31 @@ const chant = $("chant");
 const chantBtn = $("chant-btn");
 let stageTimer, closeTimer;
 
-function restartAnimations() {
+// Seconds at which each prayer line appears: on its own, and in time with audio/chant.mp3
+// (chant at 1.2× speed: lines are sung from 1.1 s, 6.3 s and 11.7 s, and end at 16.3 s)
+const LINES_QUICK = [0.2, 1.2, 2.2];
+const LINES_CHANT = [1.0, 6.2, 11.6];
+const CHANT_END = 16.4;
+
+function restartAnimations(delays) {
   opening.querySelectorAll(".mantra--opening li, .opening__glow").forEach(el => {
     el.style.animation = "none";
     void el.offsetHeight; // reflow so the animation starts again
     el.style.animation = "";
   });
+  opening.querySelectorAll(".mantra--opening li").forEach((li, i) => { li.style.animationDelay = delays[i] + "s"; });
 }
 
 function openOpening() {
   opening.classList.remove("stage2", "out");
   opening.hidden = false;
   document.body.style.overflow = "hidden";
-  restartAnimations();
+  restartAnimations(LINES_QUICK);
   chantBtn.disabled = false;
   chantBtn.innerHTML = '<span aria-hidden="true">▶</span> Play chant';
   clearTimeout(stageTimer); clearTimeout(closeTimer);
-  stageTimer = setTimeout(() => opening.classList.add("stage2"), 6600);
-  closeTimer = setTimeout(closeOpening, 11000);
+  stageTimer = setTimeout(() => opening.classList.add("stage2"), 4200);
+  closeTimer = setTimeout(closeOpening, 8000);
   $("skip-btn").focus({ preventScroll: true });
 }
 
@@ -68,12 +75,15 @@ function closeOpening() {
 }
 
 chantBtn.addEventListener("click", () => {
-  // The visitor chose to listen: let the chant finish instead of closing on the timer
-  clearTimeout(closeTimer);
+  // The visitor chose to listen: replay the lines in time with the chant, then show NBN Sir
+  clearTimeout(stageTimer); clearTimeout(closeTimer);
   chant.currentTime = 0;
   chant.play().then(() => {
     chantBtn.disabled = true;
     chantBtn.textContent = "Chant playing…";
+    opening.classList.remove("stage2");
+    restartAnimations(LINES_CHANT);
+    stageTimer = setTimeout(() => opening.classList.add("stage2"), CHANT_END * 1000);
   }).catch(() => { chantBtn.hidden = true; });
 });
 chant.addEventListener("ended", () => {
@@ -95,7 +105,7 @@ if (!isApple) {
     action: "TEMPLATE",
     text: "Guiding Lights — Celebrating Educators Who Shape Generations",
     dates: "20261121T043000Z/20261121T093000Z",
-    location: "Cariappa Auditorium, Pangode Military Station, Thiruvananthapuram",
+    location: "Cariappa Auditorium, Pangode, Thiruvananthapuram",
     details: "In remembrance of N. B. N. Sir. An initiative by alumni of Sainik School Kazhakootam. Programme begins 10:30 AM. " + SITE_URL,
   });
   cal.href = "https://calendar.google.com/calendar/render?" + q;

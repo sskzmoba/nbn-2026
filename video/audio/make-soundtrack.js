@@ -1,5 +1,7 @@
 // Builds the soundtrack for the Guiding Lights video (and the website's chant file).
-//   node audio/make-soundtrack.js <chant.wav>
+//   node audio/make-soundtrack.js <chant.wav>                  video soundtrack + website chant
+//   node audio/make-soundtrack.js <chant-fast.wav> <speed>     website chant only, from a chant
+//                                                              already sped up by ffmpeg atempo
 // The chant WAV is decoded from _source/audio/asatoma-2.mp3 (see build.md). Everything else
 // (tanpura drone, bell) is synthesised here, so it carries no licence of its own.
 const fs = require("fs");
@@ -121,8 +123,11 @@ function bell(freq, seconds) {
 // ---------- Mix ----------
 function main() {
   const chantFile = process.argv[2];
+  const speed = +(process.argv[3] || 1);
   const [cL, cR] = readWav(chantFile);
-  const a = Math.floor(CHANT_IN * SR), b = Math.floor(CHANT_OUT * SR);
+  // A sped-up chant has its cut points earlier by the same factor
+  const chantIn = CHANT_IN / speed, chantOut = CHANT_OUT / speed;
+  const a = Math.floor(chantIn * SR), b = Math.floor(chantOut * SR);
   const chantDry = [cL.slice(a, b), cR.slice(a, b)];
   chantDry.forEach(ch => { for (let i = 0; i < ch.length; i++) ch[i] *= env(i, ch.length, 0.03, 0.3); });
   // Pad 3.5 s of silence so the reverb tail can ring out
@@ -136,7 +141,7 @@ function main() {
   const N = LEN * SR, L = new Float32Array(N), R = new Float32Array(N);
   const [tL, tR] = tanpura(LEN);
   const tWetL = reverb(tL), tWetR = reverb(tR, { spread: 23 });
-  const chantEnd = CHANT_AT + (CHANT_OUT - CHANT_IN);
+  const chantEnd = CHANT_AT + (chantOut - chantIn);
   for (let i = 0; i < N; i++) {
     const t = i / SR;
     // Drone sits low under the voice, rises once the chant ends, fades out at the close
@@ -159,13 +164,13 @@ function main() {
   for (let i = 0; i < N; i++) peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i]));
   const k = 0.89 / peak;
   for (let i = 0; i < N; i++) { L[i] *= k; R[i] *= k; }
-  const outDir = path.join(__dirname, "..", "public");
-  writeWav(path.join(outDir, "soundtrack.wav"), L, R);
+  // The video is timed to the chant at normal speed, so only that version updates it
+  if (speed === 1) writeWav(path.join(__dirname, "..", "public", "soundtrack.wav"), L, R);
 
   // Website chant: the same chant with reverb over a quiet drone, 1 s lead-in
   const webLen = Math.floor((chantEnd + 3.2) * SR), wL = L.slice(0, webLen), wR = R.slice(0, webLen);
   for (let i = 0; i < webLen; i++) { const f = Math.min(1, (webLen - i) / (2 * SR)); wL[i] *= f; wR[i] *= f; }
   writeWav(path.join(__dirname, "chant-web.wav"), wL, wR);
-  console.log(`soundtrack.wav ${LEN}s, chant ends at ${chantEnd.toFixed(2)}s, peak gain ${k.toFixed(2)}`);
+  console.log(`speed ${speed}: chant ends at ${chantEnd.toFixed(2)}s, website chant ${(webLen / SR).toFixed(1)}s, peak gain ${k.toFixed(2)}`);
 }
 main();

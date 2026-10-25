@@ -154,7 +154,7 @@ const When: React.FC = () => {
       <div style={{ fontFamily: text, fontWeight: 400, fontSize: 50 }}>10:00 AM – 3:00 PM</div>
       <div style={{ width: 160, height: 3, background: C.goldDeep, margin: "44px 0" }} />
       <div style={{ fontFamily: display, fontWeight: 400, fontSize: 56 }}>Cariappa Auditorium</div>
-      <div style={{ fontFamily: text, fontSize: 42, color: C.muted, marginTop: 10, lineHeight: 1.35 }}>Pangode Military Station<br />Thiruvananthapuram</div>
+      <div style={{ fontFamily: text, fontSize: 42, color: C.muted, marginTop: 10, lineHeight: 1.35 }}>Pangode<br />Thiruvananthapuram</div>
       <div style={{ fontFamily: text, fontWeight: 700, fontSize: 32, letterSpacing: 8, color: C.gold, marginTop: 40 }}>BY INVITATION</div>
     </AbsoluteFill>
   );
