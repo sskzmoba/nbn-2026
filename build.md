@@ -94,10 +94,10 @@ curiosity and teaching with humility and compassion.
   3. `npm run render`, then `npm run render:og`
   4. Copy `out/guiding-lights.mp4` to `../docs/v1/film/` and `out/og.jpg` to
      `../docs/v1/img/`.
-  The website chant is the same chant sped up to **1.2×** (pitch kept, via ffmpeg
+  The website chant is the same chant sped up to **1.25×** (1.2× tried first; pitch kept, via ffmpeg
   `atempo`; the video stays at normal speed). In `video/`:
-  1. `ffmpeg -i audio/chant-source.wav -af atempo=1.2 audio/chant-source-1.2x.wav`
-  2. `node audio/make-soundtrack.js audio/chant-source-1.2x.wav 1.2` (writes only
+  1. `ffmpeg -i audio/chant-source.wav -af atempo=1.25 audio/chant-source-1.25x.wav`
+  2. `node audio/make-soundtrack.js audio/chant-source-1.25x.wav 1.25` (writes only
      `audio/chant-web.wav`)
   3. `ffmpeg -i audio/chant-web.wav -c:a libmp3lame -b:a 128k ../docs/v1/audio/chant.mp3`
   If the speed changes, update `LINES_CHANT` and `CHANT_END` in `docs/v1/app.js` to the
@@ -122,8 +122,8 @@ One page that scrolls, in this order:
      visitors who have reduced motion turned on.
    - Timings (set in `docs/v1/app.js`): without sound, the lines appear at 0.2 / 1.2 /
      2.2 s, the portrait at 4.2 s, and the site at 8 s. After "Play chant", the lines
-     restart in time with the chant (1.0 / 6.2 / 11.6 s), the portrait follows at
-     16.4 s, and the site opens 2.5 s after the chant ends.
+     restart in time with the chant (1.0 / 6.0 / 11.2 s), the portrait follows at
+     15.8 s, and the site opens 2.5 s after the chant ends.
    - Audio source to decide: best is a recording by an alumnus, teacher or the
      school, made for this. Never a clip taken from YouTube (copyright).
 2. **Guiding Lights hero:** title, tagline, date, time, venue, and the school photo as
