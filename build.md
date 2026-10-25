@@ -171,6 +171,9 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
 - [x] Fonts: Libre Caslon (2026-10-25)
 - [x] Removed from the site: the Upanishad reference note under the prayer, and the
       "The name" / "The tagline" headings (2026-10-25)
+- [x] Mobile navigation: normal scrolling. No one-screen "pages", snap scrolling or
+      per-section chevrons; a slim section menu was offered and not needed for now
+      (2026-10-25)
 - [ ] Search indexing: v1 is `noindex`. Decide at launch (wa.me numbers in links are
       readable by search engines).
 - [ ] Honourees: name them before the event, or only after?
