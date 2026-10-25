@@ -65,21 +65,26 @@ section { padding: 64px 16px; }
 .hero { position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; overflow: hidden; background: var(--night); }
 .hero__bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; }
 .hero__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,24,48,.92) 0%, rgba(11,24,48,.72) 45%, rgba(11,24,48,.88) 100%); }
-.hero__body { position: relative; padding: 40px 16px 72px; max-width: 760px; }
-.hero__logo { width: 76px; height: 76px; margin: 0 auto 16px; }
-.eyebrow { font-size: .95rem; letter-spacing: .06em; margin-bottom: 14px; }
+/* Sizes and gaps shrink on short screens (svh = % of the visible screen height) so the
+   date, venue and both buttons fit on the first screen of a phone */
+.hero__body { position: relative; padding: clamp(14px, 3svh, 40px) 16px clamp(40px, 7svh, 72px); max-width: 760px; }
+.hero__logo { width: clamp(46px, 8.5svh, 76px); height: auto; margin: 0 auto clamp(6px, 1.5svh, 16px); }
+.eyebrow { font-size: .95rem; line-height: 1.45; letter-spacing: .06em; margin-bottom: clamp(4px, 1.2svh, 14px); }
 .eyebrow span { opacity: .8; font-size: .85rem; }
-.title { font-family: var(--serif); font-weight: 400; font-size: clamp(3.6rem, 19vw, 7.5rem); line-height: .95; margin: 0 0 12px; text-shadow: 0 0 40px rgba(255,200,110,.25); }
-.tagline { font-size: clamp(1.05rem, 4.4vw, 1.4rem); color: var(--gold-soft); margin-bottom: 26px; }
-.when { border-top: 1px solid rgba(255,255,255,.25); border-bottom: 1px solid rgba(255,255,255,.25); padding: 18px 0 8px; margin-bottom: 26px; }
-.when p { margin: 0 0 8px; }
+.title { font-family: var(--serif); font-weight: 400; font-size: clamp(2.9rem, min(19vw, 10svh), 7.5rem); line-height: .95; margin: 0 0 clamp(4px, 1svh, 12px); text-shadow: 0 0 40px rgba(255,200,110,.25); }
+.tagline { font-size: clamp(1.05rem, 4.4vw, 1.4rem); line-height: 1.4; color: var(--gold-soft); margin-bottom: clamp(10px, 2.5svh, 26px); }
+.when { border-top: 1px solid rgba(255,255,255,.25); border-bottom: 1px solid rgba(255,255,255,.25); padding: clamp(8px, 1.8svh, 18px) 0 clamp(2px, .6svh, 8px); margin-bottom: clamp(12px, 2.5svh, 26px); }
+.when p { margin: 0 0 clamp(2px, .8svh, 8px); line-height: 1.45; }
+.when__meta { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; column-gap: 14px; }
 .when__date { font-size: 1.3rem; font-weight: 700; }
-.when__time span { opacity: .8; font-size: .92rem; }
+.when__time span { display: block; opacity: .8; font-size: .92rem; }
 .when__place { opacity: .9; }
 .when__invite { text-transform: uppercase; letter-spacing: .2em; font-size: .8rem; font-weight: 700; color: var(--gold-soft); }
 .when__count { color: var(--gold-soft); font-weight: 600; font-size: .95rem; }
 .when__count:empty { display: none; }
-.hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.hero__ctas { display: flex; gap: 8px; justify-content: center; }
+.hero__ctas .btn { padding: 10px 14px; font-size: clamp(.86rem, 3.9vw, 1rem); white-space: nowrap; }
+@media (max-width: 340px) { .hero__ctas { flex-wrap: wrap; } }
 .scroll-cue { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); color: #fff; text-decoration: none; font-size: 2rem; opacity: .7; }
 
 /* ---------- Prayer ---------- */
