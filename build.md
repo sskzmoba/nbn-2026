@@ -26,6 +26,25 @@ curiosity and teaching with humility and compassion.
   - 2:00–3:00 Lunch and networking
 - Concept text (name, tagline, session descriptions) is in the WhatsApp note; use it
   as the site's "About" copy.
+- **Attendance: by invitation only** (no public registration form).
+- **N. B. N. Sir:** N. Balakrishnan Nair (1929–2016). Served Sainik School Kazhakootam
+  from 1962 until his retirement in 1989.
+
+## Live addresses (2026-10-25)
+- Repo: https://github.com/sskzmoba/nbn-2026 (public). GitHub Pages serves **only
+  `docs/`** from `main`, so build.md, `video/` and `_source/` are never on the website
+  (build.md and `video/` are still readable in the public repo).
+- **Review copy: https://nbn.sskzmoba.org/v1/**, shared with the organising group.
+- https://nbn.sskzmoba.org/ shows a "website coming soon" holding page (`docs/index.html`).
+- DNS: CNAME `nbn` → `sskzmoba.github.io` in ResellerClub (record id 169586966, TTL
+  38400; in this panel the TTL applies to all CNAMEs, so leave it as is). Added 2026-10-25.
+- **To go live** (only with the user's go-ahead): copy `docs/v1/*` to `docs/`
+  (replacing the holding page), change `og:url`/`og:image` in index.html from `/v1/`
+  to `/`, remove `noindex` if indexing is agreed, commit and push. Keep `/v1/` or
+  delete it.
+- Rollback: `git revert` the commit and push; Pages redeploys within a minute or two.
+- Local preview: `.claude/launch.json` runs a small Node static server on `docs/`
+  (port 5181); open http://localhost:5181/v1/.
 
 ## Folder layout
 - `_source/` — untouched originals. **Not published**: keep out of the public repo
@@ -33,20 +52,24 @@ curiosity and teaching with humility and compassion.
   - `artwork/poster-v1.jpeg` (1122×1402), `artwork/programme-card-v1.jpeg` (1024×1536)
   - `photos/nbn-sir-portrait.png` (1095×1437, B&W studio portrait)
   - `photos/school-main-building-hires.jpg` (8980×4280, 22 MB; real photo of the main
-    building; photographer/credit unknown)
+    building; used with SSKZM OBA permission, credited "SSKZM OBA")
   - `logos/sainik-school-crest.jpeg`: the **school's crest** ("Ministry of Defence"
     ring). **Not used**: it suggests an official school event.
   - `logos/oba-crest.jpeg`: OBA logo. The site and video use the identical transparent
     PNG copied from the Adventures repo (`img/oba-logo.png`).
-  - `audio/asatoma-2.mp3` (21 s, single voice on F♯): **the chant used**. Source/licence
-    still to be recorded (see open questions). The three lines run 0.3–18.5 s; the
-    closing "Om" (18.7 s on) is cut.
+  - `audio/asatoma-2.mp3` (21 s, single voice on F♯): **the chant used**. Recorded for
+    SSKZM OBA; credited "SSKZM OBA" (singer's name can be added later). The three
+    lines run 0.3–18.5 s; the closing "Om" (18.7 s on) is cut.
   - `audio/pixabay-pavamana-mantra-kalsstockmedia.mp3`: Pixabay Content Licence,
     AI-generated, 1:11. Downloaded 2026-10-25 as a fallback; **not used**.
   - `audio/segments.html`: listening page used to pick chant parts.
-- Site (same layout as Adventures): `index.html`, `styles.css`, `app.js`,
-  `guiding-lights.ics`, `img/` (web-sized images, each < 250 KB; `og.jpg` = link
-  preview), `audio/chant.mp3` (website chant), `film/guiding-lights.mp4`.
+- Site in `docs/v1/` (same file layout as Adventures): `index.html`, `styles.css`,
+  `app.js`, `guiding-lights.ics`, `img/` (web-sized images, each < 250 KB; `og.jpg` =
+  link preview), `audio/chant.mp3` (website chant), `film/guiding-lights.mp4`.
+  `docs/index.html` = holding page, `docs/CNAME` = nbn.sskzmoba.org.
+- Fonts (chosen 2026-10-25 from a side-by-side comparison of 4 options): **Libre
+  Caslon Display** (titles) + **Libre Caslon Text** (everything else), Tiro Devanagari
+  Sanskrit for the prayer. Same fonts in the video.
 - `video/`: Remotion project for the WhatsApp film (see "Video" below).
 
 ## Video: WhatsApp Status film (built 2026-10-25)
@@ -64,8 +87,12 @@ curiosity and teaching with humility and compassion.
      `node_modules/@remotion/compositor-win32-x64-msvc/ffmpeg.exe -i ../_source/audio/asatoma-2.mp3 -c:a pcm_s16le -ar 44100 -ac 2 audio/chant-source.wav`
   2. `node audio/make-soundtrack.js audio/chant-source.wav`
   3. `npm run render`, then `npm run render:og`
-  4. Copy `out/guiding-lights.mp4` to `../film/` and `out/og.jpg` to `../img/`.
-  The website chant: ffmpeg `audio/chant-web.wav` → `../audio/chant.mp3` (128k MP3).
+  4. Copy `out/guiding-lights.mp4` to `../docs/v1/film/` and `out/og.jpg` to
+     `../docs/v1/img/`.
+  The website chant: ffmpeg `audio/chant-web.wav` → `../docs/v1/audio/chant.mp3` (128k MP3).
+- The date card says "BY INVITATION". The closing card shows nbn.sskzmoba.org: the
+  bare address shows the holding page until the site goes live, so share the video
+  publicly only after launch (or with the /v1/ link during review).
 - `npm run studio` opens a live preview for editing text and timings.
 
 ## Website plan (agreed 2026-10-25; v1 built)
@@ -105,8 +132,8 @@ One page that scrolls, in this order:
 After 21 Nov the same page becomes the record of the event: photos, highlight video,
 list of honourees.
 
-Effort: about 5–6 hours for v1. Cost ₹0 (GitHub Pages; videos hosted on YouTube,
-never in the repo).
+Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitHub's
+100 MB file limit). Longer event recordings go on YouTube, never in the repo.
 
 ### Video ideas (from the poster)
 1. **Site opening animation:** built in HTML/CSS, not a video file. Light on mobile
@@ -120,23 +147,24 @@ never in the repo).
    station), then a 2–3 minute highlights film on YouTube, embedded on the site.
 
 ### Decisions
-- [x] Chant: `asatoma-2.mp3` supplied by the user (2026-10-25). Source/licence: ?
+- [x] Chant: `asatoma-2.mp3`, recorded for SSKZM OBA; credit "SSKZM OBA" (2026-10-25)
 - [x] Logos: OBA logo only (2026-10-25)
-- [ ] Registration form needed (military station entry)?
-- [ ] Search indexing: v1 is `noindex`. Turn it on once the contact approach is
-      settled (wa.me numbers in links are readable by search engines).
+- [x] Registration form: not needed, attendance is by invitation (2026-10-25)
+- [x] School photo: SSKZM OBA permission; credit "SSKZM OBA" (2026-10-25)
+- [x] Address: `nbn.sskzmoba.org`, review copy at `/v1/` (2026-10-25)
+- [x] Fonts: Libre Caslon (2026-10-25)
+- [x] Removed from the site: the Upanishad reference note under the prayer, and the
+      "The name" / "The tagline" headings (2026-10-25)
+- [ ] Search indexing: v1 is `noindex`. Decide at launch (wa.me numbers in links are
+      readable by search engines).
 - [ ] Honourees: name them before the event, or only after?
-- [ ] School photo: who took it, so it can be credited?
-- [ ] Address: `nbn.sskzmoba.org` (recommended) or `guidinglights.sskzmoba.org`
 
 ## Decisions (2026-10-25)
 - **Separate project and repo**, not a worktree/subfolder of the Adventures site
   (`sskzmoba/fall-in`, adventures.sskzmoba.org). Reason: GitHub Pages allows one custom
   domain per repo; different audience, tone and lifespan; cleaner handover.
-- Planned repo: `sskzmoba/nbn-2026` (public, GitHub Pages, ₹0) — name to confirm now
-  that the programme is called "Guiding Lights".
-- Planned address: `nbn.sskzmoba.org` — CNAME at ResellerClub DNS → `sskzmoba.github.io`
-  (₹0; domain already owned). Alternative to decide: `guidinglights.sskzmoba.org`.
+- Repo `sskzmoba/nbn-2026` (public, GitHub Pages, ₹0) and address `nbn.sskzmoba.org`
+  (CNAME at ResellerClub, ₹0): both created 2026-10-25, see "Live addresses".
 - Same approach as Adventures: plain HTML/CSS/JS, no build step, mobile-first,
   contacts behind WhatsApp buttons, any data collection via Google Forms only.
   Copy (don't share) useful CSS / logo (`img/oba-logo.png`) from the Adventures repo.
@@ -163,10 +191,9 @@ never in the repo).
 - [x] OBA logo (2026-10-25)
 - [ ] Speakers: special address, fireside chat, panellists + moderator, keynote
 - [ ] Who is felicitated (names or categories) and how they are chosen
-- [ ] About NBN Sir: full name, years at school, subject (science?), short tribute
-- [ ] Attendance: open, or by invitation? Does entry to Pangode Military Station
-      need a pre-registered name list / ID? (decides whether we need an RSVP form)
-- [ ] WhatsApp contact person(s) for enquiries
+- [x] About NBN Sir: N. Balakrishnan Nair, 1929–2016, SSKZM 1962–1989 (2026-10-25)
+- [x] Attendance: by invitation (2026-10-25)
+- [ ] WhatsApp contact person(s) for enquiries (placeholder on the site for now)
 
 ## Work
 - [x] Project folder + build.md + CLAUDE.md created (2026-10-25)
@@ -178,6 +205,11 @@ never in the repo).
       boxes mark text still to come.
 - [x] WhatsApp video v1 + link-preview image rendered (2026-10-25)
 - [ ] User listens to the video and website chant (mix levels, drone)
+- [x] Fonts switched to Libre Caslon in site + video; video re-rendered with
+      "By invitation" (2026-10-25)
+- [x] Repo created, Pages from `docs/`, DNS CNAME added; review copy published at
+      https://nbn.sskzmoba.org/v1/ (2026-10-25, user's request)
+- [ ] Organising group reviews /v1/; collect feedback
 - [ ] Collect remaining inputs above; fill in the yellow boxes
 - [ ] Revised poster + programme card
-- [ ] Create repo, DNS CNAME, publish (only with go-ahead)
+- [ ] Go live at the root address (only with go-ahead)
