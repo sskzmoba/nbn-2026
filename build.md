@@ -43,6 +43,9 @@ curiosity and teaching with humility and compassion.
   to `/`, remove `noindex` if indexing is agreed, commit and push. Keep `/v1/` or
   delete it.
 - Rollback: `git revert` the commit and push; Pages redeploys within a minute or two.
+- HTTPS: certificate issued 2026-10-25, "Enforce HTTPS" on. Lesson: add the DNS record
+  *before* attaching the custom domain on GitHub, or the first check fails and the
+  certificate waits (fixed with "Check again" in repo Settings → Pages).
 - Local preview: `.claude/launch.json` runs a small Node static server on `docs/`
   (port 5181); open http://localhost:5181/v1/.
 
@@ -207,7 +210,8 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
 - [ ] User listens to the video and website chant (mix levels, drone)
 - [x] Fonts switched to Libre Caslon in site + video; video re-rendered with
       "By invitation" (2026-10-25)
-- [x] Repo created, Pages from `docs/`, DNS CNAME added; review copy published at
+- [x] Repo created, Pages from `docs/`, DNS CNAME added, HTTPS certificate issued and
+      enforced; review copy published at
       https://nbn.sskzmoba.org/v1/ (2026-10-25, user's request)
 - [ ] Organising group reviews /v1/; collect feedback
 - [ ] Collect remaining inputs above; fill in the yellow boxes
