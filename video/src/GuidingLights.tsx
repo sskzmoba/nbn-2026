@@ -6,22 +6,29 @@ import { loadFont as loadDeva } from "@remotion/google-fonts/TiroDevanagariSansk
 
 // 45 s vertical film for WhatsApp Status: prayer → N. B. N. Sir → Guiding Lights → sessions → date → OBA.
 // Soundtrack: public/soundtrack.wav, made by audio/make-soundtrack.js (chant lines are timed to it).
-const display = loadDisplay().fontFamily;
-const text = loadText("normal", { weights: ["400", "700"] }).fontFamily;
+export const display = loadDisplay().fontFamily;
+export const text = loadText("normal", { weights: ["400", "700"] }).fontFamily;
 loadText("italic", { weights: ["400"] });
 const deva = loadDeva().fontFamily;
 
-const C = { night: "#05070d", navy: "#0b1830", gold: "#ffd38a", goldDeep: "#c99a3c", cream: "#f4efe6", muted: "#b9c1d0" };
+export const C = { night: "#05070d", navy: "#0b1830", gold: "#ffd38a", goldDeep: "#c99a3c", cream: "#f4efe6", muted: "#b9c1d0" };
 
 export const FPS = 30;
 export const TOTAL_FRAMES = 45 * FPS;
-const s = (sec: number) => Math.round(sec * FPS);
-const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
-const ease = Easing.inOut(Easing.quad);
+export const s = (sec: number) => Math.round(sec * FPS);
+export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+export const ease = Easing.inOut(Easing.quad);
 
 // Fade in over [a, a+inn], hold, fade out over [b-out, b]
-function fade(frame: number, a: number, b: number, inn = 0.8, out = 0.6) {
+export function fade(frame: number, a: number, b: number, inn = 0.8, out = 0.6) {
   return interpolate(frame, [a * FPS, (a + inn) * FPS, (b - out) * FPS, b * FPS], [0, 1, 1, 0], clamp);
+}
+
+// Left-to-right "writing" reveal over [a, a+dur]: a soft-edged mask sweeps across the text
+export function wipe(frame: number, a: number, dur: number): React.CSSProperties {
+  const p = interpolate(frame, [s(a), s(a + dur)], [0, 125], { ...clamp, easing: Easing.inOut(Easing.sin) });
+  const m = `linear-gradient(90deg, #000 ${p - 25}%, transparent ${p}%)`;
+  return { WebkitMaskImage: m, maskImage: m };
 }
 
 // ---------- 1. Prayer (each line appears as it is sung) ----------
@@ -79,11 +86,11 @@ const Remembrance: React.FC = () => {
 };
 
 // ---------- 3–6. School backdrop, title, sessions, date, close ----------
-const Backdrop: React.FC = () => {
+export const Backdrop: React.FC = () => {
   const frame = useCurrentFrame();
   const o = interpolate(frame, [s(25.3), s(26.6)], [0, 1], clamp);
   // Slow pan across the main building (image is 4100 × 1954, scaled to 1920 tall ≈ 4029 wide)
-  const x = interpolate(frame, [s(25.3), s(45)], [-1650, -1300], clamp);
+  const x = interpolate(frame, [s(25.3), s(45)], [-1750, -1180], clamp);
   return (
     <AbsoluteFill style={{ opacity: o }}>
       <Img src={staticFile("school.jpg")} style={{ position: "absolute", height: 1920, width: 4029, left: x, top: 0, maxWidth: "none" }} />
@@ -92,21 +99,22 @@ const Backdrop: React.FC = () => {
   );
 };
 
-const Title: React.FC = () => {
+export const Title: React.FC = () => {
   const frame = useCurrentFrame();
   const o = interpolate(frame, [s(25.6), s(26.8), s(42.0), s(42.6)], [0, 1, 1, 0], clamp);
   // After the reveal the title rises and shrinks into a header for the following scenes
   const k = interpolate(frame, [s(30.6), s(31.6)], [0, 1], { ...clamp, easing: ease });
   const sweep = interpolate(frame, [s(25.8), s(28.2)], [-60, 160], clamp);
-  const tag = interpolate(frame, [s(27.0), s(28.0)], [0, 1], clamp) * (1 - k);
   return (
     <AbsoluteFill style={{ opacity: o, alignItems: "center", justifyContent: "center" }}>
       <div style={{ textAlign: "center", transform: `translateY(${-580 * k}px) scale(${1 - 0.48 * k})` }}>
         <div style={{ fontFamily: display, fontWeight: 400, fontSize: 210, lineHeight: 0.95, letterSpacing: 0, backgroundImage: `linear-gradient(100deg, ${C.cream} ${sweep - 30}%, #fff6dc ${sweep - 8}%, ${C.gold} ${sweep}%, #fff6dc ${sweep + 8}%, ${C.cream} ${sweep + 30}%)`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", filter: "drop-shadow(0 0 30px rgba(255,200,110,.35))" }}>
           Guiding<br />Lights
         </div>
-        <div style={{ opacity: tag, fontFamily: text, fontWeight: 400, fontSize: 50, color: C.gold, marginTop: 36, padding: "0 60px" }}>
-          Celebrating Educators<br />Who Shape Generations
+        {/* Tagline is "written" left to right, one line after the other */}
+        <div style={{ opacity: 1 - k, fontFamily: text, fontWeight: 400, fontSize: 50, color: C.gold, marginTop: 36, padding: "0 60px" }}>
+          <div style={wipe(frame, 26.9, 1.1)}>Celebrating Educators</div>
+          <div style={wipe(frame, 27.8, 1.1)}>Who Shape Generations</div>
         </div>
       </div>
     </AbsoluteFill>
@@ -121,7 +129,7 @@ const SESSIONS = [
   ["Felicitation", "Honouring educators who shape generations"],
 ];
 
-const Sessions: React.FC = () => {
+export const Sessions: React.FC = () => {
   const frame = useCurrentFrame();
   const scene = fade(frame, 31.4, 38.4, 0.01, 0.6);
   return (
@@ -143,7 +151,7 @@ const Sessions: React.FC = () => {
   );
 };
 
-const When: React.FC = () => {
+export const When: React.FC = () => {
   const frame = useCurrentFrame();
   const o = fade(frame, 38.4, 42.6, 0.7, 0.5);
   const y = interpolate(frame, [s(38.4), s(39.3)], [30, 0], { ...clamp, easing: Easing.out(Easing.quad) });
@@ -155,12 +163,12 @@ const When: React.FC = () => {
       <div style={{ width: 160, height: 3, background: C.goldDeep, margin: "44px 0" }} />
       <div style={{ fontFamily: display, fontWeight: 400, fontSize: 56 }}>Cariappa Auditorium</div>
       <div style={{ fontFamily: text, fontSize: 42, color: C.muted, marginTop: 10, lineHeight: 1.35 }}>Pangode<br />Thiruvananthapuram</div>
-      <div style={{ fontFamily: text, fontWeight: 700, fontSize: 32, letterSpacing: 8, color: C.gold, marginTop: 40 }}>BY INVITATION</div>
+      <div style={{ opacity: interpolate(frame, [s(39.7), s(40.4)], [0, 1], clamp), fontFamily: text, fontWeight: 700, fontSize: 32, letterSpacing: 8, color: C.gold, marginTop: 40 }}>BY INVITATION</div>
     </AbsoluteFill>
   );
 };
 
-const Close: React.FC = () => {
+export const Close: React.FC = () => {
   const frame = useCurrentFrame();
   const o = interpolate(frame, [s(42.5), s(43.3)], [0, 1], clamp);
   const pop = interpolate(frame, [s(42.5), s(43.4)], [0.85, 1], { ...clamp, easing: Easing.out(Easing.back(1.6)) });
@@ -168,8 +176,8 @@ const Close: React.FC = () => {
     <AbsoluteFill style={{ opacity: o, alignItems: "center", justifyContent: "center", textAlign: "center", color: C.cream, gap: 40 }}>
       <Img src={staticFile("oba-logo.png")} style={{ width: 320, height: 320, transform: `scale(${pop})` }} />
       <div>
-        <div style={{ fontFamily: text, fontSize: 40, color: C.muted }}>An initiative by alumni of</div>
-        <div style={{ fontFamily: display, fontWeight: 400, fontSize: 60, marginTop: 10, lineHeight: 1.15 }}>Sainik School<br />Kazhakootam</div>
+        <div style={{ fontFamily: text, fontSize: 32, letterSpacing: 1, color: C.muted }}>An initiative by alumni of</div>
+        <div style={{ fontFamily: display, fontWeight: 400, fontSize: 64, marginTop: 12, whiteSpace: "nowrap" }}>Sainik School Kazhakootam</div>
       </div>
       <div style={{ fontFamily: text, fontWeight: 700, fontSize: 46, color: C.gold, letterSpacing: 2, marginTop: 20 }}>nbn.sskzmoba.org</div>
     </AbsoluteFill>

@@ -173,4 +173,5 @@ function main() {
   writeWav(path.join(__dirname, "chant-web.wav"), wL, wR);
   console.log(`speed ${speed}: chant ends at ${chantEnd.toFixed(2)}s, website chant ${(webLen / SR).toFixed(1)}s, peak gain ${k.toFixed(2)}`);
 }
-main();
+if (require.main === module) main();
+module.exports = { SR, readWav, writeWav, reverb, bell };

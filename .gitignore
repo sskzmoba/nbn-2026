@@ -4,4 +4,5 @@ _source/
 video/node_modules/
 video/out/
 video/public/soundtrack.wav
+video/public/story-soundtrack.wav
 video/audio/*.wav

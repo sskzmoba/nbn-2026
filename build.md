@@ -107,6 +107,33 @@ curiosity and teaching with humility and compassion.
   publicly only after launch (or with the /v1/ link during review).
 - `npm run studio` opens a live preview for editing text and timings.
 
+## Video B: "Teacher's story" (draft for team review, 2026-10-26)
+A second 45 s version without the Sanskrit prayer, to compare with the team. Not on the
+website. Source `video/src/TeachersStory.tsx` (composition `TeachersStory`); from 25.3 s it
+reuses the title, sessions, date and closing scenes of the first film.
+- Story text: "1962." / "A young science master walks into a classroom, right here at
+  Pangode." (the school began at Pangode) / "For 27 years, and long after, he taught us far more than
+  science." / "Curiosity. Confidence. Humility. Compassion." / portrait "N. B. N.
+  Sir, 1929 – 2016" / "Every one of us has had a teacher like him." / GUIDING LIGHTS.
+- Music (user's choice, 2026-10-26): "Kaleidoscope Of Life (Sentimental Piano)" by
+  AlexGrohl, Pixabay Content Licence (free, no credit required; not AI-generated).
+  `_source/audio/kaleidoscope-of-life-alexgrohl.mp3` (3.7 MB, 1:57). The track is quiet until
+  43.03 s, then lifts into a full, intense section (to 85 s). The excerpt starts at 35.13 s,
+  so the lift lands at 7.9 s with "For 27 years, and long after…": quiet under "1962." and
+  the young master, full from his influence onwards, fading over the closing card. E♭ major;
+  two soft synthesised bells on G5 (opening chime, title).
+- Effects (2026-10-26): story lines appear word by word at reading pace ("Every one of us…"
+  line by line); "N. B. N. Sir", "1929 – 2016" and the tagline are "written" left to right
+  (`wipe()` in GuidingLights.tsx); BY INVITATION appears last on the date card; the school
+  photo pans about 1.6× faster. Closing card: smaller "An initiative by alumni of", "Sainik
+  School Kazhakootam" on one line. The title, date and closing scenes are shared with the
+  prayer film, so it picks these up when it is next rendered.
+- First draft used "Inspiring Moment" by leberch (`_source/audio/inspiring-moment-leberch.mp3`,
+  4.1 MB); the script still supports it (`... inspiring`).
+- Rebuild (in `video/`): decode the MP3 to `audio/kaleidoscope-source.wav` (ffmpeg, as for
+  the chant), `node audio/make-story-soundtrack.js audio/kaleidoscope-source.wav kaleidoscope`,
+  then `npx remotion render src/index.ts TeachersStory out/guiding-lights-teachers-story.mp4 --codec=h264 --crf=20`.
+
 ## Website plan (agreed 2026-10-25; v1 built)
 One page that scrolls, in this order:
 1. **Opening (about 8 s, skippable):** dark screen. The three lines of the
@@ -247,6 +274,8 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
       ≤ 640 px, e.g. WhatsApp in-app browser on iPhone) show "Guiding Lights" on one line
       so both buttons fit; checked 360×460 to 412×730. CSS/JS links carry `?v=N`: raise
       it after every CSS/JS edit so phones do not use a cached old file.
+- [x] Video B "Teacher's story" (piano, no prayer) rendered for team review (2026-10-26)
+- [ ] Team picks video A (prayer) or B (story); then decide if the website opening follows
 - [ ] Organising group reviews /v1/; collect feedback
 - [ ] Collect remaining inputs above; fill in the yellow boxes
 - [ ] Revised poster + programme card
