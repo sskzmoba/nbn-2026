@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SSKZM OBA//Guiding Lights//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:guiding-lights-2026@nbn.sskzmoba.org
+DTSTAMP:20261025T000000Z
+DTSTART:20261121T043000Z
+DTEND:20261121T093000Z
+SUMMARY:Guiding Lights — Celebrating Educators Who Shape Generations
+LOCATION:Cariappa Auditorium\, Pangode Military Station\, Thiruvananthapuram
+DESCRIPTION:In remembrance of N. B. N. Sir. An initiative by alumni of Sainik School Kazhakootam. Programme begins 10:30 AM. https://nbn.sskzmoba.org/
+END:VEVENT
+END:VCALENDAR

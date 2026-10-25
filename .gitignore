@@ -1,0 +1,7 @@
+# Originals and working files stay out of the public repo (backed up separately, see build.md)
+_source/
+.claude/
+video/node_modules/
+video/out/
+video/public/soundtrack.wav
+video/audio/*.wav
