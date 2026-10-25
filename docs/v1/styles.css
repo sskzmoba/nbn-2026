@@ -80,7 +80,6 @@ section { padding: 64px 16px; }
 .when__count { color: var(--gold-soft); font-weight: 600; font-size: .95rem; }
 .when__count:empty { display: none; }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-.film-btn { margin-top: 18px; background: none; border: 0; color: #fff; font: 600 1rem var(--text); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; min-height: 44px; }
 .scroll-cue { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); color: #fff; text-decoration: none; font-size: 2rem; opacity: .7; }
 
 /* ---------- Prayer ---------- */
@@ -133,10 +132,6 @@ section { padding: 64px 16px; }
 .footer strong { color: #fff; }
 .footer__small { font-size: .82rem; opacity: .8; }
 
-/* ---------- Film player ---------- */
-.film { position: fixed; inset: 0; z-index: 60; background: #000; display: flex; align-items: center; justify-content: center; }
-.film video { max-width: 100%; max-height: 100%; }
-.film__close { position: absolute; top: max(12px, env(safe-area-inset-top)); right: 12px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(255,255,255,.18); color: #fff; font-size: 1.2rem; cursor: pointer; }
 [hidden] { display: none !important; }
 
 /* ---------- Reveal on scroll ---------- */

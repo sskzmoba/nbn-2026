@@ -9,7 +9,7 @@ const store = {
   get(k) { try { return sessionStorage.getItem(k); } catch { return null; } },
   set(k, v) { try { sessionStorage.setItem(k, v); } catch { /* private mode: ignore */ } },
 };
-// True when a file is published next to the page (used to switch on the chant and film buttons)
+// True when a file is published next to the page (used to switch on the chant button)
 async function exists(url) {
   try { return (await fetch(url, { method: "HEAD", cache: "no-store" })).ok; } catch { return false; }
 }
@@ -131,25 +131,3 @@ $("share-btn").addEventListener("click", async () => {
   }
   window.open("https://wa.me/?text=" + encodeURIComponent(shareText + " " + SITE_URL), "_blank", "noopener");
 });
-
-// ---- Film: full screen on tap; close on ✕, Esc or when it ends ----
-const film = $("film");
-const filmVideo = $("film-video");
-const filmBtn = $("film-btn");
-function closeFilm() {
-  filmVideo.pause();
-  film.hidden = true;
-  document.body.style.overflow = "";
-  filmBtn.focus();
-}
-exists(filmBtn.dataset.film).then(ok => { filmBtn.hidden = !ok; });
-filmBtn.addEventListener("click", () => {
-  if (!filmVideo.getAttribute("src")) filmVideo.src = filmBtn.dataset.film;
-  film.hidden = false;
-  document.body.style.overflow = "hidden";
-  filmVideo.currentTime = 0;
-  filmVideo.play().catch(() => {}); // a tap counts as a user gesture, so sound is allowed
-});
-$("film-close").addEventListener("click", closeFilm);
-filmVideo.addEventListener("ended", closeFilm);
-document.addEventListener("keydown", e => { if (e.key === "Escape" && !film.hidden) closeFilm(); });

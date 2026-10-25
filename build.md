@@ -70,7 +70,8 @@ curiosity and teaching with humility and compassion.
   - `audio/segments.html`: listening page used to pick chant parts.
 - Site in `docs/v1/` (same file layout as Adventures): `index.html`, `styles.css`,
   `app.js`, `guiding-lights.ics`, `img/` (web-sized images, each < 250 KB; `og.jpg` =
-  link preview), `audio/chant.mp3` (website chant), `film/guiding-lights.mp4`.
+  link preview), `audio/chant.mp3` (website chant), `film/guiding-lights.mp4` (not linked from the page since 2026-10-25; kept as a download
+  link for organisers: https://nbn.sskzmoba.org/v1/film/guiding-lights.mp4).
   `docs/index.html` = holding page, `docs/CNAME` = nbn.sskzmoba.org.
 - Fonts (chosen 2026-10-25 from a side-by-side comparison of 4 options): **Libre
   Caslon Display** (titles) + **Libre Caslon Text** (everything else), Tiro Devanagari
@@ -229,6 +230,8 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
 - [x] Round 2 changes (2026-10-25): website chant 1.2× with faster text, "Enter" →
       "Skip intro", "Military Station" removed from site, calendar file and video
       (video re-rendered); share section trimmed to the WhatsApp button
+- [x] "Watch the film" button removed from the site; it repeated the page and cost
+      13 MB of mobile data. The film is for WhatsApp sharing only (2026-10-25)
 - [ ] Organising group reviews /v1/; collect feedback
 - [ ] Collect remaining inputs above; fill in the yellow boxes
 - [ ] Revised poster + programme card

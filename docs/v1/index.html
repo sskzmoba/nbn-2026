@@ -73,8 +73,6 @@
       <a class="btn btn--gold" href="#programme">See the programme</a>
       <a class="btn btn--line" id="cal-btn" href="guiding-lights.ics" download>Add to calendar</a>
     </div>
-    <!-- Shown when film/guiding-lights.mp4 exists -->
-    <button class="film-btn" id="film-btn" type="button" data-film="film/guiding-lights.mp4" hidden><span aria-hidden="true">▶</span> Watch the film · 45 s</button>
   </div>
   <a class="scroll-cue" href="#prayer" aria-label="Scroll down">⌄</a>
 </header>
@@ -216,12 +214,6 @@
   <p><strong>An initiative by alumni of Sainik School Kazhakootam</strong><br>Old Boys Association, SSKZM</p>
   <p class="footer__small">School photograph and chant recording: SSKZM OBA · <button class="linklike" id="replay-btn" type="button">Replay the opening</button></p>
 </footer>
-
-<!-- Full-screen film player -->
-<div class="film" id="film" hidden>
-  <video id="film-video" controls playsinline preload="none"></video>
-  <button class="film__close" id="film-close" type="button" aria-label="Close video">✕</button>
-</div>
 
 <script src="app.js"></script>
 </body>
