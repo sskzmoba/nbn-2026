@@ -2,31 +2,254 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guiding Lights · 21 November 2026</title>
-<meta name="description" content="Guiding Lights: Celebrating Educators Who Shape Generations. In remembrance of N. B. N. Sir. An initiative by alumni of Sainik School Kazhakootam.">
-<!-- Holding page while the site is under review at /v1/ -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guiding Lights — Celebrating Educators Who Shape Generations · 21 Nov 2026</title>
+<meta name="description" content="Guiding Lights: an initiative by alumni of Sainik School Kazhakootam, in remembrance of N. B. N. Sir. Conversations and the felicitation of educators. 21 November 2026, Cariappa Auditorium, Pangode, Thiruvananthapuram.">
+<!-- Kept out of search engines until the contact/indexing decision is made (see build.md) -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0b1830">
-<link rel="icon" type="image/png" href="v1/img/oba-logo.png">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text&display=swap" rel="stylesheet">
-<style>
-  body { margin: 0; min-height: 100svh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; box-sizing: border-box; background: #0b1830; color: #f4efe6; font-family: "Libre Caslon Text", Georgia, serif; }
-  img { width: 84px; height: 84px; margin: 0 auto 20px; display: block; }
-  h1 { font-family: "Libre Caslon Display", Georgia, serif; font-weight: 400; font-size: clamp(3rem, 16vw, 5.5rem); line-height: .95; margin: 0 0 12px; }
-  p { margin: 0 0 10px; }
-  .tag { color: #f3e3bd; }
-  .soon { margin-top: 24px; font-size: .9rem; opacity: .75; letter-spacing: .1em; text-transform: uppercase; }
-</style>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Guiding Lights — Celebrating Educators Who Shape Generations">
+<meta property="og:description" content="In remembrance of N. B. N. Sir · 21 November 2026 · Cariappa Auditorium, Pangode, Thiruvananthapuram. An initiative by alumni of Sainik School Kazhakootam.">
+<meta property="og:image" content="https://nbn.sskzmoba.org/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://nbn.sskzmoba.org/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="img/oba-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=7">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <main>
-    <img src="v1/img/oba-logo.png" alt="Old Boys Association, Sainik School Kazhakootam">
-    <p>In remembrance of N. B. N. Sir</p>
-    <h1>Guiding<br>Lights</h1>
-    <p class="tag">Celebrating Educators Who Shape Generations</p>
-    <p>Saturday, 21 November 2026 · Thiruvananthapuram</p>
-    <p class="soon">Website coming soon</p>
-  </main>
+
+<!-- ============ OPENING (shown by app.js once per visit; skipped when JavaScript is off) ============ -->
+<div class="opening" id="opening" hidden>
+  <div class="opening__glow" aria-hidden="true"></div>
+  <!-- The teacher's story, as in the film. data-at / data-to: seconds (film timing) at which each
+       scene appears and fades; data-step: seconds between words (or lines with data-byline).
+       app.js plays it at film speed with the music, or faster without. -->
+  <div class="story">
+    <p class="scene scene--year" data-at="0.4" data-to="2.9">1962.</p>
+    <p class="scene" data-at="3.0" data-to="7.6">A young science master<br>walks into a classroom,<br>right here at Pangode.</p>
+    <p class="scene" data-at="7.8" data-to="12.2">For 27 years,<br>and long after,<br>he taught us<br>far more than science.</p>
+    <p class="scene scene--qualities" data-at="12.3" data-to="18.2" data-step="1.05" data-byline>Curiosity.<br>Confidence.<br>Humility.<br>Compassion.</p>
+    <figure class="scene opening__nbn" data-at="18.0" data-to="22.6">
+      <img src="img/nbn-sir.jpg" alt="Portrait of N.&nbsp;B.&nbsp;N. Sir" width="720" height="945">
+      <figcaption><strong>N.&nbsp;B.&nbsp;N. Sir</strong><br>1929 – 2016</figcaption>
+    </figure>
+    <p class="scene" data-at="22.6" data-to="25.6" data-step="0.55" data-byline>Every one of us<br>has had a teacher<br>like him.</p>
+  </div>
+  <div class="opening__controls">
+    <!-- Shown only when audio/story.mp3 exists -->
+    <button class="opening__btn" id="music-btn" type="button" hidden><span aria-hidden="true">▶</span> Play music</button>
+    <button class="opening__btn opening__btn--ghost" id="skip-btn" type="button">Skip intro <span aria-hidden="true">›</span></button>
+  </div>
+  <audio id="music" preload="none" src="audio/story.mp3"></audio>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <picture class="hero__bg">
+    <source media="(min-width: 900px)" srcset="img/school-1600.jpg">
+    <img src="img/school-900.jpg" alt="" width="900" height="429">
+  </picture>
+  <div class="hero__shade"></div>
+
+  <div class="hero__body">
+    <img class="hero__logo" src="img/oba-logo.png" alt="Old Boys Association, Sainik School Kazhakootam" width="84" height="84">
+    <p class="eyebrow">In remembrance of N.&nbsp;B.&nbsp;N. Sir<br><span>Sainik School Kazhakootam</span></p>
+    <h1 class="title">Guiding<br> Lights</h1>
+    <p class="tagline">Celebrating Educators Who Shape Generations</p>
+
+    <div class="when">
+      <p class="when__date"><time datetime="2026-11-21">Saturday, 21 November 2026</time></p>
+      <p class="when__time">10:00 AM – 3:00 PM <span>Programme begins 10:30 AM</span></p>
+      <p class="when__place">Cariappa Auditorium, Pangode</p>
+      <div class="when__meta">
+        <p class="when__invite">By invitation</p>
+        <p class="when__count" id="countdown" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="hero__ctas">
+      <a class="btn btn--gold" href="#programme">See the programme</a>
+      <a class="btn btn--line" id="cal-btn" href="guiding-lights.ics" download>Add to calendar</a>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#nbn" aria-label="Scroll down">⌄</a>
+</header>
+
+<main>
+
+  <!-- ============ IN REMEMBRANCE ============ -->
+  <section class="remember" id="nbn">
+    <div class="wrap remember__grid">
+      <figure class="remember__photo reveal">
+        <img src="img/nbn-sir.jpg" alt="N.&nbsp;B.&nbsp;N. Sir" width="720" height="945" loading="lazy">
+      </figure>
+      <div class="reveal">
+        <p class="kicker">In remembrance</p>
+        <h2>N.&nbsp;B.&nbsp;N. Sir</h2>
+        <p class="remember__name">N. Balakrishnan Nair <span>1929 – 2016</span></p>
+        <p>N.&nbsp;B.&nbsp;N. Sir served Sainik School Kazhakootam for 27 years, from 1962 until his retirement in 1989. Generations of cadets remember him for making science accessible, for nurturing curiosity, and for teaching with humility and compassion.</p>
+        <p>Guiding Lights is offered by his students in that spirit: to thank the teachers who shape young lives, and to ask what good teaching must look like in the years ahead.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE CONCEPT ============ -->
+  <section class="concept" id="concept">
+    <div class="wrap">
+      <p class="kicker reveal">The programme</p>
+      <h2 class="reveal">Guiding Lights</h2>
+      <p class="lead reveal">Guiding Lights brings together school principals, teachers and distinguished voices to celebrate educators and explore their role in a changing world. It combines meaningful conversations with the felicitation of educators for their contributions to young lives.</p>
+      <div class="concept__pair">
+        <div class="reveal">
+          <p>“Guiding Lights” reflects the enduring influence of educators in helping young people discover their strengths, question thoughtfully and find their direction.</p>
+        </div>
+        <div class="reveal">
+          <p>“Celebrating Educators Who Shape Generations” recognises their contribution beyond classrooms and examination results: shaping character, confidence and society.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GUESTS (each has agreed to be named; photos with their consent) ============ -->
+  <section class="guests" id="guests">
+    <div class="wrap">
+      <p class="kicker reveal">Guests</p>
+      <h2 class="reveal">In the distinguished presence&nbsp;of</h2>
+      <ul class="guests__list">
+        <li class="guest reveal">
+          <img src="img/guests/ashok.jpg" alt="Dr B. Ashok IAS" width="480" height="480" loading="lazy">
+          <div><h3>Dr B. Ashok IAS</h3>
+          <p>Principal Secretary, Higher Education, Government of Keralam</p>
+          <p class="guest__more">First Vice-Chancellor, Kerala Veterinary and Animal Sciences University</p></div>
+        </li>
+        <li class="guest reveal">
+          <img src="img/guests/amala.jpg" alt="Amala Akkineni" width="480" height="480" loading="lazy">
+          <div><h3>Amala Akkineni</h3>
+          <p>Director, Annapurna College of Film and Media, Hyderabad</p>
+          <p class="guest__more">Actor; co-founder, Blue Cross of Hyderabad</p></div>
+        </li>
+        <li class="guest reveal">
+          <img src="img/guests/gvr.jpg" alt="G. Vijaya Raghavan" width="480" height="480" loading="lazy">
+          <div><h3>G. Vijaya Raghavan</h3>
+          <p>Founder CEO, Technopark, India's first technology park</p>
+          <p class="guest__more">Founder and Honorary Director, Centre for Autism and other Disabilities Rehabilitation Research and Education (CADRRE)</p></div>
+        </li>
+        <li class="guest reveal">
+          <img src="img/guests/vasuki.jpg" alt="Dr K. Vasuki IAS" width="480" height="480" loading="lazy">
+          <div><h3>Dr K. Vasuki IAS</h3>
+          <p>Secretary to the Governor of Keralam</p>
+          <p class="guest__more">Former Secretary, General Education; doctor, administrator and author of <i>The School of Life</i></p></div>
+        </li>
+      </ul>
+      <p class="guests__note reveal">More guests and speakers will be announced.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONVERSATIONS ============ -->
+  <section class="talks" id="conversations">
+    <div class="wrap">
+      <p class="kicker reveal">The conversations</p>
+      <h2 class="reveal">Four conversations</h2>
+      <p class="lead reveal">One question runs through the day: what makes a teacher unforgettable?</p>
+      <div class="cards">
+        <article class="card reveal">
+          <p class="card__type">Special Address</p>
+          <h3>Inspiring the Next Generation to Serve</h3>
+          <p>Encouraging young people to join the Armed Forces.</p>
+          <p class="card__who">Speaker to be announced</p>
+        </article>
+        <article class="card reveal">
+          <p class="card__type">Fireside Chat</p>
+          <h3>The Teachers and Experiences That Shape Us</h3>
+          <p>A personal conversation about the educators and experiences that influence our choices, values and aspirations.</p>
+          <p class="card__who">Speakers to be announced</p>
+        </article>
+        <article class="card reveal">
+          <p class="card__type">Panel Discussion</p>
+          <h3>When Answers Are Everywhere, What Should Schools Teach?</h3>
+          <p>How schools can nurture curiosity, judgment, creativity and empathy as AI makes information readily available.</p>
+          <p class="card__who">Panellists to be announced</p>
+        </article>
+        <article class="card reveal">
+          <p class="card__type">Keynote</p>
+          <h3>Leading Schools That Shape Generations</h3>
+          <p>How school leaders can build institutions that develop capable, compassionate young people and support teachers through change.</p>
+          <p class="card__who">Speaker to be announced</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FELICITATION ============ -->
+  <section class="honour" id="felicitation">
+    <div class="wrap">
+      <p class="kicker reveal">Felicitation ceremony</p>
+      <h2 class="reveal">Honouring educators</h2>
+      <p class="lead reveal">The ceremony recognises educators for their commitment and contribution to shaping generations: principals and teachers whose work reaches far beyond the classroom and the examination hall.</p>
+      <p class="reveal">A select group of school leaders will be felicitated in recognition of their leadership, dedication and contribution to education.</p>
+      <!-- Names are added only after each honouree has agreed (DPDP Act, 2023). -->
+    </div>
+  </section>
+
+  <!-- ============ PROGRAMME ============ -->
+  <section class="programme" id="programme">
+    <div class="wrap">
+      <p class="kicker reveal">Saturday, 21 November 2026</p>
+      <h2 class="reveal">Programme</h2>
+      <ol class="timeline">
+        <li class="reveal"><time><span>10:00 –</span> <span>10:30 AM</span></time><div><h3>Arrival, registration and meet &amp; greet</h3><p>Tea and snacks</p></div></li>
+        <li class="reveal"><time><span>10:30 –</span> <span>11:00 AM</span></time><div><h3>Inaugural session</h3>
+          <p><b>10:30</b> Welcome and tribute to N.&nbsp;B.&nbsp;N. Sir</p>
+          <p><b>10:45</b> Special Address: <em>Inspiring the Next Generation to Serve</em></p></div></li>
+        <li class="reveal"><time><span>11:00 –</span> <span>11:30 AM</span></time><div><h3>Fireside Chat</h3><p>The Teachers and Experiences That Shape Us</p></div></li>
+        <li class="reveal"><time><span>11:30 AM –</span> <span>12:30 PM</span></time><div><h3>Panel Discussion</h3><p>When Answers Are Everywhere, What Should Schools Teach?</p></div></li>
+        <li class="reveal"><time><span>12:30 –</span> <span>1:00 PM</span></time><div><h3>Keynote Address</h3><p>Leading Schools That Shape Generations</p></div></li>
+        <li class="reveal key"><time><span>1:00 –</span> <span>1:45 PM</span></time><div><h3>Felicitation Ceremony</h3></div></li>
+        <li class="reveal"><time><span>1:45 –</span> <span>2:00 PM</span></time><div><h3>Vote of thanks and group photographs</h3></div></li>
+        <li class="reveal"><time><span>2:00 –</span> <span>3:00 PM</span></time><div><h3>Lunch and networking</h3></div></li>
+      </ol>
+      <a class="btn btn--line btn--dark reveal" href="downloads/guiding-lights-programme.pdf" download>Download the programme (PDF)</a>
+    </div>
+  </section>
+
+  <!-- ============ VENUE ============ -->
+  <section class="venue" id="venue">
+    <div class="wrap">
+      <p class="kicker reveal">Venue</p>
+      <h2 class="reveal">Cariappa Auditorium</h2>
+      <p class="reveal">Pangode, Thiruvananthapuram</p>
+      <p class="reveal"><strong>Attendance is by invitation.</strong> Entry details will be shared with invited guests.</p>
+      <a class="btn btn--line btn--dark reveal" href="https://www.google.com/maps/search/?api=1&amp;query=Cariappa+Auditorium+Pangode+Thiruvananthapuram" target="_blank" rel="noopener">Directions in Google Maps</a>
+    </div>
+  </section>
+
+  <!-- ============ SHARE / CONTACT ============ -->
+  <section class="share" id="contact">
+    <div class="wrap">
+      <button class="btn btn--gold reveal" id="share-btn" type="button">Share on WhatsApp</button>
+      <!-- Enquiry button: add the coordinator's wa.me link here once agreed (no plain numbers as text) -->
+      <p class="tbd reveal">[WhatsApp enquiry button — coordinator to be confirmed]</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <img src="img/oba-logo.png" alt="" width="64" height="64" loading="lazy">
+  <p><strong>An initiative by alumni of Sainik School Kazhakootam</strong><br>Old Boys Association, SSKZM</p>
+  <p class="footer__small">School photograph: SSKZM OBA · Music: “Kaleidoscope of Life” by AlexGrohl (Pixabay) ·<button class="linklike" id="replay-btn" type="button">Replay the opening</button></p>
+</footer>
+
+<!-- After editing styles.css or app.js, raise ?v= on both links so phones fetch the new files -->
+<script src="app.js?v=7"></script>
 </body>
 </html>

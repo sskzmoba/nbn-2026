@@ -421,4 +421,7 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
 - [ ] Organising group reviews /v1/; collect feedback
 - [ ] Collect remaining inputs above; fill in the yellow boxes
 - [ ] Revised poster + programme card
-- [ ] Go live at the root address (only with go-ahead)
+- [x] Live at the root address https://nbn.sskzmoba.org/ (user's go-ahead, 2026-10-30): `docs/v1/*`
+      copied to `docs/` (except `film/`, which stays at `/v1/film/`), og:url/og:image point to `/`,
+      still `noindex`. `/v1/` kept for links already shared. **Edit both copies** (or retire `/v1/`
+      later) until then. Tested at 375×812.
