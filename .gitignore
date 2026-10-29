@@ -6,3 +6,4 @@ video/out/
 video/public/soundtrack.wav
 video/public/story-soundtrack.wav
 video/audio/*.wav
+video/public/speakers/

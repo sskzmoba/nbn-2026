@@ -172,6 +172,44 @@ each one has confirmed.
   School alumni. Open: who gives the Special Address; whether the chief guest attends the
   inauguration (lamp lighting) and presents the felicitations.
 
+## Invitation to principals with guests (2026-10-29)
+Replaces the group's "Congratulations" sample (AI logo, "Pangode Military Station", "alumni"
+without "of"). Sent to principals when inviting them, to show the standing of the event.
+`video/src/Speakers.tsx`, compositions `Speakers` (navy, WhatsApp) and `SpeakersCream`, 1080×2060
+(tall, fills a phone screen). Outputs `video/out/speakers-navy.jpg`, `speakers-cream.jpg` (2160×4120).
+- Text: felicitation wording in one sentence, "In the distinguished presence of", four guests
+  (2 × 2, photo, name, part in programme, two lines of post and two of achievement), date,
+  time, venue, reply line, OBA footer. Smallest text 27 px (same as the other cards).
+- Guests (user, 2026-10-29): Dr B. Ashok IAS (Chief Guest), Amala Akkineni (Guest of Honour),
+  G. Vijaya Raghavan (his own spelling; founder CEO Technopark; founder director of NISH, not
+  now; founder and hon. director CADRRE), Dr K. Vasuki IAS (Secretary to the Governor of
+  Keralam; former Secretary, General Education; doctor; author of *The School of Life*, DC
+  Books 2025; no TEDx talk found). Alumni panellists to be added later.
+- **Bigger-picture version (preferred, 2026-10-29):** composition `SpeakersLargeCream`,
+  cream only, output `video/out/speakers-large-cream.jpg`. Large square photos (430 px, rounded
+  corners, gold border) as in the group's sample; under each: name, part, two short lines (Ashok:
+  Principal Secretary, Higher Education / Government of Keralam; Amala: Director, Annapurna College
+  of Film and Media; Vijaya Raghavan: Founder CEO, Technopark / Founder, CADRRE (autism centre);
+  Vasuki: Secretary to the Governor of Keralam / Doctor, administrator and author). Crops `*-l.jpg`
+  from `Ashok-IAS-2.avif` (1024×575), `amala-portrait.png` (from a Mango Music poster, text and
+  logos cropped out; ask her office for a photo before any public use), `GVR-1.jpg`, `Vasuki.jpg`.
+- **Sample-wording versions (2026-10-29):** `SpeakersChosenCream` / `SpeakersInvitedCream`, outputs `speakers-chosen-cream.jpg` and `speakers-invited-cream.jpg`. Like the large
+  version, plus a "Congratulations" heading and "The felicitation will be held in the august
+  presence of"; no Chief Guest / Panellist labels; larger footer (logo 120 px, school name 52 px).
+  Chosen: "You have been chosen among a select group of school leaders to be felicitated at Guiding
+  Lights, in recognition of …" (the sample's text, its fragment joined into one sentence). Invited:
+  "You have been invited to be felicitated at Guiding Lights, among a select group of school
+  leaders, in recognition of …".
+- All large versions (revised 2026-10-29): 1080×2600. The real school building (`school.jpg`) is a
+  band **between the invitation text and the guests**, not near the venue line (Cariappa Auditorium
+  is not at the school). No Chief Guest / Guest of Honour / Panellist labels on any large version
+  (roles may change). Photos 410 px, names 46 px, lines 28 px; larger footer (logo 120 px, school
+  name 52 px) on all. The school crest stays unused (it implies an official school / Ministry of
+  Defence event).
+- Photos from the user (`_source/photos/speakers/`), square crops in `video/public/speakers/`
+  (gitignored: third-party photos stay out of the public repo). Dr Ashok's is a news photo;
+  replace with an official one when available. Do not use the watermarked `b-ashok-jpg.webp`.
+
 ## Website plan (agreed 2026-10-25; v1 built)
 One page that scrolls, in this order:
 1. **Opening (about 8 s, skippable):** dark screen. The three lines of the
