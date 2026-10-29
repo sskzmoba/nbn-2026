@@ -134,6 +134,44 @@ reuses the title, sessions, date and closing scenes of the first film.
   the chant), `node audio/make-story-soundtrack.js audio/kaleidoscope-source.wav kaleidoscope`,
   then `npx remotion render src/index.ts TeachersStory out/guiding-lights-teachers-story.mp4 --codec=h264 --crf=20`.
 
+## Felicitation card for honourees (v2, 2026-10-27)
+The user's `banner-2.jpeg` (kept as `_source/artwork/felicitation-card-v1.jpeg`) had an
+AI-garbled OBA logo, an AI-generated school building, an AI-retouched portrait, "Pangode
+Military Station" and "An initiative by alumni" (missing "of"). Rebuilt as
+`video/src/Felicitation.tsx` (composition `Felicitation`, 1080×1620, the same 2:3 shape) with
+the real portrait, school photo and OBA logo, in the website's navy / gold / cream and Libre
+Caslon. Venue "Cariappa Auditorium, Pangode, Thiruvananthapuram"; "Saturday" added.
+- Wording (suggested to the committee, 2026-10-27): **no heading** (the "Guiding Lights" title is
+  just above; "With Gratitude" read like a thank-you note), body "Guiding Lights brings together school leaders, teachers and distinguished speakers for
+  conversations on education. We would be honoured to felicitate you on this occasion, in
+  recognition of your leadership, dedication and contribution to education." (The first sentence
+  says what the event is; added 2026-10-27.) The organisers
+  are the honoured ones, and nothing sounds like a contest result. The committee's original wording
+  ("Congratulations", "You have been chosen among a select group …") is kept as an option.
+- Layout (2026-10-27): the school photo is a narrow band (building and clock tower only) below the
+  text, with nothing over it; the OBA logo and "An initiative by alumni of Sainik School
+  Kazhakootam" are centred in a footer strip under the photo.
+- Four versions in `video/out/` (2160×3240 JPEG): `felicitation-navy.jpg` (WhatsApp),
+  `felicitation-cream.jpg` (printing), and `…-original-text.jpg` of each. Compositions
+  `Felicitation`, `FelicitationCream`, `FelicitationOriginal`, `FelicitationOriginalCream`;
+  render with `npx remotion still src/index.ts <id> out/<name>.jpg --image-format=jpeg
+  --jpeg-quality=92 --scale=2`.
+
+## Programme chart for guests and speakers (2026-10-29)
+To send to the chief guest, guest of honour and panellists. Same look as the felicitation card
+(`video/src/Programme.tsx`, compositions `Programme` (navy, WhatsApp) and `ProgrammeCream`, 1080×1620).
+Timings and session titles from the programme card; start times only; no speaker names until
+each one has confirmed.
+- Outputs in `video/out/`: `programme-navy.jpg`, `programme-cream.jpg` (2160×3240) and
+  `guiding-lights-programme.pdf` (cream, 420×630 pt page, for email). PDF made with
+  `node tools/jpg-to-pdf.js out/programme-cream.jpg out/guiding-lights-programme.pdf` (no dependencies).
+- Speakers proposed (WhatsApp, 2026-10-29; to be confirmed by the coordinator, designations
+  not on the chart): Chief Guest Dr B. Ashok IAS (Principal Secretary, Higher Education, since
+  June 2026), keynote; Guest of Honour Amala Akkineni, fireside chat; panel: G. Vijayaraghavan
+  (founder CEO, Technopark), Dr K. Vasuki IAS (current post to be confirmed) and two Sainik
+  School alumni. Open: who gives the Special Address; whether the chief guest attends the
+  inauguration (lamp lighting) and presents the felicitations.
+
 ## Website plan (agreed 2026-10-25; v1 built)
 One page that scrolls, in this order:
 1. **Opening (about 8 s, skippable):** dark screen. The three lines of the

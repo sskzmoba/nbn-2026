@@ -2,9 +2,31 @@ import React from "react";
 import { Composition } from "remotion";
 import { GuidingLights, OgImage, TOTAL_FRAMES, FPS } from "./GuidingLights";
 import { TeachersStory } from "./TeachersStory";
+import { Felicitation, FelicitationCream, FelicitationOriginal, FelicitationOriginalCream } from "./Felicitation";
+import { Programme, ProgrammeCream } from "./Programme";
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="Programme" component={Programme} durationInFrames={1} fps={FPS} width={1080} height={1620} />
+    <Composition id="ProgrammeCream" component={ProgrammeCream} durationInFrames={1} fps={FPS} width={1080} height={1620} />
+    <Composition id="FelicitationOriginal" component={FelicitationOriginal} durationInFrames={1} fps={FPS} width={1080} height={1620} />
+    <Composition id="FelicitationOriginalCream" component={FelicitationOriginalCream} durationInFrames={1} fps={FPS} width={1080} height={1620} />
+    <Composition
+      id="FelicitationCream"
+      component={FelicitationCream}
+      durationInFrames={1}
+      fps={FPS}
+      width={1080}
+      height={1620}
+    />
+    <Composition
+      id="Felicitation"
+      component={Felicitation}
+      durationInFrames={1}
+      fps={FPS}
+      width={1080}
+      height={1620}
+    />
     <Composition
       id="TeachersStory"
       component={TeachersStory}
