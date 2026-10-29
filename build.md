@@ -210,6 +210,51 @@ without "of"). Sent to principals when inviting them, to show the standing of th
   (gitignored: third-party photos stay out of the public repo). Dr Ashok's is a news photo;
   replace with an official one when available. Do not use the watermarked `b-ashok-jpg.webp`.
 
+## Invitation in the organiser's proportions (2026-10-30)
+The main organiser asked that the invitation not be overshadowed by the guests: keep the sample's
+proportions (text top third, four landscape photos about 29% of the width each, 2 × 2) and the
+sample's photos. `video/src/Invitation.tsx`, cream only, outputs in `video/out/` (2160 wide):
+- `invite-congratulations-cream.jpg` (composition `InviteCongratsCream`, 1080×2050): the organiser's
+  text with "Congratulations", reworded so no one reads it as the only one chosen: "You are one of a
+  select group of school leaders chosen to be felicitated at Guiding Lights, in recognition of …".
+- `invite-honoured-cream.jpg` (`InviteHonouredCream`, 1080×2000): no heading; "We would be honoured
+  and privileged to felicitate you at Guiding Lights, a distinguished gathering of school leaders,
+  eminent educators and inspiring speakers, in recognition of your exemplary leadership, unwavering
+  dedication and invaluable contribution to education." (user's text, lightly edited).
+- Both: "The felicitation will be held in the august presence of"; Vijaya Raghavan "Founder CEO,
+  Technopark" (not "First CEO"); Vasuki "Doctor, Administrator and Author" (capitalised in all
+  invitation versions). The school building sits at the bottom, below the venue line, with the OBA
+  logo over its lower edge (as in the sample, but not behind the venue text).
+- Revision (organiser feedback, 2026-10-30): the invitation text sits in a panel (light gold tint,
+  gold double border) so it reads first; the "august presence" line is quieter (italic, muted).
+  Vasuki's photo zoomed out (full width of the original) so her head matches the others. School
+  band at full strength, whole clock tower, gold rules above and below; OBA logo on a white disc
+  over the forecourt; footer strip below. Both cards now 1080×2200.
+- Revision 2 (2026-10-30): date, time and venue moved **into the invitation panel** (above the
+  guests), so the school photo is no longer next to the venue line; reply line after the guests. Logo
+  no longer over the photo: school band at full strength, then a footer strip with the logo, "An
+  initiative by alumni of", "Sainik School Kazhakootam". Tagline italic gold between short gold lines.
+  Version 2 opens with a larger gold line in the title font ("We would be honoured and privileged / to
+  felicitate you at Guiding Lights,"), the rest in shorter centred lines. Dr Ashok's post on two lines
+  so the rows align; Vijaya Raghavan's white background lightly warmed; Dr Vasuki's photo given room
+  above the head (blurred copy of the photo behind). NBN Sir header unchanged.
+- Revision 3 (design review, 2026-10-30): six type sizes only (title 92, heading 56, date 44, names 38,
+  body 31, small 26); italic only for the tagline; panel border a single thin gold line with a lighter
+  shadow; school photo slightly toned (less saturated, a touch warmer) to sit with the cream. Version 2
+  drops "unwavering" ("your exemplary leadership, dedication and invaluable contribution to
+  education"), with the body in four lines that shorten evenly. Sizes: congratulations 1080×2170,
+  honoured 1080×2290. "August presence" line darkened for phones. Title stays "Guiding Lights" in
+  upper and lower case (consistent with the site, films and other cards).
+- PDFs for email (2026-10-30): `video/out/guiding-lights-invitation-congratulations.pdf` and
+  `…-honoured.pdf` (`node tools/jpg-to-pdf.js`). On WhatsApp, send the JPEGs in HD or as a document,
+  or the small text goes soft.
+- Photos (`public/speakers/*-s.jpg`, 600×464): Dr Ashok from the Manorama photo
+  (`_source/photos/speakers/ashok-manorama.png`), cropped so the watermarks fall outside; for this
+  private invitation only, not the website (user's decision, 2026-10-30). Amala Akkineni from the
+  organiser's 265×375 photo (`amala-sample.png`), cropped down to the necklace and saree (as in the
+  sample), shown whole in the middle of the tile with a blurred copy of its leafy background filling
+  the sides, plus a light sharpen (SVG filter in the composition). Vasuki from `vasuki-sample.jpg`; Vijaya Raghavan from `GVR-1.jpg`.
+
 ## Website update: teacher's story and guests (2026-10-29)
 The site follows video B (no chant), user's request 2026-10-29. Changes in `docs/v1/`:
 - **Opening:** the story from the film ("1962." → young science master → "For 27 years…" → Curiosity,

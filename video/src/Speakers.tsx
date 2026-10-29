@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import { display, text } from "./GuidingLights";
 import { THEMES } from "./Felicitation";
@@ -15,7 +15,7 @@ const SPEAKERS: [string, string, string, React.ReactNode[]][] = [
   ["ashok.jpg", "Dr B. Ashok IAS", "Chief Guest", ["Principal Secretary, Higher Education,", "Government of Keralam", "First Vice-Chancellor, Kerala", "Veterinary University"]],
   ["amala.jpg", "Amala Akkineni", "Guest of Honour", ["Director, Annapurna College of", "Film and Media, Hyderabad", "Actor; co-founder,", "Blue Cross of Hyderabad"]],
   ["gvr.jpg", "G. Vijaya Raghavan", "Panellist", ["Founder CEO, Technopark,", "India's first technology park", "Founder and Hon. Director, CADRRE", "(autism and other disabilities)"]],
-  ["vasuki.jpg", "Dr K. Vasuki IAS", "Panellist", ["Secretary to the Governor of Keralam", "Former Secretary, General Education", "Doctor, administrator and author", <>of <i>The School of Life</i></>]],
+  ["vasuki.jpg", "Dr K. Vasuki IAS", "Panellist", ["Secretary to the Governor of Keralam", "Former Secretary, General Education", "Doctor, Administrator and Author", <>of <i>The School of Life</i></>]],
 ];
 
 // Bigger-picture version (2026-10-29): large photos as in the group's sample, two short lines each.
@@ -24,7 +24,7 @@ const SPEAKERS_LARGE: [string, string, string, React.ReactNode[]][] = [
   ["ashok-l.jpg", "Dr B. Ashok IAS", "Chief Guest", ["Principal Secretary, Higher Education", "Government of Keralam"]],
   ["amala-l.jpg", "Amala Akkineni", "Guest of Honour", ["Director, Annapurna College", "of Film and Media"]],
   ["gvr-l.jpg", "G. Vijaya Raghavan", "Panellist", ["Founder CEO, Technopark", "Founder, CADRRE (autism centre)"]],
-  ["vasuki-l.jpg", "Dr K. Vasuki IAS", "Panellist", ["Secretary to the Governor of Keralam", "Doctor, administrator and author"]],
+  ["vasuki-l.jpg", "Dr K. Vasuki IAS", "Panellist", ["Secretary to the Governor of Keralam", "Doctor, Administrator and Author"]],
 ];
 
 // Wording in the style of the group's sample (2026-10-29): "Congratulations" heading, no part

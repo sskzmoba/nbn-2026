@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Composition } from "remotion";
 import { GuidingLights, OgImage, TOTAL_FRAMES, FPS } from "./GuidingLights";
 import { TeachersStory } from "./TeachersStory";
@@ -6,6 +6,7 @@ import { Felicitation, FelicitationCream, FelicitationOriginal, FelicitationOrig
 import { Programme, ProgrammeCream } from "./Programme";
 import { Budget } from "./Budget";
 import { Speakers, SpeakersCream, SpeakersLargeCream, SpeakersChosenCream, SpeakersInvitedCream } from "./Speakers";
+import { InviteCongratsCream, InviteHonouredCream } from "./Invitation";
 
 export const Root: React.FC = () => (
   <>
@@ -17,7 +18,9 @@ export const Root: React.FC = () => (
     <Composition id="SpeakersLargeCream" component={SpeakersLargeCream} durationInFrames={1} fps={FPS} width={1080} height={2600} />
     <Composition id="SpeakersChosenCream" component={SpeakersChosenCream} durationInFrames={1} fps={FPS} width={1080} height={2600} />
     <Composition id="SpeakersInvitedCream" component={SpeakersInvitedCream} durationInFrames={1} fps={FPS} width={1080} height={2600} />
-    <Composition id="FelicitationOriginal" component={FelicitationOriginal} durationInFrames={1} fps={FPS} width={1080} height={1620} />
+    <Composition id="InviteCongratsCream" component={InviteCongratsCream} durationInFrames={1} fps={FPS} width={1080} height={2170} />
+    <Composition id="InviteHonouredCream" component={InviteHonouredCream} durationInFrames={1} fps={FPS} width={1080} height={2290} />
+    <Composition id="FelicitationOriginal"component={FelicitationOriginal} durationInFrames={1} fps={FPS} width={1080} height={1620} />
     <Composition id="FelicitationOriginalCream" component={FelicitationOriginalCream} durationInFrames={1} fps={FPS} width={1080} height={1620} />
     <Composition
       id="FelicitationCream"
