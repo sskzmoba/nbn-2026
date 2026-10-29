@@ -11,7 +11,6 @@
   --line: #e6dccb;
   --serif: "Libre Caslon Display", Georgia, serif;
   --text: "Libre Caslon Text", Georgia, serif;
-  --deva: "Tiro Devanagari Sanskrit", "Nirmala UI", serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -40,23 +39,21 @@ section { padding: 64px 16px; }
 /* ---------- Opening ---------- */
 .opening { position: fixed; inset: 0; z-index: 50; background: #05070d; color: #f4efe6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 16px 96px; overflow: hidden; transition: opacity .9s ease; }
 .opening.out { opacity: 0; pointer-events: none; }
-.opening__glow { position: absolute; left: 50%; top: 42%; width: 140vmax; height: 140vmax; transform: translate(-50%, -50%) scale(.2); background: radial-gradient(circle, rgba(255,196,102,.30) 0%, rgba(255,170,60,.10) 25%, transparent 55%); opacity: 0; animation: glow 7s ease-out .3s forwards; }
+.opening__glow { position: absolute; left: 50%; top: 42%; width: 140vmax; height: 140vmax; transform: translate(-50%, -50%) scale(.2); background: radial-gradient(circle, rgba(255,196,102,.30) 0%, rgba(255,170,60,.10) 25%, transparent 55%); opacity: 0; animation: glow 12s ease-out .3s forwards; }
 @keyframes glow { to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
-.mantra { list-style: none; margin: 0; padding: 0; text-align: center; }
-.mantra li { margin: 0 0 1.4em; }
-.mantra .deva { display: block; font-family: var(--deva); font-size: clamp(1.7rem, 7.5vw, 2.6rem); line-height: 1.5; }
-.mantra .iast { display: block; font-style: italic; opacity: .8; font-size: .95rem; }
-.mantra .en { display: block; font-size: .9rem; letter-spacing: .04em; opacity: .65; }
-.mantra--opening { position: relative; transition: opacity 1s ease, transform 1s ease; }
-.mantra--opening li { opacity: 0; transform: translateY(10px); animation: rise 1.2s ease forwards; }
-.mantra--opening li:nth-child(2) .deva { color: #ffd38a; text-shadow: 0 0 24px rgba(255,190,90,.55); }
-@keyframes rise { to { opacity: 1; transform: none; } }
-.opening.stage2 .mantra--opening { opacity: 0; transform: translateY(-20px); }
-.opening__nbn { position: absolute; inset: 0; margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; opacity: 0; transition: opacity 1.4s ease; pointer-events: none; padding-bottom: 72px; }
-.opening.stage2 .opening__nbn { opacity: 1; }
+/* The teacher's story: scenes appear (.in) and fade (.gone) as app.js plays them; words rise one by one */
+.story { position: absolute; inset: 0; }
+.scene { position: absolute; inset: 0; margin: 0; padding: 0 20px 96px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: var(--serif); font-size: clamp(1.9rem, 8vw, 3rem); line-height: 1.25; opacity: 0; transition: opacity .6s ease; pointer-events: none; }
+.scene.in { opacity: 1; }
+.scene.in.gone { opacity: 0; }
+.scene span { display: inline-block; opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .6s ease; }
+.scene.in span { opacity: 1; transform: none; }
+.scene--year { font-size: clamp(4.5rem, 24vw, 8rem); color: #ffd38a; }
+.scene--qualities { color: #ffd38a; font-size: clamp(2.2rem, 9.5vw, 3.4rem); line-height: 1.55; }
+.opening__nbn { gap: 18px; transition: opacity 1.2s ease; }
 .opening__nbn img { width: min(58vw, 280px); height: auto; aspect-ratio: 1; object-fit: cover; object-position: 50% 22%; border-radius: 50%; border: 3px solid rgba(255,211,138,.7); box-shadow: 0 0 60px rgba(255,190,90,.35); filter: grayscale(1); }
-.opening__nbn figcaption { text-align: center; font-size: 1rem; letter-spacing: .08em; opacity: .9; }
-.opening__nbn strong { font-family: var(--serif); font-weight: 400; font-size: 2.1rem; letter-spacing: .03em; color: #ffd38a; }
+.opening__nbn figcaption { text-align: center; font-family: var(--text); font-size: 1rem; letter-spacing: .2em; color: #9aa3b5; }
+.opening__nbn strong { font-family: var(--serif); font-weight: 400; font-size: 2.3rem; letter-spacing: .03em; color: #ffd38a; }
 .opening__controls { position: absolute; bottom: max(24px, env(safe-area-inset-bottom)); left: 0; right: 0; display: flex; justify-content: center; gap: 12px; }
 .opening__btn { min-height: 44px; padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255,211,138,.7); background: rgba(255,211,138,.12); color: #ffe2ab; font: 600 .95rem var(--text); cursor: pointer; }
 .opening__btn--ghost { background: transparent; border-color: rgba(255,255,255,.35); color: #ddd; }
@@ -94,12 +91,6 @@ section { padding: 64px 16px; }
 }
 .scroll-cue { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); color: #fff; text-decoration: none; font-size: 2rem; opacity: .7; }
 
-/* ---------- Prayer ---------- */
-.prayer { background: var(--night); color: #f4efe6; text-align: center; }
-.prayer .mantra li { opacity: .75; }
-.prayer .mantra li.lit { opacity: 1; }
-.prayer .mantra li.lit .deva { color: #ffd38a; }
-
 /* ---------- Remembrance ---------- */
 .remember { background: var(--paper); }
 .remember__grid { display: grid; gap: 28px; }
@@ -112,6 +103,15 @@ section { padding: 64px 16px; }
 .concept__pair p { margin: 0; }
 .remember__name { font-size: 1.15rem; font-weight: 700; color: var(--navy); }
 .remember__name span { font-weight: 400; color: var(--muted); margin-left: .4em; }
+
+/* ---------- Guests ---------- */
+.guests__list { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 16px; }
+.guest { display: grid; grid-template-columns: 112px 1fr; gap: 16px; align-items: start; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+.guest img { width: 112px; height: 112px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gold); }
+.guest h3 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; margin-bottom: .25em; }
+.guest p { margin: 0 0 .3em; font-size: .95rem; line-height: 1.45; }
+.guest__more { color: var(--muted); }
+.guests__note { margin: 20px 0 0; color: var(--muted); font-style: italic; }
 
 /* ---------- Conversations ---------- */
 .talks { background: var(--paper); }
@@ -132,6 +132,7 @@ section { padding: 64px 16px; }
 .timeline time { display: block; font-weight: 700; color: var(--gold); font-size: .92rem; font-variant-numeric: tabular-nums; }
 .timeline h3 { margin: 2px 0 4px; }
 .timeline p { margin: 0 0 4px; color: var(--muted); }
+.programme .btn { margin-top: 20px; }
 
 /* ---------- Venue & share ---------- */
 .venue { background: var(--paper); }
@@ -155,7 +156,6 @@ section { padding: 64px 16px; }
   section { padding: 44px 16px; }
   h2 { margin-bottom: .35em; }
   .lead { font-size: 1.08rem; }
-  .mantra li { margin-bottom: 1em; }
   .remember__grid { gap: 20px; }
   .remember__photo { max-width: 200px; }
   .concept__pair { gap: 16px; margin-top: 20px; }
@@ -179,7 +179,9 @@ section { padding: 64px 16px; }
 @media (min-width: 720px) {
   section { padding: 88px 24px; }
   .remember__grid { grid-template-columns: 300px 1fr; align-items: center; gap: 48px; }
-  .concept__pair, .cards { grid-template-columns: 1fr 1fr; }
+  .concept__pair, .cards, .guests__list { grid-template-columns: 1fr 1fr; }
+  .guest { grid-template-columns: 132px 1fr; }
+  .guest img { width: 132px; height: 132px; }
   .timeline time { position: absolute; left: -190px; width: 170px; text-align: right; top: 2px; }
   .timeline { margin-left: 190px; }
 }
@@ -187,5 +189,6 @@ section { padding: 64px 16px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
-  .opening__glow, .mantra--opening li { animation: none; opacity: 1; transform: none; }
+  .opening__glow { animation: none; opacity: 1; transform: none; }
+  .scene, .scene span { transition-duration: .2s; transform: none; }
 }

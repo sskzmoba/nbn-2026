@@ -9,7 +9,7 @@ const store = {
   get(k) { try { return sessionStorage.getItem(k); } catch { return null; } },
   set(k, v) { try { sessionStorage.setItem(k, v); } catch { /* private mode: ignore */ } },
 };
-// True when a file is published next to the page (used to switch on the chant button)
+// True when a file is published next to the page (used to switch on the music button)
 async function exists(url) {
   try { return (await fetch(url, { method: "HEAD", cache: "no-store" })).ok; } catch { return false; }
 }
@@ -23,79 +23,88 @@ async function exists(url) {
   else if (Date.now() < EVENT_START.getTime() + 5 * 36e5) el.textContent = "Today";
 })();
 
-// ---- Opening: prayer → NBN Sir → site. Once per visit; tap Enter to skip. ----
+// ---- Opening: the teacher's story → NBN Sir → site. Once per visit; "Skip intro" ends it. ----
+// Scenes carry their film timings (data-at / data-to, seconds). Without sound they play at
+// QUICK × film speed; after "Play music" they play at film speed, in time with audio/story.mp3
+// (the film's piano, which lifts as "For 27 years…" appears).
 const opening = $("opening");
-const chant = $("chant");
-const chantBtn = $("chant-btn");
-let stageTimer, closeTimer;
+const music = $("music");
+const musicBtn = $("music-btn");
+const scenes = [...opening.querySelectorAll(".scene")];
+const STORY_END = 25.6;
+const QUICK = matchMedia("(prefers-reduced-motion: reduce)").matches ? 0.35 : 0.5;
+let timers = [];
 
-// Seconds at which each prayer line appears: on its own, and in time with audio/chant.mp3
-// (chant at normal speed: lines are sung from 1.1 s, 7.4 s and 13.8 s, and end at 19.4 s)
-const LINES_QUICK = [0.2, 1.2, 2.2];
-const LINES_CHANT = [1.0, 7.3, 13.7];
-const CHANT_END = 19.5;
+// Wrap each word (or each line, with data-byline) in a span so it can appear on its own
+scenes.forEach(sc => {
+  if (sc.tagName === "FIGURE") return;
+  const lines = sc.innerHTML.split(/<br\s*\/?>/i);
+  sc.innerHTML = "<div>" + lines.map(line => "byline" in sc.dataset
+    ? `<span>${line}</span>`
+    : line.split(" ").map(w => `<span>${w}</span>`).join(" ")).join("<br>") + "</div>";
+});
 
-function restartAnimations(delays) {
-  opening.querySelectorAll(".mantra--opening li, .opening__glow").forEach(el => {
-    el.style.animation = "none";
-    void el.offsetHeight; // reflow so the animation starts again
-    el.style.animation = "";
+function play(k) {
+  timers.forEach(clearTimeout); timers = [];
+  const at = (t, fn) => timers.push(setTimeout(fn, t * k * 1000));
+  scenes.forEach(sc => {
+    sc.classList.remove("in", "gone");
+    const step = +(sc.dataset.step || 0.24) * k;
+    sc.querySelectorAll("span").forEach((w, i) => { w.style.transitionDelay = (i * step).toFixed(2) + "s"; });
+    at(+sc.dataset.at, () => sc.classList.add("in"));
+    at(+sc.dataset.to, () => sc.classList.add("gone"));
   });
-  opening.querySelectorAll(".mantra--opening li").forEach((li, i) => { li.style.animationDelay = delays[i] + "s"; });
+  at(STORY_END + 0.4, closeOpening);
 }
 
 function openOpening() {
-  opening.classList.remove("stage2", "out");
+  opening.classList.remove("out");
   opening.hidden = false;
   document.body.style.overflow = "hidden";
-  restartAnimations(LINES_QUICK);
-  chantBtn.disabled = false;
-  chantBtn.innerHTML = '<span aria-hidden="true">▶</span> Play chant';
-  clearTimeout(stageTimer); clearTimeout(closeTimer);
-  stageTimer = setTimeout(() => opening.classList.add("stage2"), 4200);
-  closeTimer = setTimeout(closeOpening, 8000);
+  musicBtn.disabled = false;
+  musicBtn.innerHTML = '<span aria-hidden="true">▶</span> Play music';
+  const glow = opening.querySelector(".opening__glow");
+  glow.style.animation = "none";
+  void opening.offsetHeight; // reflow so the scenes and the glow start again
+  glow.style.animation = "";
+  play(QUICK);
   $("skip-btn").focus({ preventScroll: true });
 }
 
-function fadeOutChant() {
-  if (chant.paused) return;
+function fadeOutMusic() {
+  if (music.paused) return;
   const step = setInterval(() => {
-    chant.volume = Math.max(0, chant.volume - 0.1);
-    if (chant.volume === 0) { clearInterval(step); chant.pause(); chant.volume = 1; }
+    music.volume = Math.max(0, music.volume - 0.1);
+    if (music.volume === 0) { clearInterval(step); music.pause(); music.volume = 1; }
   }, 80);
 }
 
 function closeOpening() {
-  clearTimeout(stageTimer); clearTimeout(closeTimer);
-  fadeOutChant();
+  timers.forEach(clearTimeout); timers = [];
+  fadeOutMusic();
   opening.classList.add("out");
   document.body.style.overflow = "";
-  store.set("gl-opening", "seen");
+  store.set("gl-story", "seen");
   setTimeout(() => { opening.hidden = true; }, 900);
 }
 
-chantBtn.addEventListener("click", () => {
-  // The visitor chose to listen: replay the lines in time with the chant, then show NBN Sir
-  clearTimeout(stageTimer); clearTimeout(closeTimer);
-  chant.currentTime = 0;
-  chant.play().then(() => {
-    chantBtn.disabled = true;
-    chantBtn.textContent = "Chant playing…";
-    opening.classList.remove("stage2");
-    restartAnimations(LINES_CHANT);
-    stageTimer = setTimeout(() => opening.classList.add("stage2"), CHANT_END * 1000);
-  }).catch(() => { chantBtn.hidden = true; });
-});
-chant.addEventListener("ended", () => {
-  opening.classList.add("stage2");
-  closeTimer = setTimeout(closeOpening, 2500);
+musicBtn.addEventListener("click", () => {
+  // The visitor chose to listen: restart the story at film speed, in time with the music
+  music.currentTime = 0;
+  music.play().then(() => {
+    musicBtn.disabled = true;
+    musicBtn.textContent = "Music playing…";
+    scenes.forEach(sc => sc.classList.remove("in", "gone"));
+    void opening.offsetHeight;
+    play(1);
+  }).catch(() => { musicBtn.hidden = true; });
 });
 $("skip-btn").addEventListener("click", closeOpening);
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !opening.hidden) closeOpening(); });
 $("replay-btn").addEventListener("click", () => { window.scrollTo(0, 0); openOpening(); });
 
-exists("audio/chant.mp3").then(ok => { chantBtn.hidden = !ok; });
-if (store.get("gl-opening") !== "seen" && !location.hash) openOpening();
+exists("audio/story.mp3").then(ok => { musicBtn.hidden = !ok; });
+if (store.get("gl-story") !== "seen" && !location.hash) openOpening();
 
 // ---- Add to calendar: .ics for iPhone/iPad, Google Calendar elsewhere ----
 const isApple = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && "ontouchend" in document;

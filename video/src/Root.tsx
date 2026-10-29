@@ -4,10 +4,12 @@ import { GuidingLights, OgImage, TOTAL_FRAMES, FPS } from "./GuidingLights";
 import { TeachersStory } from "./TeachersStory";
 import { Felicitation, FelicitationCream, FelicitationOriginal, FelicitationOriginalCream } from "./Felicitation";
 import { Programme, ProgrammeCream } from "./Programme";
+import { Budget } from "./Budget";
 import { Speakers, SpeakersCream, SpeakersLargeCream, SpeakersChosenCream, SpeakersInvitedCream } from "./Speakers";
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="Budget" component={Budget} durationInFrames={1} fps={FPS} width={1080} height={1310} />
     <Composition id="Programme" component={Programme} durationInFrames={1} fps={FPS} width={1080} height={1620} />
     <Composition id="ProgrammeCream" component={ProgrammeCream} durationInFrames={1} fps={FPS} width={1080} height={1620} />
     <Composition id="Speakers" component={Speakers} durationInFrames={1} fps={FPS} width={1080} height={2060} />

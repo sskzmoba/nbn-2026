@@ -21,8 +21,8 @@
 <link rel="icon" type="image/png" href="img/oba-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=7">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -30,21 +30,26 @@
 <!-- ============ OPENING (shown by app.js once per visit; skipped when JavaScript is off) ============ -->
 <div class="opening" id="opening" hidden>
   <div class="opening__glow" aria-hidden="true"></div>
-  <ol class="mantra mantra--opening">
-    <li><span class="deva" lang="sa">असतो मा सद्गमय ।</span><span class="iast">asato mā sad gamaya</span><span class="en">Lead me from the unreal to the real</span></li>
-    <li><span class="deva" lang="sa">तमसो मा ज्योतिर्गमय ।</span><span class="iast">tamaso mā jyotir gamaya</span><span class="en">Lead me from darkness to light</span></li>
-    <li><span class="deva" lang="sa">मृत्योर्मा अमृतं गमय ॥</span><span class="iast">mṛtyor mā amṛtaṃ gamaya</span><span class="en">Lead me from death to immortality</span></li>
-  </ol>
-  <figure class="opening__nbn">
-    <img src="img/nbn-sir.jpg" alt="Portrait of N.&nbsp;B.&nbsp;N. Sir" width="720" height="945">
-    <figcaption>In remembrance of<br><strong>N.&nbsp;B.&nbsp;N. Sir</strong></figcaption>
-  </figure>
+  <!-- The teacher's story, as in the film. data-at / data-to: seconds (film timing) at which each
+       scene appears and fades; data-step: seconds between words (or lines with data-byline).
+       app.js plays it at film speed with the music, or faster without. -->
+  <div class="story">
+    <p class="scene scene--year" data-at="0.4" data-to="2.9">1962.</p>
+    <p class="scene" data-at="3.0" data-to="7.6">A young science master<br>walks into a classroom,<br>right here at Pangode.</p>
+    <p class="scene" data-at="7.8" data-to="12.2">For 27 years,<br>and long after,<br>he taught us<br>far more than science.</p>
+    <p class="scene scene--qualities" data-at="12.3" data-to="18.2" data-step="1.05" data-byline>Curiosity.<br>Confidence.<br>Humility.<br>Compassion.</p>
+    <figure class="scene opening__nbn" data-at="18.0" data-to="22.6">
+      <img src="img/nbn-sir.jpg" alt="Portrait of N.&nbsp;B.&nbsp;N. Sir" width="720" height="945">
+      <figcaption><strong>N.&nbsp;B.&nbsp;N. Sir</strong><br>1929 – 2016</figcaption>
+    </figure>
+    <p class="scene" data-at="22.6" data-to="25.6" data-step="0.55" data-byline>Every one of us<br>has had a teacher<br>like him.</p>
+  </div>
   <div class="opening__controls">
-    <!-- Shown only when audio/chant.mp3 exists -->
-    <button class="opening__btn" id="chant-btn" type="button" hidden><span aria-hidden="true">▶</span> Play chant</button>
+    <!-- Shown only when audio/story.mp3 exists -->
+    <button class="opening__btn" id="music-btn" type="button" hidden><span aria-hidden="true">▶</span> Play music</button>
     <button class="opening__btn opening__btn--ghost" id="skip-btn" type="button">Skip intro <span aria-hidden="true">›</span></button>
   </div>
-  <audio id="chant" preload="none" src="audio/chant.mp3"></audio>
+  <audio id="music" preload="none" src="audio/story.mp3"></audio>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -76,19 +81,10 @@
       <a class="btn btn--line" id="cal-btn" href="guiding-lights.ics" download>Add to calendar</a>
     </div>
   </div>
-  <a class="scroll-cue" href="#prayer" aria-label="Scroll down">⌄</a>
+  <a class="scroll-cue" href="#nbn" aria-label="Scroll down">⌄</a>
 </header>
 
 <main>
-
-  <!-- ============ PRAYER ============ -->
-  <section class="prayer" id="prayer">
-    <ol class="mantra reveal">
-      <li><span class="deva" lang="sa">असतो मा सद्गमय ।</span><span class="iast">asato mā sad gamaya</span><span class="en">Lead me from the unreal to the real</span></li>
-      <li class="lit"><span class="deva" lang="sa">तमसो मा ज्योतिर्गमय ।</span><span class="iast">tamaso mā jyotir gamaya</span><span class="en">Lead me from darkness to light</span></li>
-      <li><span class="deva" lang="sa">मृत्योर्मा अमृतं गमय ॥</span><span class="iast">mṛtyor mā amṛtaṃ gamaya</span><span class="en">Lead me from death to immortality</span></li>
-    </ol>
-  </section>
 
   <!-- ============ IN REMEMBRANCE ============ -->
   <section class="remember" id="nbn">
@@ -120,6 +116,41 @@
           <p>“Celebrating Educators Who Shape Generations” recognises their contribution beyond classrooms and examination results: shaping character, confidence and society.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ GUESTS (each has agreed to be named; photos with their consent) ============ -->
+  <section class="guests" id="guests">
+    <div class="wrap">
+      <p class="kicker reveal">Guests</p>
+      <h2 class="reveal">In the distinguished presence&nbsp;of</h2>
+      <ul class="guests__list">
+        <li class="guest reveal">
+          <img src="img/guests/ashok.jpg" alt="Dr B. Ashok IAS" width="480" height="480" loading="lazy">
+          <div><h3>Dr B. Ashok IAS</h3>
+          <p>Principal Secretary, Higher Education, Government of Keralam</p>
+          <p class="guest__more">First Vice-Chancellor, Kerala Veterinary and Animal Sciences University</p></div>
+        </li>
+        <li class="guest reveal">
+          <img src="img/guests/amala.jpg" alt="Amala Akkineni" width="480" height="480" loading="lazy">
+          <div><h3>Amala Akkineni</h3>
+          <p>Director, Annapurna College of Film and Media, Hyderabad</p>
+          <p class="guest__more">Actor; co-founder, Blue Cross of Hyderabad</p></div>
+        </li>
+        <li class="guest reveal">
+          <img src="img/guests/gvr.jpg" alt="G. Vijaya Raghavan" width="480" height="480" loading="lazy">
+          <div><h3>G. Vijaya Raghavan</h3>
+          <p>Founder CEO, Technopark, India's first technology park</p>
+          <p class="guest__more">Founder and Honorary Director, Centre for Autism and other Disabilities Rehabilitation Research and Education (CADRRE)</p></div>
+        </li>
+        <li class="guest reveal">
+          <img src="img/guests/vasuki.jpg" alt="Dr K. Vasuki IAS" width="480" height="480" loading="lazy">
+          <div><h3>Dr K. Vasuki IAS</h3>
+          <p>Secretary to the Governor of Keralam</p>
+          <p class="guest__more">Former Secretary, General Education; doctor, administrator and author of <i>The School of Life</i></p></div>
+        </li>
+      </ul>
+      <p class="guests__note reveal">More guests and speakers will be announced.</p>
     </div>
   </section>
 
@@ -164,8 +195,8 @@
       <p class="kicker reveal">Felicitation ceremony</p>
       <h2 class="reveal">Honouring educators</h2>
       <p class="lead reveal">The ceremony recognises educators for their commitment and contribution to shaping generations: principals and teachers whose work reaches far beyond the classroom and the examination hall.</p>
+      <p class="reveal">A select group of school leaders will be felicitated in recognition of their leadership, dedication and contribution to education.</p>
       <!-- Names are added only after each honouree has agreed (DPDP Act, 2023). -->
-      <p class="tbd reveal">[Who is honoured and how they are chosen — to be added]</p>
     </div>
   </section>
 
@@ -186,6 +217,7 @@
         <li class="reveal"><time><span>1:45 –</span> <span>2:00 PM</span></time><div><h3>Vote of thanks and group photographs</h3></div></li>
         <li class="reveal"><time><span>2:00 –</span> <span>3:00 PM</span></time><div><h3>Lunch and networking</h3></div></li>
       </ol>
+      <a class="btn btn--line btn--dark reveal" href="downloads/guiding-lights-programme.pdf" download>Download the programme (PDF)</a>
     </div>
   </section>
 
@@ -214,10 +246,10 @@
 <footer class="footer">
   <img src="img/oba-logo.png" alt="" width="64" height="64" loading="lazy">
   <p><strong>An initiative by alumni of Sainik School Kazhakootam</strong><br>Old Boys Association, SSKZM</p>
-  <p class="footer__small">School photograph and chant recording: SSKZM OBA · <button class="linklike" id="replay-btn" type="button">Replay the opening</button></p>
+  <p class="footer__small">School photograph: SSKZM OBA · Music: “Kaleidoscope of Life” by AlexGrohl (Pixabay) ·<button class="linklike" id="replay-btn" type="button">Replay the opening</button></p>
 </footer>
 
 <!-- After editing styles.css or app.js, raise ?v= on both links so phones fetch the new files -->
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>

@@ -210,6 +210,27 @@ without "of"). Sent to principals when inviting them, to show the standing of th
   (gitignored: third-party photos stay out of the public repo). Dr Ashok's is a news photo;
   replace with an official one when available. Do not use the watermarked `b-ashok-jpg.webp`.
 
+## Website update: teacher's story and guests (2026-10-29)
+The site follows video B (no chant), user's request 2026-10-29. Changes in `docs/v1/`:
+- **Opening:** the story from the film ("1962." → young science master → "For 27 years…" → Curiosity,
+  Confidence, Humility, Compassion → portrait "N. B. N. Sir, 1929 – 2016" → "Every one of us has had a
+  teacher like him."). Scenes carry the film's timings in `data-at` / `data-to` in index.html;
+  app.js plays them at 0.5× film time without sound (about 13 s; 0.35× with reduced motion), or at
+  film speed after "Play music". `audio/story.mp3` = the film's soundtrack, first 27.5 s, faded out
+  from 25.4 s (made with a small Node fade script, as the bundled ffmpeg has no fade filter; source
+  `video/audio/story-web.wav`). Seen-once key is now `gl-story`.
+- Removed: the prayer section, `audio/chant.mp3`, the Devanagari font, the chant credit. Footer credit:
+  "Music: “Kaleidoscope of Life” by AlexGrohl (Pixabay)".
+- **Guests section** ("In the distinguished presence of", after the concept): four guests with photos
+  (`img/guests/*.jpg`, 480 px, from the invitation crops) and two lines each, no roles. All four
+  confirmed they agree to be named and shown (user, 2026-10-29). Session cards still "to be announced".
+- Felicitation: yellow box replaced by "A select group of school leaders will be felicitated …".
+- Programme: "Download the programme (PDF)" → `downloads/guiding-lights-programme.pdf`.
+- `film/guiding-lights.mp4` now holds the teacher's story film (same address for organisers).
+- CSS/JS links `?v=7`. Tested at 375×812 and 1280 wide (story sync with music checked).
+- Photo rights: Amala Akkineni's (Mango Music poster) and Dr Ashok's (news photo) are third-party;
+  replace with official photos when they arrive.
+
 ## Website plan (agreed 2026-10-25; v1 built)
 One page that scrolls, in this order:
 1. **Opening (about 8 s, skippable):** dark screen. The three lines of the
@@ -351,7 +372,7 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
       so both buttons fit; checked 360×460 to 412×730. CSS/JS links carry `?v=N`: raise
       it after every CSS/JS edit so phones do not use a cached old file.
 - [x] Video B "Teacher's story" (piano, no prayer) rendered for team review (2026-10-26)
-- [ ] Team picks video A (prayer) or B (story); then decide if the website opening follows
+- [x] Team picks video B (story); website opening follows it (2026-10-29)
 - [ ] Organising group reviews /v1/; collect feedback
 - [ ] Collect remaining inputs above; fill in the yellow boxes
 - [ ] Revised poster + programme card
