@@ -6,7 +6,7 @@ import { THEMES } from "./Felicitation";
 // Programme chart for guests and speakers (2:3, same look as the felicitation card).
 // No speaker names until each one has confirmed. Navy for WhatsApp, cream for the PDF / print.
 
-const SIZE = { title: 104, date: 54, body: 32, small: 27 };
+const SIZE = { title: 96, date: 54, body: 32, small: 27 };
 
 // [time, session, details]
 const ROWS: [string, string, string[]][] = [
@@ -27,30 +27,34 @@ const Card: React.FC<{ theme: keyof typeof THEMES }> = ({ theme }) => {
   const rule = (my: number) => <div style={{ width: 90, height: 2, background: T.rule, margin: `${my}px auto` }} />;
   return (
     <AbsoluteFill style={{ background: T.bg, color: T.ink, textAlign: "center" }}>
+      {/* School photo above the footer strip, as on the felicitation card */}
+      <Img src={staticFile("school.jpg")} style={{ position: "absolute", left: 0, bottom: FOOT, width: 1080, height: 270, objectFit: "cover", objectPosition: "50% 100%", maxWidth: "none", opacity: T.photo, WebkitMaskImage: "linear-gradient(180deg, transparent 0%, #000 22%)", maskImage: "linear-gradient(180deg, transparent 0%, #000 22%)" }} />
       {/* Warm light behind the portrait */}
       <div style={{ position: "absolute", width: 1100, height: 1100, left: -10, top: -400, borderRadius: "50%", background: `radial-gradient(circle, ${T.glow} 0%, transparent 55%)` }} />
 
-      <AbsoluteFill style={{ alignItems: "center", padding: "44px 50px 0" }}>
-        <div style={{ width: 140, height: 140, borderRadius: "50%", overflow: "hidden", border: "4px solid rgba(201,154,60,.85)", boxShadow: `0 0 60px ${T.glow}` }}>
+      <AbsoluteFill style={{ alignItems: "center", padding: "32px 30px 0" }}>
+        <div style={{ width: 120, height: 120, borderRadius: "50%", overflow: "hidden", border: "4px solid rgba(201,154,60,.85)", boxShadow: `0 0 60px ${T.glow}` }}>
           <Img src={staticFile("nbn-sir.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 22%", filter: "grayscale(1)" }} />
         </div>
-        <div style={{ fontFamily: text, fontSize: SIZE.small, letterSpacing: 1.5, marginTop: 14 }}>In remembrance of N. B. N. Sir</div>
-        <div style={{ fontFamily: display, fontWeight: 400, fontSize: SIZE.title, lineHeight: 1, marginTop: 16, filter: T.titleShadow }}>Guiding Lights</div>
+        <div style={{ fontFamily: text, fontSize: SIZE.small, letterSpacing: 1.5, marginTop: 10 }}>In remembrance of N. B. N. Sir</div>
+        <div style={{ fontFamily: display, fontWeight: 400, fontSize: SIZE.title, lineHeight: 1, marginTop: 12, filter: T.titleShadow }}>Guiding Lights</div>
         <div style={{ fontFamily: text, fontSize: SIZE.body, color: T.accent, marginTop: 12 }}>Celebrating Educators Who Shape Generations</div>
 
-        <div style={{ fontFamily: display, fontWeight: 400, fontSize: SIZE.date, color: T.accent, marginTop: 28 }}>Saturday, 21 November 2026</div>
+        <div style={{ fontFamily: display, fontWeight: 400, fontSize: SIZE.date, color: T.accent, marginTop: 20 }}>Saturday, 21 November 2026</div>
         <div style={{ fontFamily: text, fontSize: SIZE.body, marginTop: 4 }}>Cariappa Auditorium, Pangode, Thiruvananthapuram</div>
 
-        {rule(32)}
-        <div style={{ fontFamily: text, fontWeight: 700, fontSize: SIZE.small, letterSpacing: 6, color: T.muted, marginBottom: 28 }}>PROGRAMME</div>
+        {rule(24)}
+        <div style={{ fontFamily: text, fontWeight: 700, fontSize: SIZE.small, letterSpacing: 6, color: T.muted, marginBottom: 22 }}>PROGRAMME</div>
 
-        {/* Time | session, left-aligned so the times line up */}
-        <div style={{ display: "grid", gridTemplateColumns: "170px auto", columnGap: 26, rowGap: 26, textAlign: "left", width: "fit-content", margin: "0 auto" }}>
-          {ROWS.map(([time, session, details]) => (
+        {/* Time | session, with a thin gold timeline and a dot at each time; the felicitation,
+            the heart of the day, has its title in gold */}
+        <div style={{ display: "grid", gridTemplateColumns: "196px auto", columnGap: 0, textAlign: "left", width: "fit-content", margin: "0 auto" }}>
+          {ROWS.map(([time, session, details], i) => (
             <React.Fragment key={time}>
-              <div style={{ fontFamily: text, fontSize: SIZE.body, color: T.accent, textAlign: "right", lineHeight: 1.3 }}>{time}</div>
-              <div style={{ lineHeight: 1.3 }}>
-                <div style={{ fontFamily: text, fontSize: SIZE.body }}>{session}</div>
+              <div style={{ fontFamily: text, fontSize: SIZE.body, color: T.accent, textAlign: "right", lineHeight: 1.3, paddingRight: 26, whiteSpace: "nowrap" }}>{time}</div>
+              <div style={{ position: "relative", lineHeight: 1.3, paddingLeft: 26, paddingBottom: i < ROWS.length - 1 ? 12 : 0, borderLeft: `2px solid ${T.rule}` }}>
+                <div style={{ position: "absolute", left: -8, top: 14, width: 14, height: 14, borderRadius: "50%", background: T.rule }} />
+                <div style={{ fontFamily: text, fontSize: SIZE.body, color: session.startsWith("Felicitation") ? T.accent : T.ink }}>{session}</div>
                 {details.map((d) => <div key={d} style={{ fontFamily: text, fontStyle: "italic", fontSize: SIZE.small, color: T.muted, marginTop: 2 }}>{d}</div>)}
               </div>
             </React.Fragment>
