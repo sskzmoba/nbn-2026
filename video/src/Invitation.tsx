@@ -16,17 +16,15 @@ const T = THEMES.cream;
 
 // [photo, name, lines]
 const GUESTS: [string, string, string[]][] = [
-  ["ashok-s.jpg", "Dr B. Ashok IAS", ["Principal Secretary, Higher Education", "Government of Keralam"]],
-  ["amala-s.jpg", "Amala Akkineni", ["Director, Annapurna College", "of Film and Media"]],
-  ["gvr-s.jpg", "G. Vijaya Raghavan", ["Founder CEO, Technopark", "Founder, CADRRE (autism centre)"]],
-  ["vasuki-s.jpg", "Dr K. Vasuki IAS", ["Secretary to the Governor of Keralam", "Doctor, Administrator and Author"]],
+  ["ashok-s.jpg", "Dr B. Ashok IAS", ["Principal Secretary,", "Higher Education,", "Government of Keralam"]],
+  ["amala-s.jpg", "Amala Akkineni", ["Director,", "Annapurna College", "of Film and Media"]],
+  ["vasuki-s.jpg", "Dr K. Vasuki IAS", ["Secretary to the Governor", "of Keralam", "Doctor, Administrator", "and Author"]],
 ];
 
 // How each photo sits in its tile:
 //   centre – a portrait-shaped photo shown whole, a blurred copy of it filling the sides (Amala Akkineni)
 //   lower  – shown slightly smaller and low, a blurred copy giving room above the head (Dr Vasuki)
-//   warm   – a light warm tone so a white studio background matches the others (Vijaya Raghavan)
-const FIT: Record<string, "centre" | "lower" | "warm"> = { "amala-s.jpg": "centre", "vasuki-s.jpg": "lower", "gvr-s.jpg": "warm" };
+const FIT: Record<string, "centre" | "lower"> = { "amala-s.jpg": "centre", "vasuki-s.jpg": "lower" };
 
 const HEAD = { congrats: "Congratulations", honoured: <>We would be honoured and privileged<br />to felicitate you at Guiding Lights,</> };
 const BODY = {
@@ -58,7 +56,7 @@ const Photo: React.FC<{ photo: string }> = ({ photo }) => {
       <Img src={src} style={{ position: "absolute", left: "4%", bottom: 0, width: "92%", height: "92%", WebkitMaskImage: "linear-gradient(180deg, transparent, #000 9%)", maskImage: "linear-gradient(180deg, transparent, #000 9%)" }} />
     </>
   );
-  return <Img src={src} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: fit === "warm" ? "sepia(.18) saturate(1.05) brightness(.97)" : undefined }} />;
+  return <Img src={src} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", }} />;
 };
 
 const Card: React.FC<{ wording: keyof typeof BODY }> = ({ wording }) => {
@@ -95,8 +93,8 @@ const Card: React.FC<{ wording: keyof typeof BODY }> = ({ wording }) => {
 
         <div style={{ fontFamily: text, fontSize: F.small, color: T.ink, opacity: 0.85, marginTop: 26, marginBottom: 20 }}>The felicitation will be held in the august presence of</div>
 
-        {/* Guests, two per row, landscape photos at the sample's size */}
-        <div style={{ display: "grid", gridTemplateColumns: "470px 470px", columnGap: 20, rowGap: 24 }}>
+        {/* Guests, three in one row (G. Vijaya Raghavan withdrew, 2026-10-30), landscape photos at the sample's size */}
+        <div style={{ display: "grid", gridTemplateColumns: "320px 320px 320px", columnGap: 20 }}>
           {GUESTS.map(([photo, name, lines]) => (
             <div key={name} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <div style={{ position: "relative", width: 310, height: 240, borderRadius: 10, overflow: "hidden", border: `3px solid ${T.rule}`, boxShadow: "0 8px 24px rgba(15,37,71,.14)" }}>

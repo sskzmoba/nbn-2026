@@ -18,8 +18,8 @@ export const Root: React.FC = () => (
     <Composition id="SpeakersLargeCream" component={SpeakersLargeCream} durationInFrames={1} fps={FPS} width={1080} height={2600} />
     <Composition id="SpeakersChosenCream" component={SpeakersChosenCream} durationInFrames={1} fps={FPS} width={1080} height={2600} />
     <Composition id="SpeakersInvitedCream" component={SpeakersInvitedCream} durationInFrames={1} fps={FPS} width={1080} height={2600} />
-    <Composition id="InviteCongratsCream" component={InviteCongratsCream} durationInFrames={1} fps={FPS} width={1080} height={2170} />
-    <Composition id="InviteHonouredCream" component={InviteHonouredCream} durationInFrames={1} fps={FPS} width={1080} height={2290} />
+    <Composition id="InviteCongratsCream" component={InviteCongratsCream} durationInFrames={1} fps={FPS} width={1080} height={1880} />
+    <Composition id="InviteHonouredCream" component={InviteHonouredCream} durationInFrames={1} fps={FPS} width={1080} height={2000} />
     <Composition id="FelicitationOriginal"component={FelicitationOriginal} durationInFrames={1} fps={FPS} width={1080} height={1620} />
     <Composition id="FelicitationOriginalCream" component={FelicitationOriginalCream} durationInFrames={1} fps={FPS} width={1080} height={1620} />
     <Composition

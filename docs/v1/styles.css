@@ -179,9 +179,11 @@ section { padding: 64px 16px; }
 @media (min-width: 720px) {
   section { padding: 88px 24px; }
   .remember__grid { grid-template-columns: 300px 1fr; align-items: center; gap: 48px; }
-  .concept__pair, .cards, .guests__list { grid-template-columns: 1fr 1fr; }
-  .guest { grid-template-columns: 132px 1fr; }
-  .guest img { width: 132px; height: 132px; }
+  .concept__pair, .cards { grid-template-columns: 1fr 1fr; }
+  /* Three guests: one row, photo above the text */
+  .guests__list { grid-template-columns: repeat(3, 1fr); }
+  .guest { grid-template-columns: 1fr; text-align: center; padding: 18px; }
+  .guest img { width: 160px; height: 160px; margin: 0 auto; }
   .timeline time { position: absolute; left: -190px; width: 170px; text-align: right; top: 2px; }
   .timeline { margin-left: 190px; }
 }

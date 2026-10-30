@@ -255,6 +255,16 @@ sample's photos. `video/src/Invitation.tsx`, cream only, outputs in `video/out/`
   sample), shown whole in the middle of the tile with a blurred copy of its leafy background filling
   the sides, plus a light sharpen (SVG filter in the composition). Vasuki from `vasuki-sample.jpg`; Vijaya Raghavan from `GVR-1.jpg`.
 
+## G. Vijaya Raghavan not attending (2026-10-30)
+He withdrew; removed everywhere guests are named. Three guests remain: Dr B. Ashok IAS, Amala
+Akkineni, Dr K. Vasuki IAS.
+- Invitations (`Invitation.tsx`): three guests in one row (columns 320 px, photos unchanged, lines
+  rewrapped to fit). Sizes now congratulations 1080×1880, honoured 1080×2000. JPEGs and PDFs remade.
+- Website (both `docs/` and `docs/v1/`): his card and `img/guests/gvr.jpg` removed; on screens
+  ≥ 720 px the guests sit three in a row, photo above the text; phones unchanged. CSS/JS `?v=8`.
+- Drive: only the latest invitation files kept; his photo removed. Superseded Speakers cards stay
+  on this computer only (not updated).
+
 ## Website update: teacher's story and guests (2026-10-29)
 The site follows video B (no chant), user's request 2026-10-29. Changes in `docs/v1/`:
 - **Opening:** the story from the film ("1962." → young science master → "For 27 years…" → Curiosity,
