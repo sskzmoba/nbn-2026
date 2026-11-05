@@ -262,8 +262,16 @@ Akkineni, Dr K. Vasuki IAS.
   rewrapped to fit). Sizes now congratulations 1080×1880, honoured 1080×2000. JPEGs and PDFs remade.
 - Website (both `docs/` and `docs/v1/`): his card and `img/guests/gvr.jpg` removed; on screens
   ≥ 720 px the guests sit three in a row, photo above the text; phones unchanged. CSS/JS `?v=8`.
+- Website (2026-11-06): music credit removed from the footer; the yellow enquiry placeholder is hidden
+  (an HTML comment) until a coordinator is chosen. No coordinator number on the site.
 - Drive: only the latest invitation files kept; his photo removed. Superseded Speakers cards stay
   on this computer only (not updated).
+
+## Group pictures for WhatsApp (2026-11-06)
+Square, 1080×1080, for the group icon or a status; all text stays inside the circle WhatsApp crops an
+icon to (checked, also at 96 and 48 px). No guest names or photos, as the list may change.
+`video/src/GroupPicture.tsx`, compositions `GroupPortrait` (N. B. N. Sir on navy; best as the icon) and
+`GroupSchool` (school building on cream). Outputs `video/out/group-picture-portrait.jpg` and `…-school.jpg`.
 
 ## Website update: teacher's story and guests (2026-10-29)
 The site follows video B (no chant), user's request 2026-10-29. Changes in `docs/v1/`:

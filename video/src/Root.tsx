@@ -7,9 +7,12 @@ import { Programme, ProgrammeCream } from "./Programme";
 import { Budget } from "./Budget";
 import { Speakers, SpeakersCream, SpeakersLargeCream, SpeakersChosenCream, SpeakersInvitedCream } from "./Speakers";
 import { InviteCongratsCream, InviteHonouredCream } from "./Invitation";
+import { GroupPortrait, GroupSchool } from "./GroupPicture";
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="GroupPortrait" component={GroupPortrait} durationInFrames={1} fps={FPS} width={1080} height={1080} />
+    <Composition id="GroupSchool" component={GroupSchool} durationInFrames={1} fps={FPS} width={1080} height={1080} />
     <Composition id="Budget" component={Budget} durationInFrames={1} fps={FPS} width={1080} height={1310} />
     <Composition id="Programme" component={Programme} durationInFrames={1} fps={FPS} width={1080} height={1620} />
     <Composition id="ProgrammeCream" component={ProgrammeCream} durationInFrames={1} fps={FPS} width={1080} height={1620} />
