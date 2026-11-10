@@ -48,8 +48,9 @@ curiosity and teaching with humility and compassion.
 - HTTPS: certificate issued 2026-10-25, "Enforce HTTPS" on. Lesson: add the DNS record
   *before* attaching the custom domain on GitHub, or the first check fails and the
   certificate waits (fixed with "Check again" in repo Settings → Pages).
-- Local preview: `.claude/launch.json` runs a small Node static server on `docs/`
-  (port 5181); open http://localhost:5181/v1/.
+- Local preview: `node tools/serve.js` (no dependencies) serves `docs/` on port 5181; open
+  http://localhost:5181/. `.claude/launch.json` (not in the repo) runs the same command. Moved into
+  the project on 10 Nov 2026; before that it lived in a temporary folder.
 
 ## Folder layout
 - `_source/` — untouched originals. **Not published**: keep out of the public repo
@@ -443,3 +444,7 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
       copied to `docs/` (except `film/`, which stays at `/v1/film/`), og:url/og:image point to `/`,
       still `noindex`. `/v1/` kept for links already shared. **Edit both copies** (or retire `/v1/`
       later) until then. Tested at 375×812.
+
+## Folder note (8 Nov 2026)
+
+Part of the SSKZM OBA projects under `D:\claudecode\oba\events\`. See `D:\claudecode\PROJECTS.md` for the map and `D:\claudecode\oba\platform` for platform-wide decisions.
