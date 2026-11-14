@@ -111,6 +111,7 @@ section { padding: 64px 16px; }
 .guest h3 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; margin-bottom: .25em; }
 .guest p { margin: 0 0 .3em; font-size: .95rem; line-height: 1.45; }
 .guest__more { color: var(--muted); }
+.guest .guest__role { text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; font-weight: 700; color: var(--gold); margin: 0 0 .35em; }
 .guests__note { margin: 20px 0 0; color: var(--muted); font-style: italic; }
 
 /* ---------- Conversations ---------- */
@@ -180,12 +181,16 @@ section { padding: 64px 16px; }
   section { padding: 88px 24px; }
   .remember__grid { grid-template-columns: 300px 1fr; align-items: center; gap: 48px; }
   .concept__pair, .cards { grid-template-columns: 1fr 1fr; }
-  /* Three guests: one row, photo above the text */
-  .guests__list { grid-template-columns: repeat(3, 1fr); }
-  .guest { grid-template-columns: 1fr; text-align: center; padding: 18px; }
+  /* Four guests: 2 × 2, photo above the text (four in a row from 960 px) */
+  .guests__list { grid-template-columns: repeat(2, 1fr); }
+  .guest { grid-template-columns: 1fr; align-content: start; text-align: center; padding: 18px; }
   .guest img { width: 160px; height: 160px; margin: 0 auto; }
   .timeline time { position: absolute; left: -190px; width: 170px; text-align: right; top: 2px; }
   .timeline { margin-left: 190px; }
+}
+@media (min-width: 960px) {
+  .guests__list { grid-template-columns: repeat(4, 1fr); }
+  .guest img { width: 150px; height: 150px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
