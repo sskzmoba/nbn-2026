@@ -115,7 +115,7 @@ if (!isApple) {
     text: "Guiding Lights — Celebrating Educators Who Shape Generations",
     dates: "20261121T043000Z/20261121T093000Z",
     location: "Cariappa Auditorium, Pangode, Thiruvananthapuram",
-    details: "In remembrance of N. B. N. Sir. An initiative by alumni of Sainik School Kazhakootam. Programme begins 10:30 AM. " + SITE_URL,
+    details: "In remembrance of NBN Sir. An initiative by alumni of Sainik School Kazhakootam. Programme begins 10:30 AM. " + SITE_URL,
   });
   cal.href = "https://calendar.google.com/calendar/render?" + q;
   cal.removeAttribute("download");
@@ -132,7 +132,7 @@ const io = new IntersectionObserver(entries => {
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
 // ---- Share ----
-const shareText = "GUIDING LIGHTS — Celebrating Educators Who Shape Generations. In remembrance of N. B. N. Sir. Sat 21 Nov 2026, Cariappa Auditorium, Pangode, Thiruvananthapuram. An initiative by alumni of Sainik School Kazhakootam:";
+const shareText = "GUIDING LIGHTS — Celebrating Educators Who Shape Generations. In remembrance of NBN Sir. Sat 21 Nov 2026, Cariappa Auditorium, Pangode, Thiruvananthapuram. An initiative by alumni of Sainik School Kazhakootam:";
 $("share-btn").addEventListener("click", async () => {
   if (navigator.share) {
     try { await navigator.share({ title: "Guiding Lights", text: shareText, url: SITE_URL }); return; }

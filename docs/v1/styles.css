@@ -199,3 +199,6 @@ section { padding: 64px 16px; }
   .opening__glow { animation: none; opacity: 1; transform: none; }
   .scene, .scene span { transition-duration: .2s; transform: none; }
 }
+
+/* Speakers in the programme (2026-11-15) */
+.timeline p.who { color: var(--navy); font-size: .88rem; margin: 0 0 6px; }
