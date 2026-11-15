@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=13">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -150,17 +150,22 @@
           <p class="guest__more">First woman Vice-Chancellor of a university in Kerala; former Vice-Chancellor, Mahatma Gandhi University</p></div>
         </li>
       </ul>
-      <!-- Panellists and special guests: text only, below the Guests of Honour (order of precedence) -->
+      <!-- Panellists and special guests: small photos, below the Guests of Honour (order of precedence).
+           Col Gurung's photo is not published (his wish): a monogram stands in. -->
       <div class="also reveal">
         <div class="also__group">
           <p class="guest__role">Distinguished Panellists</p>
-          <p><strong>Dr TR John</strong><br>Alumnus (1371/83); Chief of Medical Services, Aster Medcity, Kochi</p>
-          <p><strong>R Abhilash</strong><br>Founder, Bloombloom and FEST – The School of Innovators</p>
+          <div class="also__person"><img src="img/guests/trjohn.jpg" alt="Dr TR John" width="240" height="240" loading="lazy">
+            <p><strong>Dr TR John</strong><br>Alumnus (1371/83); Chief of Medical Services, Aster Medcity, Kochi</p></div>
+          <div class="also__person"><img src="img/guests/abhilash.jpg" alt="R Abhilash" width="200" height="200" loading="lazy">
+            <p><strong>R Abhilash</strong><br>Founder, Bloombloom and FEST – The School of Innovators</p></div>
         </div>
         <div class="also__group">
           <p class="guest__role">Special Guests</p>
-          <p><strong>Col Sidharth Karanbir Gurung</strong><br>Deputy Commander, 91 Infantry Brigade</p>
-          <p><strong>Col Abhishek Vohra</strong><br>Principal, Sainik School Kazhakootam; Patron, SSKZM OBA</p>
+          <div class="also__person"><span class="also__mono" aria-hidden="true">SKG</span>
+            <p><strong>Col Sidharth Karanbir Gurung</strong><br>Deputy Commander, 91 Infantry Brigade</p></div>
+          <div class="also__person"><img src="img/guests/vohra.jpg" alt="Col Abhishek Vohra" width="240" height="240" loading="lazy">
+            <p><strong>Col Abhishek Vohra</strong><br>Principal, Sainik School Kazhakootam; Patron, SSKZM OBA</p></div>
         </div>
       </div>
     </div>
@@ -269,6 +274,6 @@
 </footer>
 
 <!-- After editing styles.css or app.js, raise ?v= on both links so phones fetch the new files -->
-<script src="app.js?v=12"></script>
+<script src="app.js?v=13"></script>
 </body>
 </html>

@@ -209,3 +209,7 @@ section { padding: 64px 16px; }
 .also__group p strong { color: var(--navy); font-size: 1rem; }
 .also__group .guest__role { text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; font-weight: 700; color: var(--gold); margin: 0 0 .6em; }
 @media (min-width: 720px) { .also { grid-template-columns: 1fr 1fr; gap: 32px; } }
+.also__person { display: flex; align-items: center; gap: 14px; margin: 0 0 14px; }
+.also__person p { margin: 0; }
+.also__person img, .also__mono { flex: none; width: 72px; height: 72px; border-radius: 8px; border: 2px solid var(--gold); object-fit: cover; }
+.also__mono { display: flex; align-items: center; justify-content: center; background: var(--navy); color: var(--gold); font-family: var(--serif); font-size: 1.25rem; letter-spacing: .06em; }
