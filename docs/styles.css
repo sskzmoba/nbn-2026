@@ -207,3 +207,10 @@ section { padding: 64px 16px; }
 .guest__mono { display: flex; align-items: center; justify-content: center; width: 112px; height: 112px; border-radius: 8px; border: 2px solid var(--gold); background: var(--navy); color: var(--gold); font-family: var(--serif); font-size: 2rem; letter-spacing: .06em; }
 @media (min-width: 720px) { .guest__mono { width: 160px; height: 160px; margin: 0 auto; font-size: 2.6rem; } }
 @media (min-width: 960px) { .guest__mono { width: 150px; height: 150px; } }
+
+/* Speakers on the conversation cards: one person per pair of lines, upright (2026-11-16) */
+.card__speakers { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.card__speakers p { margin: 0 0 10px; font-size: .88rem; line-height: 1.4; color: var(--muted); }
+.card__speakers p:last-child { margin-bottom: 0; }
+.card__speakers strong { display: block; color: var(--navy); font-size: .98rem; }
+.card__speakers .card__with { margin: 12px 0 2px; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); }
