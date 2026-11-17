@@ -214,3 +214,8 @@ section { padding: 64px 16px; }
 .card__speakers p:last-child { margin-bottom: 0; }
 .card__speakers strong { display: block; color: var(--navy); font-size: .98rem; }
 .card__speakers .card__with { margin: 12px 0 2px; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); }
+
+/* Master of Ceremonies and revision note under the Programme heading; sponsor line in the footer (2026-11-18) */
+.programme__note { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 6px 0 0; color: var(--navy); font-size: .95rem; }
+.programme__note span + span { color: var(--muted); font-style: italic; font-size: .88rem; align-self: center; }
+.footer__support { margin: -4px 0 14px; color: var(--gold); font-style: italic; letter-spacing: .02em; }
