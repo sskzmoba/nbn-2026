@@ -216,6 +216,12 @@ section { padding: 64px 16px; }
 .card__speakers .card__with { margin: 12px 0 2px; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); }
 
 /* Master of Ceremonies and revision note under the Programme heading; sponsor line in the footer (2026-11-18) */
-.programme__note { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 6px 0 0; color: var(--navy); font-size: .95rem; }
-.programme__note span + span { color: var(--muted); font-style: italic; font-size: .88rem; align-self: center; }
+.programme__note { margin: 6px 0 0; color: var(--muted); font-style: italic; font-size: .88rem; }
 .footer__support { margin: -4px 0 14px; color: var(--gold); font-style: italic; letter-spacing: .02em; }
+
+/* MC below the programme, at the left margin (2026-11-18) */
+.programme__mc { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--line); color: var(--navy); }
+.programme__mc span { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); }
+.programme__mc strong { font-size: 1rem; }
+/* Sponsor credit on the opening screen, under the buttons (2026-11-18) */
+.hero__support { margin: clamp(10px, 2.2svh, 22px) 0 0; font-style: italic; font-size: .92rem; color: var(--gold-soft); letter-spacing: .02em; }
