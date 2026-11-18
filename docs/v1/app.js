@@ -132,7 +132,7 @@ const io = new IntersectionObserver(entries => {
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
 // ---- Share ----
-const shareText = "GUIDING LIGHTS — Celebrating Educators Who Shape Generations. In remembrance of NBN Sir. Sat 21 Nov 2026, Cariappa Auditorium, Pangode, Thiruvananthapuram. An initiative by alumni of Sainik School Kazhakootam:";
+const shareText = "GUIDING LIGHTS — Celebrating Educators Who Shape Generations. In remembrance of NBN Sir. Sat 21 Nov 2026, Cariappa Auditorium, Pangode, Thiruvananthapuram. An initiative by alumni of Sainik School Kazhakootam, supported by the 1991 Batch:";
 $("share-btn").addEventListener("click", async () => {
   if (navigator.share) {
     try { await navigator.share({ title: "Guiding Lights", text: shareText, url: SITE_URL }); return; }
