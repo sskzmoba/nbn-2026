@@ -153,8 +153,8 @@ $("share-btn").addEventListener("click", async () => {
   if (rec) {
     s.classList.add("live--rec");
     s.querySelector(".live__kicker").textContent = "Recording";
-    s.querySelector(".live__title").textContent = "Watch the recording";
-    s.querySelector(".live__note").textContent = "Guiding Lights, Cariappa Auditorium, Pangode, Saturday, 21 November 2026.";
+
+    s.querySelector(".live__note").textContent = "The recording of the event, Cariappa Auditorium, Pangode · 21 November 2026";
   }
   s.querySelector(".live__yt").href = "https://www.youtube.com/watch?v=" + id;
   s.querySelector(".live__play").addEventListener("click", function () {

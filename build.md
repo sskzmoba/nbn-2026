@@ -270,6 +270,9 @@ Akkineni, Dr K. Vasuki IAS.
   The video loads only on tap (youtube-nocookie embed), so no data is used until then. CSS `?v=21`, JS `?v=20`. Tested at
   375×812 and desktop with a sample link (play works), then the link removed. The stream needs "Allow embedding" on and is best
   set to Unlisted; check the station allows live streaming.
+  Revised (user, 20 Nov): heading is the name alone, "Guiding Lights" (site title font), with a "● LIVE NOW" label above and
+  "Streaming from Cariappa Auditorium, Pangode · Saturday, 21 November 2026" below; recording mode keeps the heading and says
+  "The recording of the event, …". CSS `?v=22`, JS `?v=21`.
 - Website (2026-11-20): Venue section has two map buttons: "Entry gate in Google Maps" (https://maps.app.goo.gl/DbLW2arAfZqq2vEt6, gold) and "Auditorium in Google Maps"; wording avoids "military". CSS `?v=20`, both copies. Checked at 375 px.
 - Website (2026-11-06): music credit removed from the footer; the yellow enquiry placeholder is hidden
   (an HTML comment) until a coordinator is chosen. No coordinator number on the site.

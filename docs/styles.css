@@ -227,7 +227,7 @@ section { padding: 64px 16px; }
 
 /* Live stream (hidden until a YouTube link is set in index.html) */
 .live { background: var(--navy); color: #fff; text-align: center; }
-.live h2 { color: #fff; }
+.live h2 { color: #fff; font-family: var(--serif); font-size: clamp(2.4rem, 9vw, 3.4rem); margin-bottom: .2em; }
 .live__note { opacity: .85; margin: 0 auto; max-width: 36em; }
 .live__dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #e0453a; margin-right: 4px; vertical-align: 1px; animation: livepulse 1.6s ease-in-out infinite; }
 .live--rec .live__dot { display: none; }
