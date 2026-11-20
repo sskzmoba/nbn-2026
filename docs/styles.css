@@ -240,3 +240,11 @@ section { padding: 64px 16px; }
 .live__play:hover span, .live__play:focus-visible span { background: #b5862c; }
 .live__links { margin: 18px 0 0; }
 @media (prefers-reduced-motion: reduce) { .live__dot { animation: none; } }
+
+/* Live stream on laptops (20 Nov): the whole section, video included, fits one screen height */
+@media (min-width: 720px) {
+  .live { padding-top: 36px; padding-bottom: 36px; }
+  .live__note { max-width: none; }
+  .live__player { max-width: clamp(480px, calc((100svh - 290px) * 16 / 9), 880px); margin-top: 16px; }
+  .live__links { margin-top: 14px; }
+}
