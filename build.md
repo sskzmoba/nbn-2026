@@ -263,6 +263,7 @@ Akkineni, Dr K. Vasuki IAS.
   rewrapped to fit). Sizes now congratulations 1080×1880, honoured 1080×2000. JPEGs and PDFs remade.
 - Website (both `docs/` and `docs/v1/`): his card and `img/guests/gvr.jpg` removed; on screens
   ≥ 720 px the guests sit three in a row, photo above the text; phones unchanged. CSS/JS `?v=8`.
+- Website (2026-11-20): Venue section has two map buttons: "Entry gate in Google Maps" (https://maps.app.goo.gl/DbLW2arAfZqq2vEt6, gold) and "Auditorium in Google Maps"; wording avoids "military". CSS `?v=20`, both copies. Checked at 375 px.
 - Website (2026-11-06): music credit removed from the footer; the yellow enquiry placeholder is hidden
   (an HTML comment) until a coordinator is chosen. No coordinator number on the site.
 - Drive: only the latest invitation files kept; his photo removed. Superseded Speakers cards stay
