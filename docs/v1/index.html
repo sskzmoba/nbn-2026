@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20">
+<link rel="stylesheet" href="styles.css?v=21">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -86,6 +86,23 @@
 </header>
 
 <main>
+
+  <!-- ============ LIVE STREAM ============
+       To switch it on: paste the YouTube link into data-video below (any form works: youtube.com/live/...,
+       youtube.com/watch?v=..., youtu.be/...). After the event, change data-mode="live" to "recording".
+       While data-video is empty, this section stays hidden and the page looks exactly as before. -->
+  <section class="live" id="live" data-video="" data-mode="live" hidden>
+    <div class="wrap">
+      <p class="kicker"><span class="live__dot" aria-hidden="true"></span> <span class="live__kicker">Live</span></p>
+      <h2 class="live__title">Watch Guiding Lights live</h2>
+      <p class="live__note">Streaming from Cariappa Auditorium, Pangode, on Saturday, 21 November 2026.</p>
+      <div class="live__player">
+        <img src="img/live-banner.jpg" alt="Guiding Lights: the programme" width="1280" height="720" loading="lazy">
+        <button class="live__play" type="button" aria-label="Play the video"><span></span></button>
+      </div>
+      <p class="live__links"><a class="btn btn--line live__yt" href="https://www.youtube.com/" target="_blank" rel="noopener">Open in YouTube</a></p>
+    </div>
+  </section>
 
   <!-- ============ IN REMEMBRANCE ============ -->
   <section class="remember" id="nbn">
@@ -307,6 +324,6 @@
 </footer>
 
 <!-- After editing styles.css or app.js, raise ?v= on both links so phones fetch the new files -->
-<script src="app.js?v=19"></script>
+<script src="app.js?v=20"></script>
 </body>
 </html>

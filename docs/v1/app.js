@@ -140,3 +140,33 @@ $("share-btn").addEventListener("click", async () => {
   }
   window.open("https://wa.me/?text=" + encodeURIComponent(shareText + " " + SITE_URL), "_blank", "noopener");
 });
+
+// ---- Live stream (section #live in index.html; hidden while data-video is empty) ----
+(function () {
+  const s = document.getElementById("live");
+  if (!s) return;
+  const raw = (s.getAttribute("data-video") || "").trim();
+  if (!raw) return;
+  const m = raw.match(/(?:youtu\.be\/|[?&]v=|\/live\/|\/embed\/|\/shorts\/)([\w-]{11})/) || raw.match(/^([\w-]{11})$/);
+  if (!m) return;
+  const id = m[1], rec = s.getAttribute("data-mode") === "recording";
+  if (rec) {
+    s.classList.add("live--rec");
+    s.querySelector(".live__kicker").textContent = "Recording";
+    s.querySelector(".live__title").textContent = "Watch the recording";
+    s.querySelector(".live__note").textContent = "Guiding Lights, Cariappa Auditorium, Pangode, Saturday, 21 November 2026.";
+  }
+  s.querySelector(".live__yt").href = "https://www.youtube.com/watch?v=" + id;
+  s.querySelector(".live__play").addEventListener("click", function () {
+    const f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1";
+    f.title = rec ? "Guiding Lights: recording" : "Guiding Lights: live stream";
+    f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    f.allowFullscreen = true;
+    const p = this.parentNode; p.innerHTML = ""; p.appendChild(f);
+  });
+  s.hidden = false;
+  // First hero button points to the stream while it is on
+  const b = document.querySelector(".hero__ctas .btn--gold");
+  if (b) { b.textContent = rec ? "Watch the recording" : "Watch live"; b.href = "#live"; }
+})();

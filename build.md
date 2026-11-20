@@ -263,6 +263,13 @@ Akkineni, Dr K. Vasuki IAS.
   rewrapped to fit). Sizes now congratulations 1080×1880, honoured 1080×2000. JPEGs and PDFs remade.
 - Website (both `docs/` and `docs/v1/`): his card and `img/guests/gvr.jpg` removed; on screens
   ≥ 720 px the guests sit three in a row, photo above the text; phones unchanged. CSS/JS `?v=8`.
+- Website (2026-11-20): **live stream section, hidden** until a link is set. In both `index.html` copies, `<section id="live"
+  data-video="" data-mode="live" hidden>` at the top of `<main>`: paste the YouTube link (any form) into `data-video` and the
+  section appears with a play button over `img/live-banner.jpg` (the navy programme banner, 1280×720), an "Open in YouTube"
+  button, and the first hero button becomes "Watch live". After the event set `data-mode="recording"` ("Watch the recording").
+  The video loads only on tap (youtube-nocookie embed), so no data is used until then. CSS `?v=21`, JS `?v=20`. Tested at
+  375×812 and desktop with a sample link (play works), then the link removed. The stream needs "Allow embedding" on and is best
+  set to Unlisted; check the station allows live streaming.
 - Website (2026-11-20): Venue section has two map buttons: "Entry gate in Google Maps" (https://maps.app.goo.gl/DbLW2arAfZqq2vEt6, gold) and "Auditorium in Google Maps"; wording avoids "military". CSS `?v=20`, both copies. Checked at 375 px.
 - Website (2026-11-06): music credit removed from the footer; the yellow enquiry placeholder is hidden
   (an HTML comment) until a coordinator is chosen. No coordinator number on the site.
