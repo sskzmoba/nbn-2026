@@ -248,3 +248,8 @@ section { padding: 64px 16px; }
   .live__player { max-width: clamp(480px, calc((100svh - 290px) * 16 / 9), 880px); margin-top: 16px; }
   .live__links { margin-top: 14px; }
 }
+
+/* With gratitude (after the event, 22 Nov 2026) */
+.gratitude { text-align: center; }
+.gratitude p { max-width: 36em; margin-left: auto; margin-right: auto; }
+.gratitude__cta { margin-top: 22px; }
