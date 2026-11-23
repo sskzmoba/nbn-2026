@@ -11,6 +11,7 @@ import { GroupPortrait, GroupSchool } from "./GroupPicture";
 import { SpeakersFilm, FILM_FRAMES } from "./SpeakersFilm";
 import { FelicitationTable, TABLE_FRAMES } from "./FelicitationTable";
 import { YouTubeThumb } from "./YouTubeThumb";
+import { Honoured, HONOURED_SLIDES, Panel, PANEL_SLIDES, Thanks, THANKS_SLIDES } from "./Carousels";
 import { InstaReel, REEL_FRAMES, InstaGuest, GUESTS } from "./InstaReel";
 import { SpeakerBite, SB_FPS, biteFrames } from "./SpeakerBite";
 import { BITES } from "./bites";
@@ -24,6 +25,9 @@ export const Root: React.FC = () => (
     {Object.entries(GUESTS).map(([id, g]) => (
       <Composition key={id} id={`InstaGuest-${id}`} component={InstaGuest} defaultProps={{ id }} durationInFrames={g.total} fps={FPS} width={1080} height={1920} />
     ))}
+    <Composition id="CarouselHonoured" component={Honoured} durationInFrames={HONOURED_SLIDES} fps={FPS} width={1080} height={1350} />
+    <Composition id="CarouselPanel" component={Panel} durationInFrames={PANEL_SLIDES} fps={FPS} width={1080} height={1350} />
+    <Composition id="CarouselThanks" component={Thanks} durationInFrames={THANKS_SLIDES} fps={FPS} width={1080} height={1350} />
     <Composition id="YouTubeThumb" component={YouTubeThumb} durationInFrames={1} fps={FPS} width={1280} height={720} />
     <Composition id="FelicitationTable" component={FelicitationTable} durationInFrames={TABLE_FRAMES} fps={FPS} width={1920} height={1080} />
     <Composition id="BreezeTalk" component={BreezeTalk} durationInFrames={breezeTalkFrames} fps={30} width={1920} height={1080} />

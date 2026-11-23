@@ -410,6 +410,11 @@ A 3 min 11 s, 16:9 (1920×1080) film of each speaker's key lines, to send to the
   date card reads "Held on Saturday, 21 November 2026", without the time and "By invitation". Output
   `video/out/insta/Guiding Lights 2026 - The teacher's story (held on 21 Nov).mp4`; first post on @sskzmoba and a
   YouTube Short. Needs `public/story-soundtrack.wav` (gitignored; copy from the main checkout).
+- **One video thread (24 Nov 2026):** the speaker-bites branch (`claude/guiding-lights-nov-21-0b03f4`) was merged
+  into this one. Its scratchpad scripts are now in `video/tools/bites/` and `video/tools/highlights/`, and its
+  footage is in `video/public/breeze/`. **`video/POSTING.md` is the posting ledger** for every post-event video:
+  file, platform, day, checked, posted. The speaker videos' closing card (`BrandEnd` in `SpeakerBite.tsx`, also used
+  by `BreezeTalk`) now shows NBN Sir's portrait, "In remembrance of NBN Sir"; all 10 were re-rendered.
 - **Plan for the other videos (24 Nov 2026):** the speaker bites in `D:\temp\NBN\bites\` (1–1:48 each, made in
   the `guiding-lights-nov-21` worktree) are the daily per-guest Instagram Reels and YouTube Shorts, rather than
   the 20 s guest reels above (those are for WhatsApp Status, if used). Event highlights v4 (`D:\temp\NBN\`) goes
@@ -425,6 +430,13 @@ A 3 min 11 s, 16:9 (1920×1080) film of each speaker's key lines, to send to the
     08 Kamal, 09 Breeze. Col Vohra has no clip.
   - Output: `video/out/insta/guests/Guiding Lights 2026 - Reel NN - <name>.mp4`.
   - Post one a day with that guest as collaborator, after the coordinator checks the clip.
+- **7-day release plan and carousels (24 Nov 2026):** plan doc "Guiding Lights 2026 - 7-day social media plan
+  (editable)" in the Drive folder "08 Report and press kit" (days, captions, WhatsApp text, tagging list). Three
+  carousels, 1080×1350, `video/src/Carousels.tsx` (compositions `CarouselHonoured` 10 slides, `CarouselPanel` 7,
+  `CarouselThanks` 5; one frame per slide): JPEGs in `video/out/carousels/<deck>/`, PDFs for LinkedIn there and on
+  Drive. Honourees from `src/carousel-honourees.json` (photos `public/film/fel/NN.jpg`). Panel quotes are exact
+  spoken words. All 10 speaker videos re-rendered with NBN Sir on the closing card (`D:\temp\NBN\bites\`).
+  LinkedIn: a Page "SSKZM Old Boys Association", created by a committee member from their own profile.
 - **YouTube:** upload `video/out/final/… (1080p master).mp4`. YouTube re-compresses, so give it the best copy.
 
 ## Report quotes checked (22 Nov 2026)

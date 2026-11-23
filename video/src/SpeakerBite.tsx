@@ -157,7 +157,17 @@ export const BrandEnd: React.FC<{ dur: number }> = ({ dur }) => {
       </div>
       <div style={{ ...rise(frame, 0.8), fontFamily: display, fontSize: 132, lineHeight: 1 }}>Guiding Lights</div>
       <div style={{ ...rise(frame, 1.1), fontFamily: text, fontStyle: "italic", fontSize: 38, color: C.gold, marginTop: 26 }}>Celebrating educators who shape generations</div>
-      <div style={{ ...rise(frame, 1.5), fontFamily: text, fontSize: 48, marginTop: 90, letterSpacing: 2 }}>SSKZM OBA</div>
+      {/* NBN Sir's portrait (user, 24 Nov 2026) */}
+      <div style={{ ...rise(frame, 1.3), display: "flex", alignItems: "center", gap: 30, marginTop: 70, textAlign: "left" }}>
+        <div style={{ width: 170, height: 170, borderRadius: "50%", overflow: "hidden", border: "4px solid rgba(255,211,138,.8)", boxShadow: "0 0 50px rgba(255,190,90,.3)" }}>
+          <Img src={staticFile("nbn-sir.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 22%", filter: "grayscale(1)" }} />
+        </div>
+        <div>
+          <div style={{ fontFamily: text, fontSize: 32, color: C.muted }}>In remembrance of</div>
+          <div style={{ fontFamily: display, fontSize: 64, color: C.gold, lineHeight: 1.1 }}>NBN Sir</div>
+        </div>
+      </div>
+      <div style={{ ...rise(frame, 1.5), fontFamily: text, fontSize: 48, marginTop: 70, letterSpacing: 2 }}>SSKZM OBA</div>
       <div style={{ ...rise(frame, 1.7), fontFamily: text, fontSize: 34, color: C.muted, marginTop: 18, lineHeight: 1.4 }}>An initiative by alumni of<br />Sainik School Kazhakootam</div>
       <div style={{ ...rise(frame, 2.1), fontFamily: text, fontStyle: "italic", fontSize: 32, color: C.gold, marginTop: 44 }}>Supported by the 1991 Batch</div>
     </AbsoluteFill>
