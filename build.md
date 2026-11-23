@@ -279,6 +279,38 @@ Akkineni, Dr K. Vasuki IAS.
 - Drive: only the latest invitation files kept; his photo removed. Superseded Speakers cards stay
   on this computer only (not updated).
 
+## Report quotes checked (22 Nov 2026)
+The user supplied a cleaner transcript of the stream (`D:\temp\NBN\pho\GUIDING LIGHTS LIVE ... .srt.txt`, 0:48:56–4:11:26,
+punctuated; copy in `report/guiding-lights-2026-transcript.srt.txt`). Its speaker labels (Speaker 1–8) do not map to people:
+"Speaker 7" covers Vasuki, Jancy, Abhilash and Amala. Every quote in `report/guiding-lights-2026-highlights.md` was checked
+against it; 28 corrected to the spoken words. Still unclear, check the recording: Dr Ashok at 3:35:55 ("a question at every
+single definite …"), Abhilash at 1:52:00 ("gyaan"), and Capt Breeze at 1:05:32, where the transcript has "didn't teach us
+history alone" (probably "chemistry").
+
+## Event highlights film, v3 (22 Nov 2026)
+The organisers' edit (`D:\temp\NBN\Guiding Lights.mov`, 1920×1080, 50 fps, 1:41; `GuidingLightsHighlights-v2.mp4` is a 720p
+export of it) reworked:
+- **Opening and closing cards** in the site's look (`video/src/Highlights.tsx`, compositions `HighlightsIntro` 6.4 s and
+  `HighlightsOutro` 7.6 s, 1920×1080, 50 fps): navy over the school photo, Libre Caslon, "In remembrance of NBN Sir /
+  Guiding Lights / tagline / Saturday, 21 November 2026 · Cariappa Auditorium, Pangode"; closing "With gratitude …", OBA logo,
+  "An initiative by alumni of Sainik School Kazhakootam", nbn.sskzmoba.org. They replace the old small-text title, the glitchy
+  banner close-up and the "An / Initiative by Alumni …" end card.
+- **Middle (7.0–98.6 s of the master):** all ~55 zoom-blur transitions and the block wipe at 56.4 s cut out (straight cuts);
+  the white flash before the end card dropped; jerky starts of the bust shot and one audience pan trimmed; handheld shots with
+  measurable shake stabilised (ffmpeg vidstab, 4% zoom). Scripts: scratchpad `hl/plan.py`, `build_middle.py` (frame lists
+  from sharpness and motion analysis). Result 1:37.
+- **Music:** ElevenLabs Music v2.5, instrumental, 97 s, written to the cut (flow "Guiding Lights highlights music");
+  2 versions, 1,455 credits each (Starter plan; check that it covers commercial use of ElevenLabs music before public posting).
+  Mixed to −14 LUFS (true peak −1.5 dB) with a 3.5 s fade-out. B (quiet start, build from 0:30, peak 1:24) suits the cut
+  better than A (loud from the first bar).
+- **v4 (23 Nov 2026, user saw flashes):** 44 frames where the photographer's camera flash fired (mostly during the
+  felicitation) replaced by the frame before; a 4-frame white "flash" effect at 34.7 s held out; two more editor wipes cut
+  (diagonal green/white slash at 37.1 s, black-and-white panel effect at 67.6 s). Script: scratchpad `hl/fixflash.py`.
+  Re-scan finds no bright one-frame flashes. 1:36.5. Files `GuidingLightsHighlights-v4-musicA/B.mp4` (97 MB) and
+  `-v4-musicB-whatsapp.mp4` (24 MB); v3 files superseded.
+- Outputs in `D:\temp\NBN\`: `GuidingLightsHighlights-v3-musicA.mp4` / `-musicB.mp4` (1080p50, ~106 MB, for YouTube, Drive,
+  website), `-musicB-whatsapp.mp4` (720p30, 25 MB), and the two tracks `highlights-music-A/B-elevenlabs.mp3`.
+
 ## Group pictures for WhatsApp (2026-11-06)
 Square, 1080×1080, for the group icon or a status; all text stays inside the circle WhatsApp crops an
 icon to (checked, also at 96 and 48 px). No guest names or photos, as the list may change.
@@ -459,3 +491,37 @@ Cost ₹0 (GitHub Pages). The 13 MB promo film sits in the repo (well under GitH
 ## Folder note (8 Nov 2026)
 
 Part of the SSKZM OBA projects under `D:\claudecode\oba\events\`. See `D:\claudecode\PROJECTS.md` for the map and `D:\claudecode\oba\platform` for platform-wide decisions.
+
+## Breeze's NBN Sir talk as a video / first OBA series episode (23 Nov 2026)
+- Source: the live stream is on the vendor's channel (LIVE KERALA, youtube.com/live/3oP4N9b-r1Q), not an OBA channel.
+  Ask the vendor for the original recording file so the OBA holds its own master.
+- Segment 0:58:30–1:07:40 downloaded (1080p) to `D:\temp\NBN\breeze\` (outside the repo). His NBN part runs 0:59:07–1:07:05.
+- Plan: a 75–90 s portrait reel (WhatsApp, Instagram) and the full talk (about 6½ min, interruptions cut) for YouTube,
+  word-highlighted captions, site look. Breeze approves before anything is shared.
+- YouTube channel "SSKZM OBA": owner sskzmobakazak@gmail.com (user, 23 Nov), as a Brand Account with admin@sskzmoba.org
+  and committee members added as managers; phone-verify it. Series name: not "Voice of the Kazak" (dropped by the user,
+  23 Nov); videos are titled plainly, e.g. "The OBA President on NBN Sir". Final series name later.
+- Breeze reel (1:49): word timings from faster-whisper small.en (local); now built as the `breeze` speaker bite below
+  (the first `BreezeReel.tsx` was folded into the bite template). Outputs `D:\temp\NBN\breeze-obapresident-on-nbn-sir.mp4`
+  (61 MB) and `-whatsapp.mp4` (13 MB). Both transcripts hear "didn't teach us history alone" (1:05:32): left out of the reel.
+- **Speaker bites (23 Nov)**: one portrait video (1080×1920, 30 fps, about 1:00–1:35) per speaker, one template,
+  `video/src/SpeakerBite.tsx`: 3.8 s opening card (title, name, role) with "Kaleidoscope of Life" (AlexGrohl, Pixabay),
+  the speaker cropped from the stream with word-timed captions (key phrases gold), header "heading / Guiding Lights ·
+  SSKZM OBA", OBA logo footer, then a 6 s closing card with the logo halo: "Guiding Lights / SSKZM OBA / An initiative
+  by alumni of Sainik School Kazhakootam / Supported by the 1991 Batch". Entries in `video/src/bites/index.ts`
+  (composition `Bite-<key>`), captions and clips in `video/src/bites/<key>.json`, footage `video/public/breeze/<key>.mp4`
+  (gitignored). Made by scratchpad `reel/prep_bite.py bites/<key>.json` (clips in stream seconds, per-clip crop x and
+  zoom z, word fixes, gold phrases); rendered by `video/render_bite.sh <key> <file-name>`, which also makes the 720p
+  WhatsApp copy and copies both to `D:\temp\NBN\bites\`. Render one at a time, with network access (Google Fonts).
+  Done: breeze, pramod-arun (welcome and thanks), gurung, vasuki (her daughter's private detail left out), kamal (a
+  photographer blocks him for about 2 s near the start), jancy, john, abhilash, ashok (the unclear "a question at every
+  …" line left out), amala (closing lines from the wide two-shot, zoomed 1.5×, a little soft). All ten in
+  `D:\temp\NBN\bites\` (Breeze's in `D:\temp\NBN\`), 1:00–1:40 each. Word timings for every piece:
+  `D:\temp\NBN\breeze\words-*.json` (stream offset = the piece's start second). Check by ear: Lt Col Arun's "Honouring
+  the principals …" (best guess).
+- **Full talk (landscape, YouTube)**: `video/src/BreezeTalk.tsx` (composition `BreezeTalk`, 1920×1080, 7:53), footage
+  `public/breeze/full.mp4` and captions `src/breezeFull.json` from scratchpad `reel/prep_full.py`; 4 s opening card so the
+  SRT lines up. Output `D:\temp\NBN\the-oba-president-on-nbn-sir-full-talk.mp4` and `.srt` (upload the SRT to YouTube as
+  subtitles). It captions "didn't teach us history alone" as heard (probably "chemistry"): check before posting.
+- Approvals before sharing: Breeze for his videos; each guest sees their own clip first (DPDP: consent to publish their
+  words and image).
