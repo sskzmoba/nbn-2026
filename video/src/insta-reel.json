@@ -1,0 +1,500 @@
+{
+ "total": 3134,
+ "items": [
+  {
+   "kind": "clip",
+   "dur": 9.94,
+   "src": "film/breeze.mp4",
+   "parts": [
+    {
+     "start": 3.26,
+     "dur": 9.94,
+     "at": 0.0
+    }
+   ],
+   "name": "Capt(IN) KM Breeze Antony",
+   "role": "President, SSKZM OBA",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.19,
+     "t1": 4.29,
+     "text": "Think: will somebody celebrate us"
+    },
+    {
+     "t0": 4.29,
+     "t1": 6.19,
+     "text": "as educators and teachers"
+    },
+    {
+     "t0": 6.19,
+     "t1": 9.84,
+     "text": "long after we are gone?"
+    }
+   ],
+   "from": 0
+  },
+  {
+   "kind": "title",
+   "dur": 3.8,
+   "from": 298
+  },
+  {
+   "kind": "clip",
+   "dur": 13.2,
+   "src": "film/kamal.mp4",
+   "parts": [
+    {
+     "start": 0.0,
+     "dur": 13.2,
+     "at": 0.0
+    }
+   ],
+   "name": "Kamal Krishnan PS",
+   "role": "Moderator, Panel Discussion",
+   "alum": true,
+   "caps": [
+    {
+     "t0": 0.35,
+     "t1": 3.9,
+     "text": "Imagine if a student gets up and asks:"
+    },
+    {
+     "t0": 3.9,
+     "t1": 5.55,
+     "text": "do we know what we are actually throwing away?"
+    },
+    {
+     "t0": 5.55,
+     "t1": 7.7,
+     "text": "Precisely these were the questions"
+    },
+    {
+     "t0": 7.7,
+     "t1": 11.05,
+     "text": "that NBN Sir taught us to ask,"
+    },
+    {
+     "t0": 11.05,
+     "t1": 13.1,
+     "text": "not just in class, in our lives too."
+    }
+   ],
+   "from": 412
+  },
+  {
+   "kind": "clip",
+   "dur": 8.0,
+   "src": "film/vasuki.mp4",
+   "parts": [
+    {
+     "start": 10.5,
+     "dur": 8.0,
+     "at": 0.0
+    }
+   ],
+   "name": "Dr K Vasuki IAS",
+   "role": "Secretary to the Governor of Keralam",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.0,
+     "t1": 3.45,
+     "text": "I think education should be focused on creating"
+    },
+    {
+     "t0": 3.45,
+     "t1": 7.85,
+     "text": "happy, compassionate, loving, peaceful human beings."
+    }
+   ],
+   "from": 808
+  },
+  {
+   "kind": "clip",
+   "dur": 9.54,
+   "src": "film/john.mp4",
+   "parts": [
+    {
+     "start": 5.86,
+     "dur": 9.54,
+     "at": 0.0
+    }
+   ],
+   "name": "Dr TR John",
+   "role": "Chief of Medical Services, Aster Medcity, Kochi",
+   "alum": true,
+   "caps": [
+    {
+     "t0": 0.14,
+     "t1": 4.44,
+     "text": "The silicon capacity is what the AI can give you, or assist you,"
+    },
+    {
+     "t0": 4.44,
+     "t1": 6.84,
+     "text": "and the carbon skills only a teacher can."
+    },
+    {
+     "t0": 6.84,
+     "t1": 9.44,
+     "text": "Someone who is made of carbon can teach you."
+    }
+   ],
+   "from": 1048
+  },
+  {
+   "kind": "clip",
+   "dur": 7.95,
+   "src": "film/abhilash.mp4",
+   "parts": [
+    {
+     "start": 0.0,
+     "dur": 7.95,
+     "at": 0.0
+    }
+   ],
+   "name": "Shri R Abhilash",
+   "role": "Innovator; founder, Bloom and Fest",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.35,
+     "t1": 2.85,
+     "text": "For me, education"
+    },
+    {
+     "t0": 2.85,
+     "t1": 5.95,
+     "text": "is not about a truckload of information."
+    },
+    {
+     "t0": 5.95,
+     "t1": 7.95,
+     "text": "It is about a capsule of inspiration."
+    }
+   ],
+   "from": 1334
+  },
+  {
+   "kind": "clip",
+   "dur": 5.43,
+   "src": "film/amala.mp4",
+   "parts": [
+    {
+     "start": 0.0,
+     "dur": 5.43,
+     "at": 0.0
+    }
+   ],
+   "name": "Smt Amala Akkineni",
+   "role": "Director, Annapurna College of Film and Media",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.45,
+     "t1": 4.25,
+     "text": "If you are going back with a gift from me,"
+    },
+    {
+     "t0": 4.25,
+     "t1": 5.43,
+     "text": "carry the word mindset."
+    }
+   ],
+   "from": 1573
+  },
+  {
+   "kind": "clip",
+   "dur": 7.52,
+   "src": "film/gurung.mp4",
+   "parts": [
+    {
+     "start": 0.0,
+     "dur": 7.52,
+     "at": 0.0
+    }
+   ],
+   "name": "Col Sidharth Karanbir Gurung",
+   "role": "Deputy Commander, 91 Infantry Brigade",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.35,
+     "t1": 2.95,
+     "text": "To guide young minds, you are often"
+    },
+    {
+     "t0": 2.95,
+     "t1": 5.4,
+     "text": "the first to notice a spark in a child."
+    },
+    {
+     "t0": 5.4,
+     "t1": 7.52,
+     "text": "Teachers light the way."
+    }
+   ],
+   "from": 1736
+  },
+  {
+   "kind": "clip",
+   "dur": 8.7,
+   "src": "film/ashok.mp4",
+   "parts": [
+    {
+     "start": 0.0,
+     "dur": 8.7,
+     "at": 0.0
+    }
+   ],
+   "name": "Dr B Ashok IAS",
+   "role": "Principal Secretary, Higher Education, Government of Keralam",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.37,
+     "t1": 4.57,
+     "text": "Learning is inherently a very pleasurable thing."
+    },
+    {
+     "t0": 4.57,
+     "t1": 7.37,
+     "text": "There is a lot of pleasure involved in knowing new things"
+    },
+    {
+     "t0": 7.37,
+     "t1": 8.7,
+     "text": "just for the sake of it,"
+    }
+   ],
+   "from": 1961
+  },
+  {
+   "kind": "fel",
+   "dur": 8.5,
+   "cards": [
+    {
+     "src": "film/fel/01.jpg",
+     "at": 0.84,
+     "rot": 1.8
+    },
+    {
+     "src": "film/fel/02.jpg",
+     "at": 1.2,
+     "rot": 0.68
+    },
+    {
+     "src": "film/fel/03.jpg",
+     "at": 1.535,
+     "rot": 1.34
+    },
+    {
+     "src": "film/fel/04.jpg",
+     "at": 1.847,
+     "rot": -2.63
+    },
+    {
+     "src": "film/fel/05.jpg",
+     "at": 2.137,
+     "rot": 0.84
+    },
+    {
+     "src": "film/fel/06.jpg",
+     "at": 2.408,
+     "rot": 3.08
+    },
+    {
+     "src": "film/fel/07.jpg",
+     "at": 2.659,
+     "rot": -0.49
+    },
+    {
+     "src": "film/fel/08.jpg",
+     "at": 2.894,
+     "rot": -2.48
+    },
+    {
+     "src": "film/fel/09.jpg",
+     "at": 3.112,
+     "rot": 2.93
+    },
+    {
+     "src": "film/fel/10.jpg",
+     "at": 3.315,
+     "rot": 1.13
+    },
+    {
+     "src": "film/fel/11.jpg",
+     "at": 3.504,
+     "rot": -1.94
+    },
+    {
+     "src": "film/fel/12.jpg",
+     "at": 3.68,
+     "rot": 1.1
+    },
+    {
+     "src": "film/fel/13.jpg",
+     "at": 3.844,
+     "rot": 3.15
+    },
+    {
+     "src": "film/fel/14.jpg",
+     "at": 3.996,
+     "rot": -1.86
+    },
+    {
+     "src": "film/fel/15.jpg",
+     "at": 4.138,
+     "rot": 2.26
+    },
+    {
+     "src": "film/fel/16.jpg",
+     "at": 4.27,
+     "rot": 1.27
+    },
+    {
+     "src": "film/fel/17.jpg",
+     "at": 4.393,
+     "rot": -1.78
+    },
+    {
+     "src": "film/fel/18.jpg",
+     "at": 4.507,
+     "rot": -2.02
+    },
+    {
+     "src": "film/fel/19.jpg",
+     "at": 4.614,
+     "rot": 2.91
+    },
+    {
+     "src": "film/fel/20.jpg",
+     "at": 4.713,
+     "rot": -1.02
+    },
+    {
+     "src": "film/fel/21.jpg",
+     "at": 4.805,
+     "rot": -0.38
+    },
+    {
+     "src": "film/fel/22.jpg",
+     "at": 4.891,
+     "rot": 1.0
+    },
+    {
+     "src": "film/fel/23.jpg",
+     "at": 4.972,
+     "rot": -0.38
+    },
+    {
+     "src": "film/fel/24.jpg",
+     "at": 5.046,
+     "rot": -3.2
+    },
+    {
+     "src": "film/fel/25.jpg",
+     "at": 5.115,
+     "rot": -1.53
+    },
+    {
+     "src": "film/fel/26.jpg",
+     "at": 5.18,
+     "rot": -0.18
+    },
+    {
+     "src": "film/fel/27.jpg",
+     "at": 5.24,
+     "rot": 1.67
+    },
+    {
+     "src": "film/fel/28.jpg",
+     "at": 5.296,
+     "rot": 0.68
+    },
+    {
+     "src": "film/fel/29.jpg",
+     "at": 5.348,
+     "rot": -0.45
+    },
+    {
+     "src": "film/fel/30.jpg",
+     "at": 5.396,
+     "rot": -1.98
+    },
+    {
+     "src": "film/fel/31.jpg",
+     "at": 5.441,
+     "rot": 1.82
+    },
+    {
+     "src": "film/fel/32.jpg",
+     "at": 5.483,
+     "rot": -2.0
+    }
+   ],
+   "count": 32,
+   "from": 2222
+  },
+  {
+   "kind": "clip",
+   "dur": 16.4,
+   "src": "film/jancy.mp4",
+   "parts": [
+    {
+     "start": 0.0,
+     "dur": 3.47,
+     "at": 0.0
+    },
+    {
+     "start": 6.57,
+     "dur": 12.93,
+     "at": 3.47
+    }
+   ],
+   "name": "Prof Dr Jancy James",
+   "role": "Founder Vice Chancellor, Central University of Kerala",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.4,
+     "t1": 3.47,
+     "text": "Don't teach a student, but discover the student."
+    },
+    {
+     "t0": 3.47,
+     "t1": 7.0,
+     "text": "Teaching or learning is not filling up a bucket"
+    },
+    {
+     "t0": 7.0,
+     "t1": 9.1,
+     "text": "with information or knowledge."
+    },
+    {
+     "t0": 9.1,
+     "t1": 11.6,
+     "text": "It's the kindling of a fire."
+    },
+    {
+     "t0": 11.6,
+     "t1": 13.7,
+     "text": "It's the lighting up of a fire"
+    },
+    {
+     "t0": 13.7,
+     "t1": 16.25,
+     "text": "in the personality of every child."
+    }
+   ],
+   "from": 2477
+  },
+  {
+   "kind": "close",
+   "dur": 5.5,
+   "from": 2969
+  }
+ ]
+}

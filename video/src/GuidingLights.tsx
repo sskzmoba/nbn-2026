@@ -9,7 +9,7 @@ import { loadFont as loadDeva } from "@remotion/google-fonts/TiroDevanagariSansk
 export const display = loadDisplay().fontFamily;
 export const text = loadText("normal", { weights: ["400", "700"] }).fontFamily;
 loadText("italic", { weights: ["400"] });
-const deva = loadDeva().fontFamily;
+export const deva = loadDeva().fontFamily;
 
 export const C = { night: "#05070d", navy: "#0b1830", gold: "#ffd38a", goldDeep: "#c99a3c", cream: "#f4efe6", muted: "#b9c1d0" };
 
@@ -151,19 +151,20 @@ export const Sessions: React.FC = () => {
   );
 };
 
-export const When: React.FC = () => {
+// held: after the event (24 Nov 2026), the card reads "Held on" and drops the time and "By invitation".
+export const When: React.FC<{ held?: boolean }> = ({ held = false }) => {
   const frame = useCurrentFrame();
   const o = fade(frame, 38.4, 42.6, 0.7, 0.5);
   const y = interpolate(frame, [s(38.4), s(39.3)], [30, 0], { ...clamp, easing: Easing.out(Easing.quad) });
   return (
     <AbsoluteFill style={{ opacity: o, alignItems: "center", justifyContent: "center", textAlign: "center", color: C.cream, paddingTop: 200, transform: `translateY(${y}px)` }}>
-      <div style={{ fontFamily: text, fontWeight: 700, fontSize: 40, letterSpacing: 10, color: C.muted }}>SATURDAY</div>
+      <div style={{ fontFamily: text, fontWeight: 700, fontSize: 40, letterSpacing: 10, color: C.muted }}>{held ? "HELD ON SATURDAY" : "SATURDAY"}</div>
       <div style={{ fontFamily: display, fontWeight: 400, fontSize: 118, lineHeight: 1.05, color: C.gold, margin: "10px 0 18px" }}>21 November<br />2026</div>
-      <div style={{ fontFamily: text, fontWeight: 400, fontSize: 50 }}>10:00 AM – 3:00 PM</div>
+      {!held && <div style={{ fontFamily: text, fontWeight: 400, fontSize: 50 }}>10:00 AM – 3:00 PM</div>}
       <div style={{ width: 160, height: 3, background: C.goldDeep, margin: "44px 0" }} />
       <div style={{ fontFamily: display, fontWeight: 400, fontSize: 56 }}>Cariappa Auditorium</div>
       <div style={{ fontFamily: text, fontSize: 42, color: C.muted, marginTop: 10, lineHeight: 1.35 }}>Pangode<br />Thiruvananthapuram</div>
-      <div style={{ opacity: interpolate(frame, [s(39.7), s(40.4)], [0, 1], clamp), fontFamily: text, fontWeight: 700, fontSize: 32, letterSpacing: 8, color: C.gold, marginTop: 40 }}>BY INVITATION</div>
+      {!held && <div style={{ opacity: interpolate(frame, [s(39.7), s(40.4)], [0, 1], clamp), fontFamily: text, fontWeight: 700, fontSize: 32, letterSpacing: 8, color: C.gold, marginTop: 40 }}>BY INVITATION</div>}
     </AbsoluteFill>
   );
 };

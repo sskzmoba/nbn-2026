@@ -1,0 +1,68 @@
+import sys
+p = sys.argv[1]
+s = open(p, encoding='utf-8').read()
+R = [
+("> **How this was made.** The text comes from YouTube's automatic captions, so names and phrases can be wrong. Quotes below are lightly cleaned (fillers removed, obvious caption errors fixed) but not checked word for word. **Before any quote goes into a press release, check it against the recording at the timestamp given, and send each guest their own quotes to approve.**",
+ "> **How this was made.** First drafted from YouTube's automatic captions. On 22 Nov 2026 every quote was checked against a second, cleaner transcript of the stream (`GUIDING LIGHTS LIVE ... .srt`) and corrected to the words actually spoken; fillers (\"uh\", repeated words) are removed and \"…\" marks words left out. Both transcripts are machine-made. **Before any quote goes into a press release, check it against the recording at the timestamp given, and send each guest their own quotes to approve.**"),
+("- **Closing thought:** \"We are celebrating a teacher who taught us four decades ago, and who passed away a decade ago. Will somebody celebrate us as educators long after we are gone?\"",
+ "- **Closing thought:** \"We are celebrating a teacher who taught us four decades before … a man who passed away ten years before. I leave you with this thought: will somebody celebrate us as educators and teachers long after we are gone?\""),
+("- \"The Indian Army is not just a career, it is a calling\": standing guard at 18,000 ft while the country sleeps.",
+ "- As his father told him, \"the Indian Army is not just a career, but it is a calling\": \"standing guard at 18,000 feet when the rest of the country sleeps peacefully\"."),
+("- \"Every officer can name a person who shaped them. Our whole system rests on mentorship.\"",
+ "- \"Every officer can name a person who shaped them … Our whole system rests on mentorship.\""),
+("- **Appeal to teachers:** \"You are often the first to notice a spark in a child. Teachers light the way. I ask you to keep lighting it and, now and then, to point it towards the defence forces.\"",
+ "- **Appeal to teachers:** \"You are often the first to notice a spark in a child … Teachers light the way. I ask you to keep lighting it and now and then to point it towards the defence forces.\""),
+("- Her teenage daughter concluded that AI \"just gives you the answers you want\": an echo chamber to use for facts, never for life's important decisions.",
+ "- Her teenage daughter concluded that AI \"just gives answers that you want … a kind of an echo chamber\": to be used for facts, never for life's important decisions."),
+("- A candid moment: the way to reduce waste is to stop using disposables, \"yet we are producing a lot of waste in this very conference\". That is the difference between knowing and acting.",
+ "- A candid moment (\"with the organisers' permission\", a \"critical remark\"): AI will list ways to reduce waste, \"and we are going to produce a lot of waste today\". That is the difference between knowing and acting."),
+("- \"Don't teach a student, discover the student. Discover those beautiful minds before you.\"",
+ "- \"Don't teach a student, but discover the student. Discover those beautiful minds before you.\""),
+("- \"Teaching is not filling a bucket with information. It is the kindling of a fire.\"",
+ "- Teaching \"is not filling up a bucket with information or knowledge. It's the kindling of a fire.\""),
+("- \"Like Balakrishnan Sir did not confine himself to chemistry, don't confine yourselves to your subject. Talk philosophy, literature, tell them stories.\"",
+ "- NBN Sir did not confine himself to chemistry: \"Don't confine yourselves to your subject. Expand. Go beyond your subject. Talk philosophy. Talk literature.\""),
+("- An answer on its own is \"a bubble hanging in the middle of nowhere\".",
+ "- An answer on its own \"is like a bubble … hanging in the middle of nowhere\"."),
+("**\"silicon skills and carbon capacity\"**",
+ "**\"the silicon skills and the carbon capacity\"**"),
+("\"For you teachers the problem is more severe: children may never develop the skills at all.\"",
+ "\"For you teachers the problem is much more severe … They will never develop the skills at all.\""),
+("- Students in Bengaluru told him: \"We don't want *gyaan* (lectures). We want action.\"",
+ "- Students told him: \"We don't want *gyaan* (lectures) … We want actions.\" (The transcript has \"Gans\"; check the recording at 1:52:00.)"),
+("\"The least we can give them is to listen.\"",
+ "\"Listening to them … that's the least that we can actually give.\""),
+("- \"Education is not a truckload of information. It is a capsule of inspiration.\"",
+ "- Education \"is not about a truckload of information. It is about a capsule of inspiration.\""),
+("\"critical of your idea, never of you\"",
+ "\"my question is not for you, it is for your idea … I'm going to be your best friend and your critic\" (3:02:05)"),
+("\"If you got 60 out of 100, your learning is the 40 you didn't get.\"",
+ "\"If you've got 60 out of 100 in your marks, your learning is that 40% you didn't get.\""),
+("- The truly learned carry \"a question at every single definitive\".",
+ "- The truly learned carry a question at every conclusion reached (both transcripts are unclear here: \"a question at every single definite …\"; check the recording at 3:35:55 before quoting)."),
+("our learners are in a hurry. \"Slow down, spend more time with your discipline.\"",
+ "our learners are in a hurry. \"You need to relax and slow down. Spend more time with your discipline.\""),
+("He urged teachers to keep lighting the way and \"now and then, to point it towards the defence forces\".",
+ "\"Teachers light the way,\" he said. \"I ask you to keep lighting it and now and then to point it towards the defence forces.\""),
+("Innovator R Abhilash said that education should be \"a capsule of inspiration\".",
+ "Innovator R Abhilash said that education \"is not about a truckload of information. It is about a capsule of inspiration.\""),
+("- \"There is a subtle difference between knowledge and wisdom.\" (Dr K Vasuki IAS)",
+ "- \"There's a very subtle difference between knowledge and wisdom.\" (Dr K Vasuki IAS)"),
+("- \"Don't teach a student; discover the student.\" (Prof Dr Jancy James)",
+ "- \"Don't teach a student, but discover the student.\" (Prof Dr Jancy James)"),
+("- \"AI brings silicon skills; only a teacher builds carbon capacity.\" (Dr TR John)",
+ "- \"The silicon skills and the carbon capacity\": AI can supply the first; only people can build the second. (Dr TR John)"),
+("- \"Education is a capsule of inspiration.\" (R Abhilash)",
+ "- Education \"is not about a truckload of information. It is about a capsule of inspiration.\" (R Abhilash)"),
+("- \"Carry the word mindset back to your classrooms.\" (Amala Akkineni)",
+ "- \"If you are going back with a gift from me, carry the word mindset.\" (Amala Akkineni)"),
+("| Dr B Ashok | \"A question at every single definitive\" |",
+ "| Dr B Ashok | On true learning: \"a question at every …\" (words unclear; listen first) |"),
+]
+miss = [a for a, b in R if a not in s]
+for a, b in R:
+    s = s.replace(a, b)
+open(p, 'w', encoding='utf-8').write(s)
+print('replaced', len(R) - len(miss), 'of', len(R))
+for m in miss:
+    print(' MISSING:', m[:100])

@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Composition } from "remotion";
 import { GuidingLights, OgImage, TOTAL_FRAMES, FPS } from "./GuidingLights";
 import { TeachersStory } from "./TeachersStory";
@@ -8,9 +8,20 @@ import { Budget } from "./Budget";
 import { Speakers, SpeakersCream, SpeakersLargeCream, SpeakersChosenCream, SpeakersInvitedCream } from "./Speakers";
 import { InviteCongratsCream, InviteHonouredCream } from "./Invitation";
 import { GroupPortrait, GroupSchool } from "./GroupPicture";
+import { SpeakersFilm, FILM_FRAMES } from "./SpeakersFilm";
+import { FelicitationTable, TABLE_FRAMES } from "./FelicitationTable";
+import { YouTubeThumb } from "./YouTubeThumb";
+import { InstaReel, REEL_FRAMES, InstaGuest, GUESTS } from "./InstaReel";
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="SpeakersFilm" component={SpeakersFilm} durationInFrames={FILM_FRAMES} fps={FPS} width={1920} height={1080} />
+    <Composition id="InstaReel" component={InstaReel} durationInFrames={REEL_FRAMES} fps={FPS} width={1080} height={1920} />
+    {Object.entries(GUESTS).map(([id, g]) => (
+      <Composition key={id} id={`InstaGuest-${id}`} component={InstaGuest} defaultProps={{ id }} durationInFrames={g.total} fps={FPS} width={1080} height={1920} />
+    ))}
+    <Composition id="YouTubeThumb" component={YouTubeThumb} durationInFrames={1} fps={FPS} width={1280} height={720} />
+    <Composition id="FelicitationTable" component={FelicitationTable} durationInFrames={TABLE_FRAMES} fps={FPS} width={1920} height={1080} />
     <Composition id="GroupPortrait" component={GroupPortrait} durationInFrames={1} fps={FPS} width={1080} height={1080} />
     <Composition id="GroupSchool" component={GroupSchool} durationInFrames={1} fps={FPS} width={1080} height={1080} />
     <Composition id="Budget" component={Budget} durationInFrames={1} fps={FPS} width={1080} height={1310} />
@@ -41,6 +52,7 @@ export const Root: React.FC = () => (
       width={1080}
       height={1620}
     />
+    <Composition id="TeachersStoryHeld" component={TeachersStory} defaultProps={{ held: true }} durationInFrames={TOTAL_FRAMES} fps={FPS} width={1080} height={1920} />
     <Composition
       id="TeachersStory"
       component={TeachersStory}

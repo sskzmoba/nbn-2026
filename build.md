@@ -279,6 +279,154 @@ Akkineni, Dr K. Vasuki IAS.
 - Drive: only the latest invitation files kept; his photo removed. Superseded Speakers cards stay
   on this computer only (not updated).
 
+## "Voices from Guiding Lights": speakers film (2026-11-23)
+A 3 min 11 s, 16:9 (1920×1080) film of each speaker's key lines, to send to the guests and circulate. User asked
+2026-11-23; quotes picked from a shortlist the user approved (recommended picks).
+- Order: opening (NBN Sir remembrance, Guiding Lights title, date and venue, "Voices from the day") → Capt Breeze →
+  card + Col Gurung → panel card + Dr Vasuki, Prof Jancy James, Dr TR John, R Abhilash → fireside card + Amala Akkineni
+  → keynote card + Dr B Ashok (chief guest last) → felicitation group photo → "With gratitude" (guests in the standard
+  order) → OBA logo, "Supported by the 1991 Batch", nbn.sskzmoba.org.
+- Each clip: name and role top left for 6 s, captions (exact spoken words, fillers cut) on a dark band at the bottom.
+  Two or three pieces per speaker are joined with 0.25 s dissolves.
+- Music: "Kaleidoscope of Life" (AlexGrohl, Pixabay licence). The quiet opening loops under the speakers at −24 dB;
+  the track's lift lands as the felicitation photo appears.
+- Source: `video/src/SpeakersFilm.tsx` (composition `SpeakersFilm`), timeline `video/src/speakers-film.json`, built by
+  `video/tools/build-speakers-film.py <clips-dir> <music.mp3> <group.jpg>`. The script holds every cut point and
+  caption; raw segments were downloaded from the stream with yt-dlp (`--download-sections`, times in the script's
+  notes). Media in `video/public/film/` (gitignored). Render:
+  `npx remotion render src/index.ts SpeakersFilm out/guiding-lights-voices.mp4 --codec=h264 --crf=20`.
+- Before sending to a guest, let the coordinator check that guest's clip.
+- **v2 (2026-11-23, user's request; 4 min 4 s, `out/guiding-lights-voices-v2.mp4`):**
+  - Opens with the single chant line "tamaso mā jyotir gamaya" (from `asatoma-2.mp3`, 6.45–13.2 s, light reverb):
+    Devanagari, transliteration, "Lead me from darkness to light". NBN Sir's portrait then glows in, followed by the title.
+  - The piano starts at 8 s, only after the chant has died away (chant in F♯, piano in E♭).
+  - Photo interludes (slow zoom, crossfades, section label and title) replace the plain section cards:
+    - arrival (welcome arch, stage, mementos);
+    - Special Address;
+    - Panel (panel and the four panellists);
+    - Fireside Chat;
+    - Keynote.
+  - Before "With gratitude", a felicitation montage: six felicitation photos with the names on screen blurred, three
+    side by side; then the felicitated group with guests; then the school family group.
+  - No photo ever covers a speaker while they speak.
+  - Music is at full level between speakers and ducks to −21 dB under speech (was −24).
+  - Build: `python tools/build-speakers-film.py <clips-dir> <music.mp3> <photos-dir> <chant.mp3>`. The photos are in
+    `_source/photos/event-film/` (22 photos from the album). The raw clips are in
+    `_source/video/speakers-raw/` (yt-dlp ranges in the script).
+- **v3 (2026-11-23, user's review of v2; 4 min 6 s, `out/guiding-lights-voices-v3.mp4`, plus `-720p` and `-share`):**
+  - Chant removed (it did not sit with the piano). The film opens on NBN Sir's portrait, then the title; the
+    piano starts at 0 s.
+  - Order: arrival, Capt Breeze, panel, fireside, Special Address (Col Gurung, moved here), keynote (chief guest
+    last), felicitation, credits.
+  - Panel opens with moderator Kamal Krishnan PS (one line, two joined pieces, about 13 s): "Imagine if a student
+    gets up and asks: do we know what we are actually throwing away? … Precisely these were the questions that NBN
+    Sir taught us to ask, not just in class, in our lives too."
+  - Amala Akkineni: the animal-welfare piece cut; only "mindset" is kept.
+  - Photo breaks trimmed:
+    - arrival: two photos side by side;
+    - Special Address: one photo;
+    - panel: the four panellists in one frame, in speaking order.
+  - **Felicitation collage:** all 32 honourees' stage photos are laid as cards on an 8 × 4 board. The first card
+    takes 0.6 s and they speed up to 0.07 s apart, timed so the piano's lift lands as the collage starts. The
+    full board then holds with "32 principals and heads of schools honoured".
+    - The photos are from the Drive album "Guiding Lights 2026 - Selected Photos / 05 Felicitation", downloaded
+      to `_source/photos/felicitation/` (12–15 MB each, too big for the Drive connector).
+    - The first photo in each folder is used (`FEL_PICK` in the script picks another).
+    - At card size the names on the stage screen cannot be read.
+  - After the collage: the group photo, the school family photo, then the end credits.
+  - **End credits** (22 s scroll over the school):
+    - With gratitude: Chief Guest, distinguished guests (standard order), moderator;
+    - Educators honoured: all 32 names, taken from the folder names. Mr, Ms and Shri dropped (user's decision);
+      Dr, Fr, Capt(IN) and (Retd) kept. "Received on her behalf" honourees are listed by their own name. The
+      user confirmed the spelling "Anisha Sen".
+    - Organised by SSKZM Old Boys Association, supported by the 1991 Batch;
+    - In remembrance of NBN Sir.
+  - Build: `python tools/build-speakers-film.py <clips-dir> <music.mp3> <photos-dir> <felicitation-dir>`. v2's
+    script and component are in the session scratchpad only.
+- **v4 (2026-11-23; 4 min 17 s, `out/guiding-lights-voices-v4.mp4`, plus `-720p` and `-share`):**
+  - **Felicitation as prints dropped on a table** (`src/FelicitationTable.tsx`, scene `TableScene`). This replaces
+    the 8 × 4 grid.
+    - The 32 photos are about twice the size, overlapping and scattered.
+    - The timing is the same slow-to-fast as v3.
+    - The prints have an ivory border with a thin gold line, chosen by the user over white and navy.
+    - Every card stays inside the frame.
+    - The count line reads "32 educators honoured", because Sandhya R is a teacher, not a head of school.
+    - The composition `FelicitationTable` previews the scene alone with its music. `--props '{"border":"navy"}'`
+      shows the other borders.
+  - The group photo line is "The honourees with our guests" (the collage title already says "Educators who shape
+    generations").
+  - Kamal Krishnan PS and Dr TR John: an extra line "Alumnus, Sainik School Kazhakootam" on their name cards and in
+    the credits.
+  - **Credits (31 s), scrolling fully off the screen:**
+    1. With gratitude
+    2. Chief Guest: Dr B Ashok IAS
+    3. Guests of Honour: Dr K Vasuki IAS, Smt Amala Akkineni, Prof Dr Jancy James, Dr TR John, Shri R Abhilash
+    4. Special Guests: Col Sidharth Karanbir Gurung, Col Abhishek Vohra
+    5. Moderator: Kamal Krishnan PS
+    6. Principals and heads of schools honoured: folders 01–25
+    7. From the Sainik School Kazhakootam family:
+       - Capt(IN) Paul Abraham (Retd), former Principal
+       - former teachers, later heads of schools: 27–31
+       - former teacher: Sandhya R
+       (`FAMILY` in the script.)
+    8. Organising committee, names only, no roles (the comperes are on it): Capt(IN) KM Breeze Antony, Sqn Ldr
+       Pradeep Kumar (Retd), Col Pramod M, Lt Col Arun Sathyan, Manu G, Vinod V.
+    9. The thank-you line: "To the Principal, officers, teachers and staff of Sainik School Kazhakootam, and to
+       every alumnus and friend who joined us, in the auditorium and online: thank you."
+  - **Final slide (10 s, still):** In remembrance of NBN Sir, the OBA logo, "An initiative by alumni of Sainik
+    School Kazhakootam", "Supported by the 1991 Batch", nbn.sskzmoba.org.
+- **v4 is FINAL (user, 2026-11-23).** Copies in `video/out/final/`, named "Guiding Lights 2026 - Voices from the
+  day":
+  - 1080p master (176 MB)
+  - 1080p for sharing (80 MB)
+  - 720p for WhatsApp (39 MB)
+
+  The user uploads them to Drive by hand: they are too big for the connector. Before sending the film to a guest,
+  the coordinator checks that guest's clip and the names in the credits.
+
+## Instagram (2026-11-24)
+- The old account **obasskzm** is locked. A new account, **@sskzmoba** (matches the domain), was created on
+  2026-11-24 and is now the **main account**. When obasskzm is back: pin a "we've moved to @sskzmoba" post there,
+  point its bio here, and invite it as collaborator on the next few posts. Followers can't be moved across.
+- Channels: the full 4 min film goes on **YouTube** (link in the Instagram bio); short vertical reels go on Instagram,
+  with guests invited as collaborators. Reels top out at about 3 min.
+- **Highlight reel** (1080×1920, 1 min 44 s; v2, user's changes 24 Nov 2026): `video/src/InstaReel.tsx`
+  (composition `InstaReel`), timeline `video/src/insta-reel.json` and music bed `public/film/insta-music.wav`,
+  both written by `python tools/build-insta-reel.py <kaleidoscope mp3>`. The script picks lines from the film's
+  clips. Order:
+  1. Opens on Capt Breeze, "Think: will somebody celebrate us … long after we are gone?"
+  2. Title over NBN Sir's portrait.
+  3. Kamal (whole line), Vasuki, TR John, Abhilash, Amala, Gurung, Ashok.
+  4. Fast felicitation table (`TableScene` with `bare`; cards 1/0.6× faster); the piano lifts here.
+  5. Prof Jancy James to close: "Don't teach a student, but discover the student." joined to "Teaching or
+     learning is not filling up a bucket … in the personality of every child."
+  6. OBA close, "Full film: link in bio".
+
+  Cut points sit in the silence between words: word timings from faster-whisper, then the quietest 30 ms in
+  each gap. v1 cut a fixed few tenths after the caption, which let the start of the next word in ("disc…").
+  The stage video sits whole in a 16:9 band in the middle, name above and captions below, clear of Instagram's
+  buttons. Output `video/out/insta/Guiding Lights 2026 - Instagram highlights.mp4`.
+- **Teacher's story, after the event** (24 Nov 2026): composition `TeachersStoryHeld` (prop `held` on `When`): the
+  date card reads "Held on Saturday, 21 November 2026", without the time and "By invitation". Output
+  `video/out/insta/Guiding Lights 2026 - The teacher's story (held on 21 Nov).mp4`; first post on @sskzmoba and a
+  YouTube Short. Needs `public/story-soundtrack.wav` (gitignored; copy from the main checkout).
+- **Plan for the other videos (24 Nov 2026):** the speaker bites in `D:\temp\NBN\bites\` (1–1:48 each, made in
+  the `guiding-lights-nov-21` worktree) are the daily per-guest Instagram Reels and YouTube Shorts, rather than
+  the 20 s guest reels above (those are for WhatsApp Status, if used). Event highlights v4 (`D:\temp\NBN\`) goes
+  on YouTube; check the ElevenLabs plan covers public use first.
+- **YouTube:** the full film is up (https://youtu.be/GicfgyElS9M, 24 Nov 2026), with the custom thumbnail
+  `video/out/final/Guiding Lights 2026 - YouTube thumbnail.jpg` (composition `YouTubeThumb`).
+- **Guest reels** (2026-11-24): 9 reels, each 18–25 s.
+  - Each is that speaker's whole clip from the film, then the OBA close. Same layout as the highlight reel; quiet
+    piano under the speech, louder for the close.
+  - Built by the same script: `src/insta-guests.json`, `public/film/insta-music-<id>.wav`; compositions
+    `InstaGuest-<id>`.
+  - Numbered in guest order: 01 Ashok, 02 Vasuki, 03 Amala, 04 Jancy, 05 TR John, 06 Abhilash, 07 Gurung, then
+    08 Kamal, 09 Breeze. Col Vohra has no clip.
+  - Output: `video/out/insta/guests/Guiding Lights 2026 - Reel NN - <name>.mp4`.
+  - Post one a day with that guest as collaborator, after the coordinator checks the clip.
+- **YouTube:** upload `video/out/final/… (1080p master).mp4`. YouTube re-compresses, so give it the best copy.
+
 ## Group pictures for WhatsApp (2026-11-06)
 Square, 1080×1080, for the group icon or a status; all text stays inside the circle WhatsApp crops an
 icon to (checked, also at 96 and 48 px). No guest names or photos, as the list may change.

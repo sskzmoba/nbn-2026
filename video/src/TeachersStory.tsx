@@ -92,7 +92,7 @@ const Portrait: React.FC = () => {
   );
 };
 
-export const TeachersStory: React.FC = () => (
+export const TeachersStory: React.FC<{ held?: boolean }> = ({ held = false }) => (
   <AbsoluteFill style={{ background: C.night }}>
     <Audio src={staticFile("story-soundtrack.wav")} />
     <Glow />
@@ -105,7 +105,7 @@ export const TeachersStory: React.FC = () => (
     <Backdrop />
     <Title />
     <Sessions />
-    <When />
+    <When held={held} />
     <Close />
   </AbsoluteFill>
 );

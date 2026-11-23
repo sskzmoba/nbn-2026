@@ -1,0 +1,773 @@
+{
+ "total": 7697,
+ "items": [
+  {
+   "kind": "open",
+   "dur": 11.8,
+   "from": 0
+  },
+  {
+   "kind": "inter",
+   "dur": 7.2,
+   "photos": [
+    {
+     "at": 0.0,
+     "dur": 4.3,
+     "srcs": [
+      "film/ph/5323.jpg"
+     ],
+     "zin": true,
+     "land": true
+    },
+    {
+     "at": 3.6,
+     "dur": 3.6,
+     "srcs": [
+      "film/ph/5351.jpg",
+      "film/ph/5371.jpg"
+     ],
+     "zin": false,
+     "land": true
+    }
+   ],
+   "texts": [
+    {
+     "t0": 0.0,
+     "label": "21 November 2026",
+     "title": "Welcome to Guiding Lights",
+     "t1": 7.2
+    }
+   ],
+   "from": 354
+  },
+  {
+   "kind": "clip",
+   "dur": 13.25,
+   "src": "film/breeze.mp4",
+   "name": "Capt(IN) KM Breeze Antony",
+   "role": "President, SSKZM OBA",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.45,
+     "t1": 3.45,
+     "text": "I leave you with this thought."
+    },
+    {
+     "t0": 3.45,
+     "t1": 7.55,
+     "text": "Think: will somebody celebrate us"
+    },
+    {
+     "t0": 7.55,
+     "t1": 9.45,
+     "text": "as educators and teachers"
+    },
+    {
+     "t0": 9.45,
+     "t1": 13.1,
+     "text": "long after we are gone?"
+    }
+   ],
+   "from": 570
+  },
+  {
+   "kind": "inter",
+   "dur": 7.6,
+   "photos": [
+    {
+     "at": 0.0,
+     "dur": 4.7,
+     "srcs": [
+      "film/ph/6245.jpg"
+     ],
+     "zin": true,
+     "land": true
+    },
+    {
+     "at": 4.0,
+     "dur": 3.6,
+     "srcs": [
+      "film/ph/6020.jpg",
+      "film/ph/6072.jpg",
+      "film/ph/6109.jpg",
+      "film/ph/6159.jpg"
+     ],
+     "zin": false,
+     "land": false
+    }
+   ],
+   "texts": [
+    {
+     "t0": 0.0,
+     "label": "Panel Discussion",
+     "title": "When Answers Are Everywhere, What Should Schools Teach?",
+     "t1": 7.6
+    }
+   ],
+   "from": 968
+  },
+  {
+   "kind": "clip",
+   "dur": 13.25,
+   "src": "film/kamal.mp4",
+   "name": "Kamal Krishnan PS",
+   "role": "Moderator, Panel Discussion",
+   "alum": true,
+   "caps": [
+    {
+     "t0": 0.35,
+     "t1": 3.9,
+     "text": "Imagine if a student gets up and asks:"
+    },
+    {
+     "t0": 3.9,
+     "t1": 6.15,
+     "text": "do we know what we are actually throwing away?"
+    },
+    {
+     "t0": 5.55,
+     "t1": 7.7,
+     "text": "Precisely these were the questions"
+    },
+    {
+     "t0": 7.7,
+     "t1": 11.05,
+     "text": "that NBN Sir taught us to ask,"
+    },
+    {
+     "t0": 11.05,
+     "t1": 13.1,
+     "text": "not just in class, in our lives too."
+    }
+   ],
+   "from": 1196
+  },
+  {
+   "kind": "clip",
+   "dur": 18.5,
+   "src": "film/vasuki.mp4",
+   "name": "Dr K Vasuki IAS",
+   "role": "Secretary to the Governor of Keralam",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.4,
+     "t1": 2.6,
+     "text": "And there is a very subtle difference"
+    },
+    {
+     "t0": 2.6,
+     "t1": 6.0,
+     "text": "between facts and truth,"
+    },
+    {
+     "t0": 6.0,
+     "t1": 7.6,
+     "text": "and there's a very subtle difference"
+    },
+    {
+     "t0": 7.6,
+     "t1": 10.9,
+     "text": "between knowledge and wisdom."
+    },
+    {
+     "t0": 10.35,
+     "t1": 13.95,
+     "text": "I think education should be focused on creating"
+    },
+    {
+     "t0": 13.95,
+     "t1": 18.35,
+     "text": "happy, compassionate, loving, peaceful human beings."
+    }
+   ],
+   "from": 1593
+  },
+  {
+   "kind": "clip",
+   "dur": 19.5,
+   "src": "film/jancy.mp4",
+   "name": "Prof Dr Jancy James",
+   "role": "Founder Vice Chancellor, Central University of Kerala",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.4,
+     "t1": 4.4,
+     "text": "Don't teach a student, but discover the student."
+    },
+    {
+     "t0": 4.4,
+     "t1": 6.95,
+     "text": "Discover those beautiful minds before you."
+    },
+    {
+     "t0": 6.4,
+     "t1": 10.1,
+     "text": "Teaching or learning is not filling up a bucket"
+    },
+    {
+     "t0": 10.1,
+     "t1": 12.2,
+     "text": "with information or knowledge."
+    },
+    {
+     "t0": 12.2,
+     "t1": 14.7,
+     "text": "It's the kindling of a fire."
+    },
+    {
+     "t0": 14.7,
+     "t1": 16.8,
+     "text": "It's the lighting up of a fire"
+    },
+    {
+     "t0": 16.8,
+     "t1": 19.35,
+     "text": "in the personality of every child."
+    }
+   ],
+   "from": 2148
+  },
+  {
+   "kind": "clip",
+   "dur": 15.45,
+   "src": "film/john.mp4",
+   "name": "Dr TR John",
+   "role": "Chief of Medical Services, Aster Medcity, Kochi",
+   "alum": true,
+   "caps": [
+    {
+     "t0": 0.4,
+     "t1": 2.15,
+     "text": "Nowadays when I talk, I talk about"
+    },
+    {
+     "t0": 2.15,
+     "t1": 6.0,
+     "text": "the silicon skills and the carbon capacity."
+    },
+    {
+     "t0": 6.0,
+     "t1": 10.3,
+     "text": "The silicon capacity is what the AI can give you, or assist you,"
+    },
+    {
+     "t0": 10.3,
+     "t1": 12.7,
+     "text": "and the carbon skills only a teacher can."
+    },
+    {
+     "t0": 12.7,
+     "t1": 15.3,
+     "text": "Someone who is made of carbon can teach you."
+    }
+   ],
+   "from": 2733
+  },
+  {
+   "kind": "clip",
+   "dur": 16.65,
+   "src": "film/abhilash.mp4",
+   "name": "Shri R Abhilash",
+   "role": "Innovator; founder, Bloom and Fest",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.35,
+     "t1": 3.4,
+     "text": "For me, education"
+    },
+    {
+     "t0": 2.85,
+     "t1": 5.95,
+     "text": "is not about a truckload of information."
+    },
+    {
+     "t0": 5.95,
+     "t1": 7.95,
+     "text": "It is about a capsule of inspiration."
+    },
+    {
+     "t0": 7.95,
+     "t1": 10.85,
+     "text": "Can we be that inspiration to our children"
+    },
+    {
+     "t0": 10.85,
+     "t1": 13.25,
+     "text": "and make them feel this space belongs to you"
+    },
+    {
+     "t0": 13.25,
+     "t1": 14.45,
+     "text": "and belongs to us?"
+    },
+    {
+     "t0": 14.45,
+     "t1": 16.5,
+     "text": "And that's very important."
+    }
+   ],
+   "from": 3196
+  },
+  {
+   "kind": "inter",
+   "dur": 6.4,
+   "photos": [
+    {
+     "at": 0.0,
+     "dur": 4.3,
+     "srcs": [
+      "film/ph/6536.jpg"
+     ],
+     "zin": true,
+     "land": true
+    },
+    {
+     "at": 3.6,
+     "dur": 2.8,
+     "srcs": [
+      "film/ph/6499.jpg"
+     ],
+     "zin": false,
+     "land": true
+    }
+   ],
+   "texts": [
+    {
+     "t0": 0.0,
+     "label": "Fireside Chat",
+     "title": "The Teachers and Experiences That Shape Us",
+     "t1": 6.4
+    }
+   ],
+   "from": 3696
+  },
+  {
+   "kind": "clip",
+   "dur": 17.15,
+   "src": "film/amala.mp4",
+   "name": "Smt Amala Akkineni",
+   "role": "Director, Annapurna College of Film and Media",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.45,
+     "t1": 4.25,
+     "text": "If you are going back with a gift from me,"
+    },
+    {
+     "t0": 4.25,
+     "t1": 6.05,
+     "text": "carry the word mindset."
+    },
+    {
+     "t0": 5.5,
+     "t1": 11.2,
+     "text": "…see how your assessments can open up to new ways"
+    },
+    {
+     "t0": 11.2,
+     "t1": 17.0,
+     "text": "where the child then becomes a learner for life."
+    }
+   ],
+   "from": 3888
+  },
+  {
+   "kind": "inter",
+   "dur": 4.2,
+   "photos": [
+    {
+     "at": 0.0,
+     "dur": 4.2,
+     "srcs": [
+      "film/ph/6597.jpg"
+     ],
+     "zin": true,
+     "land": true
+    }
+   ],
+   "texts": [
+    {
+     "t0": 0.0,
+     "label": "Special Address",
+     "title": "Inspiring the Next Generation to Serve",
+     "t1": 4.2
+    }
+   ],
+   "from": 4402
+  },
+  {
+   "kind": "clip",
+   "dur": 14.15,
+   "src": "film/gurung.mp4",
+   "name": "Col Sidharth Karanbir Gurung",
+   "role": "Deputy Commander, 91 Infantry Brigade",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.35,
+     "t1": 2.95,
+     "text": "To guide young minds, you are often"
+    },
+    {
+     "t0": 2.95,
+     "t1": 5.75,
+     "text": "the first to notice a spark in a child."
+    },
+    {
+     "t0": 5.4,
+     "t1": 8.2,
+     "text": "Teachers light the way."
+    },
+    {
+     "t0": 8.2,
+     "t1": 10.1,
+     "text": "I ask you to keep lighting it,"
+    },
+    {
+     "t0": 10.1,
+     "t1": 14.0,
+     "text": "and now and then to point it towards the defence forces."
+    }
+   ],
+   "from": 4528
+  },
+  {
+   "kind": "inter",
+   "dur": 6.4,
+   "photos": [
+    {
+     "at": 0.0,
+     "dur": 4.1,
+     "srcs": [
+      "film/ph/6652.jpg"
+     ],
+     "zin": true,
+     "land": true
+    },
+    {
+     "at": 3.4,
+     "dur": 3.0,
+     "srcs": [
+      "film/ph/6616.jpg"
+     ],
+     "zin": false,
+     "land": true
+    }
+   ],
+   "texts": [
+    {
+     "t0": 0.0,
+     "label": "Keynote",
+     "title": "Leading Schools That Shape Generations",
+     "t1": 6.4
+    }
+   ],
+   "from": 4953
+  },
+  {
+   "kind": "clip",
+   "dur": 20.42,
+   "src": "film/ashok.mp4",
+   "name": "Dr B Ashok IAS",
+   "role": "Chief Guest · Principal Secretary, Higher Education, Government of Keralam",
+   "alum": false,
+   "caps": [
+    {
+     "t0": 0.37,
+     "t1": 4.57,
+     "text": "Learning is inherently a very pleasurable thing."
+    },
+    {
+     "t0": 4.57,
+     "t1": 7.37,
+     "text": "There is a lot of pleasure involved in knowing new things"
+    },
+    {
+     "t0": 7.37,
+     "t1": 8.97,
+     "text": "just for the sake of it,"
+    },
+    {
+     "t0": 8.97,
+     "t1": 12.37,
+     "text": "for exploring a thing, researching a thing,"
+    },
+    {
+     "t0": 12.37,
+     "t1": 17.67,
+     "text": "delving deep into the facts…"
+    },
+    {
+     "t0": 17.67,
+     "t1": 20.27,
+     "text": "and then discovering things afresh."
+    }
+   ],
+   "from": 5145
+  },
+  {
+   "kind": "fel",
+   "dur": 12.14,
+   "cards": [
+    {
+     "src": "film/fel/01.jpg",
+     "at": 1.4,
+     "rot": 1.8
+    },
+    {
+     "src": "film/fel/02.jpg",
+     "at": 2.0,
+     "rot": 0.68
+    },
+    {
+     "src": "film/fel/03.jpg",
+     "at": 2.559,
+     "rot": 1.34
+    },
+    {
+     "src": "film/fel/04.jpg",
+     "at": 3.078,
+     "rot": -2.63
+    },
+    {
+     "src": "film/fel/05.jpg",
+     "at": 3.562,
+     "rot": 0.84
+    },
+    {
+     "src": "film/fel/06.jpg",
+     "at": 4.013,
+     "rot": 3.08
+    },
+    {
+     "src": "film/fel/07.jpg",
+     "at": 4.432,
+     "rot": -0.49
+    },
+    {
+     "src": "film/fel/08.jpg",
+     "at": 4.823,
+     "rot": -2.48
+    },
+    {
+     "src": "film/fel/09.jpg",
+     "at": 5.186,
+     "rot": 2.93
+    },
+    {
+     "src": "film/fel/10.jpg",
+     "at": 5.525,
+     "rot": 1.13
+    },
+    {
+     "src": "film/fel/11.jpg",
+     "at": 5.84,
+     "rot": -1.94
+    },
+    {
+     "src": "film/fel/12.jpg",
+     "at": 6.133,
+     "rot": 1.1
+    },
+    {
+     "src": "film/fel/13.jpg",
+     "at": 6.406,
+     "rot": 3.15
+    },
+    {
+     "src": "film/fel/14.jpg",
+     "at": 6.66,
+     "rot": -1.86
+    },
+    {
+     "src": "film/fel/15.jpg",
+     "at": 6.896,
+     "rot": 2.26
+    },
+    {
+     "src": "film/fel/16.jpg",
+     "at": 7.116,
+     "rot": 1.27
+    },
+    {
+     "src": "film/fel/17.jpg",
+     "at": 7.321,
+     "rot": -1.78
+    },
+    {
+     "src": "film/fel/18.jpg",
+     "at": 7.512,
+     "rot": -2.02
+    },
+    {
+     "src": "film/fel/19.jpg",
+     "at": 7.69,
+     "rot": 2.91
+    },
+    {
+     "src": "film/fel/20.jpg",
+     "at": 7.855,
+     "rot": -1.02
+    },
+    {
+     "src": "film/fel/21.jpg",
+     "at": 8.009,
+     "rot": -0.38
+    },
+    {
+     "src": "film/fel/22.jpg",
+     "at": 8.152,
+     "rot": 1.0
+    },
+    {
+     "src": "film/fel/23.jpg",
+     "at": 8.286,
+     "rot": -0.38
+    },
+    {
+     "src": "film/fel/24.jpg",
+     "at": 8.41,
+     "rot": -3.2
+    },
+    {
+     "src": "film/fel/25.jpg",
+     "at": 8.525,
+     "rot": -1.53
+    },
+    {
+     "src": "film/fel/26.jpg",
+     "at": 8.633,
+     "rot": -0.18
+    },
+    {
+     "src": "film/fel/27.jpg",
+     "at": 8.733,
+     "rot": 1.67
+    },
+    {
+     "src": "film/fel/28.jpg",
+     "at": 8.826,
+     "rot": 0.68
+    },
+    {
+     "src": "film/fel/29.jpg",
+     "at": 8.913,
+     "rot": -0.45
+    },
+    {
+     "src": "film/fel/30.jpg",
+     "at": 8.994,
+     "rot": -1.98
+    },
+    {
+     "src": "film/fel/31.jpg",
+     "at": 9.069,
+     "rot": 1.82
+    },
+    {
+     "src": "film/fel/32.jpg",
+     "at": 9.139,
+     "rot": -2.0
+    }
+   ],
+   "count": 32,
+   "from": 5758
+  },
+  {
+   "kind": "inter",
+   "dur": 11.5,
+   "photos": [
+    {
+     "at": 0.0,
+     "dur": 7.2,
+     "srcs": [
+      "film/ph/6795.jpg"
+     ],
+     "zin": true,
+     "land": true
+    },
+    {
+     "at": 6.5,
+     "dur": 5.0,
+     "srcs": [
+      "film/ph/6807.jpg"
+     ],
+     "zin": false,
+     "land": true
+    }
+   ],
+   "texts": [
+    {
+     "t0": 0.0,
+     "label": "Guiding Lights 2026",
+     "title": "The honourees with our guests",
+     "t1": 6.85
+    },
+    {
+     "t0": 6.5,
+     "label": "With the school family",
+     "title": "Alumni, teachers and staff of Sainik School Kazhakootam",
+     "t1": 11.5
+    }
+   ],
+   "from": 6122
+  },
+  {
+   "kind": "credits",
+   "dur": 31.0,
+   "honourees": [
+    "Anisha Sen",
+    "Anitha Rajesh Kumar",
+    "Dr Annamma George",
+    "Annie Cherian",
+    "Biju Baby",
+    "Delcy Joseph",
+    "G Sasikumar",
+    "Fr Jojo Vadakkeparampil CMI",
+    "Jose Mathew",
+    "K Rakesh",
+    "Lekshmi Nair",
+    "Dr Nirmala A",
+    "Praseetha Sajan",
+    "R Giri Sankaran Thampi",
+    "Rachel Ignatius",
+    "Reshma Raffi Mather",
+    "Retna Satheesh",
+    "Fr Dr Salvin Augustine SJ",
+    "Dr Shafi Thompson T",
+    "Shahna Renjith",
+    "Dr Shaniya John",
+    "Dr Shiny Mathew",
+    "Sindhu S",
+    "Sreekumari R",
+    "Sunil Chacko"
+   ],
+   "family": {
+    "principal": [
+     "Capt(IN) Paul Abraham (Retd)"
+    ],
+    "later": [
+     "K Rajendran",
+     "Manoj P",
+     "MG Francis",
+     "NG Babu",
+     "Dr Rajan K Varughese"
+    ],
+    "teacher": [
+     "Sandhya R"
+    ]
+   },
+   "from": 6467
+  },
+  {
+   "kind": "close",
+   "dur": 10.0,
+   "from": 7397
+  }
+ ]
+}
