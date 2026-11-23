@@ -12,6 +12,10 @@ import { SpeakersFilm, FILM_FRAMES } from "./SpeakersFilm";
 import { FelicitationTable, TABLE_FRAMES } from "./FelicitationTable";
 import { YouTubeThumb } from "./YouTubeThumb";
 import { InstaReel, REEL_FRAMES, InstaGuest, GUESTS } from "./InstaReel";
+import { SpeakerBite, SB_FPS, biteFrames } from "./SpeakerBite";
+import { BITES } from "./bites";
+import { BreezeTalk, breezeTalkFrames } from "./BreezeTalk";
+import { HighlightsIntro, HighlightsOutro, HL_FPS, INTRO_SEC, OUTRO_SEC } from "./Highlights";
 
 export const Root: React.FC = () => (
   <>
@@ -22,6 +26,12 @@ export const Root: React.FC = () => (
     ))}
     <Composition id="YouTubeThumb" component={YouTubeThumb} durationInFrames={1} fps={FPS} width={1280} height={720} />
     <Composition id="FelicitationTable" component={FelicitationTable} durationInFrames={TABLE_FRAMES} fps={FPS} width={1920} height={1080} />
+    <Composition id="BreezeTalk" component={BreezeTalk} durationInFrames={breezeTalkFrames} fps={30} width={1920} height={1080} />
+    {Object.entries(BITES).map(([k, b]) => (
+      <Composition key={k} id={`Bite-${k}`} component={SpeakerBite} defaultProps={b} durationInFrames={biteFrames(b.data)} fps={SB_FPS} width={1080} height={1920} />
+    ))}
+    <Composition id="HighlightsIntro" component={HighlightsIntro} durationInFrames={Math.round(INTRO_SEC * HL_FPS)} fps={HL_FPS} width={1920} height={1080} />
+    <Composition id="HighlightsOutro" component={HighlightsOutro} durationInFrames={Math.round(OUTRO_SEC * HL_FPS)} fps={HL_FPS} width={1920} height={1080} />
     <Composition id="GroupPortrait" component={GroupPortrait} durationInFrames={1} fps={FPS} width={1080} height={1080} />
     <Composition id="GroupSchool" component={GroupSchool} durationInFrames={1} fps={FPS} width={1080} height={1080} />
     <Composition id="Budget" component={Budget} durationInFrames={1} fps={FPS} width={1080} height={1310} />
