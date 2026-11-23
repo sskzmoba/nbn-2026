@@ -515,7 +515,8 @@ Part of the SSKZM OBA projects under `D:\claudecode\oba\events\`. See `D:\claude
   WhatsApp copy and copies both to `D:\temp\NBN\bites\`. Render one at a time, with network access (Google Fonts).
   Done: breeze, pramod-arun (welcome and thanks), gurung, vasuki (her daughter's private detail left out), kamal (a
   photographer blocks him for about 2 s near the start), jancy, john, abhilash, ashok (the unclear "a question at every
-  …" line left out), amala (closing lines from the wide two-shot, zoomed 1.5×, a little soft). All ten in
+  …" line left out; his opening "standing before your lunch" cut, user 23 Nov), amala (closing lines from the
+  wide two-shot, zoomed 1.5×, a little soft; her cough and "pardon me" cut, user 23 Nov). All ten in
   `D:\temp\NBN\bites\` (Breeze's in `D:\temp\NBN\`), 1:00–1:40 each. Word timings for every piece:
   `D:\temp\NBN\breeze\words-*.json` (stream offset = the piece's start second). Check by ear: Lt Col Arun's "Honouring
   the principals …" (best guess).
