@@ -4,7 +4,9 @@ The one list of every video made after the event (21 Nov 2026): the file, where 
 checked and posted. Update a row when something changes. All video work happens in this folder (one thread).
 
 - Instagram: **@sskzmoba** (new main account, 24 Nov 2026; the old `obasskzm` is locked).
-- YouTube: channel "SSKZM OBA". Full film: https://youtu.be/GicfgyElS9M
+- YouTube: channel "SSKZM OBA" (@SSKZMOBA). Full film: https://youtu.be/GicfgyElS9M. Playlist "Guiding Lights 2026"
+  (film first, then the Shorts). Banner, logo, description and links set 24 Nov. Clickable description links and
+  "Related video" on Shorts wait for YouTube's video verification (requested 24 Nov, about 24 hours).
 - Before a guest's video goes out, the coordinator checks that guest's part. Capt Breeze approves his own video.
 - On Instagram, use **Invite collaborator** for the guest(s) in the video, then phone their office to accept.
 - Folders: `F` = `D:\claudecode\oba\events\nbn-2026\.claude\worktrees\admiring-wu-e6735d\video\out`,
@@ -15,8 +17,8 @@ checked and posted. Update a row when something changes. All video work happens 
 | Day | Video | File | Instagram | YouTube | Checked | Posted |
 |---|---|---|---|---|---|---|
 | — | Voices from the day (4:17, 16:9) | `F\final\… (1080p master).mp4`, thumbnail `F\final\… YouTube thumbnail.jpg` | link in bio | ✅ video | ✅ | ✅ YouTube 24 Nov |
-| 0 | The teacher's story, "Held on" (45 s, vertical) | `F\insta\Guiding Lights 2026 - The teacher's story (held on 21 Nov).mp4` | Reel, first post | Short | ☐ | ☐ |
-| 1 | Instagram highlights (1:44, vertical) | `F\insta\Guiding Lights 2026 - Instagram highlights.mp4` | Reel, guests as collaborators | Short | ☐ | ☐ |
+| 0 | The teacher's story, "Held on" (45 s, vertical) | `F\insta\Guiding Lights 2026 - The teacher's story (held on 21 Nov).mp4` | Reel, first post | Short | ✅ | ✅ Instagram + YouTube 24 Nov |
+| 1 | Instagram highlights (1:44, vertical) | `F\insta\Guiding Lights 2026 - Instagram highlights.mp4` | Reel, guests as collaborators | Short | ✅ | ✅ Instagram + YouTube 24 Nov (collaborators pending) |
 | 1–2 | Event highlights v4 (1:36, 16:9, organisers' edit) | `N\GuidingLightsHighlights-v4-musicB.mp4` | — (or a feed post) | video | ☐ ElevenLabs licence | ☐ |
 | 2 | Dr B Ashok IAS (speaker video) | `B\guiding-lights-dr-b-ashok.mp4` | Reel + collaborator | Short | ☐ | ☐ |
 | 3 | Dr K Vasuki IAS | `B\guiding-lights-dr-vasuki.mp4` | Reel + collaborator | Short | ☐ | ☐ |

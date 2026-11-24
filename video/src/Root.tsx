@@ -11,6 +11,7 @@ import { GroupPortrait, GroupSchool } from "./GroupPicture";
 import { SpeakersFilm, FILM_FRAMES } from "./SpeakersFilm";
 import { FelicitationTable, TABLE_FRAMES } from "./FelicitationTable";
 import { YouTubeThumb } from "./YouTubeThumb";
+import { ReelCover, ReelCoverPhoto, YouTubeBanner, HighlightCover } from "./ReelCover";
 import { Honoured, HONOURED_SLIDES, Panel, PANEL_SLIDES, Thanks, THANKS_SLIDES } from "./Carousels";
 import { InstaReel, REEL_FRAMES, InstaGuest, GUESTS } from "./InstaReel";
 import { SpeakerBite, SB_FPS, biteFrames } from "./SpeakerBite";
@@ -28,7 +29,13 @@ export const Root: React.FC = () => (
     <Composition id="CarouselHonoured" component={Honoured} durationInFrames={HONOURED_SLIDES} fps={FPS} width={1080} height={1350} />
     <Composition id="CarouselPanel" component={Panel} durationInFrames={PANEL_SLIDES} fps={FPS} width={1080} height={1350} />
     <Composition id="CarouselThanks" component={Thanks} durationInFrames={THANKS_SLIDES} fps={FPS} width={1080} height={1350} />
+    <Composition id="ReelCoverStory" component={ReelCover} durationInFrames={1} fps={FPS} width={1080} height={1920} defaultProps={{ kicker: "The teacher's story" }} />
+    <Composition id="ReelCoverHighlights" component={ReelCover} durationInFrames={1} fps={FPS} width={1080} height={1920} defaultProps={{ kicker: "Voices from the day" }} />
+    <Composition id="ReelCoverHighlightsPhoto" component={ReelCoverPhoto} durationInFrames={1} fps={FPS} width={1080} height={1920} />
     <Composition id="YouTubeThumb" component={YouTubeThumb} durationInFrames={1} fps={FPS} width={1280} height={720} />
+    <Composition id="YouTubeBanner" component={YouTubeBanner} durationInFrames={1} fps={FPS} width={2560} height={1440} />
+    <Composition id="HighlightCoverGL" component={HighlightCover} durationInFrames={1} fps={FPS} width={1080} height={1920} defaultProps={{ mode: "monogram" as const }} />
+    <Composition id="HighlightCoverNBN" component={HighlightCover} durationInFrames={1} fps={FPS} width={1080} height={1920} defaultProps={{ mode: "portrait" as const }} />
     <Composition id="FelicitationTable" component={FelicitationTable} durationInFrames={TABLE_FRAMES} fps={FPS} width={1920} height={1080} />
     <Composition id="BreezeTalk" component={BreezeTalk} durationInFrames={breezeTalkFrames} fps={30} width={1920} height={1080} />
     {Object.entries(BITES).map(([k, b]) => (

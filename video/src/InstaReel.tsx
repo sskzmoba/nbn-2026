@@ -83,22 +83,30 @@ const Clip: React.FC<{ it: Extract<Item, { kind: "clip" }> }> = ({ it }) => {
   );
 };
 
+// The sliding title from the teacher's story film: the school building pans sideways under "Guiding Lights",
+// with a gold sweep over the title and the tagline written left to right.
+const wipeIn = (frame: number, a: number, d: number) => {
+  const p = interpolate(frame, [sec(a), sec(a + d)], [0, 100], { ...clamp, easing: Easing.inOut(Easing.quad) });
+  return { clipPath: `inset(-20% ${100 - p}% -20% 0)` };
+};
 const Title: React.FC<{ dur: number }> = ({ dur }) => {
   const frame = useCurrentFrame();
-  const glow = interpolate(frame, [0, sec(1.2)], [0, 1], clamp);
+  const x = interpolate(frame, [0, sec(dur)], [-1750, -1330]);
+  const sweep = interpolate(frame, [sec(0.4), sec(2.4)], [-60, 160], clamp);
   return (
-    <AbsoluteFill style={{ opacity: edge(frame, dur, 0.3, 0.35) }}>
-      <Backdrop />
-      <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", textAlign: "center", color: C.cream, paddingBottom: 60 }}>
-        <div style={{ width: 300, height: 300, borderRadius: "50%", overflow: "hidden", border: "4px solid rgba(255,211,138,.75)", boxShadow: `0 0 ${50 + 60 * glow}px rgba(255,190,90,${0.4 * glow})`, opacity: glow }}>
-          <Img src={staticFile("nbn-sir.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 22%", filter: "grayscale(1)" }} />
+    <AbsoluteFill style={{ opacity: edge(frame, dur, 0.3, 0.35), background: C.night }}>
+      <Img src={staticFile("school.jpg")} style={{ position: "absolute", height: 1920, width: 4029, left: x, top: 0, maxWidth: "none" }} />
+      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(11,24,48,.94) 0%, rgba(11,24,48,.78) 40%, rgba(11,24,48,.80) 70%, rgba(5,7,13,.96) 100%)" }} />
+      <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", textAlign: "center", color: C.cream }}>
+        <div style={{ fontFamily: text, fontSize: 40, letterSpacing: 2, marginBottom: 44, ...rise(frame, 0.1) }}>In remembrance of <span style={{ color: C.gold }}>NBN Sir</span></div>
+        <div style={{ fontFamily: display, fontSize: 210, lineHeight: 0.95, backgroundImage: `linear-gradient(100deg, ${C.cream} ${sweep - 30}%, #fff6dc ${sweep - 8}%, ${C.gold} ${sweep}%, #fff6dc ${sweep + 8}%, ${C.cream} ${sweep + 30}%)`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", filter: "drop-shadow(0 0 30px rgba(255,200,110,.35))", ...rise(frame, 0.25, 0.8) }}>
+          Guiding<br />Lights
         </div>
-        <div style={{ fontFamily: text, fontSize: 32, letterSpacing: 2, marginTop: 30, ...rise(frame, 0.3) }}>In remembrance of <span style={{ color: C.gold }}>NBN Sir</span></div>
-        <div style={{ fontFamily: display, fontSize: 150, lineHeight: 1, color: C.gold, marginTop: 50, ...rise(frame, 0.6, 0.7) }}>Guiding</div>
-        <div style={{ fontFamily: display, fontSize: 150, lineHeight: 1, color: C.gold, ...rise(frame, 0.75, 0.7) }}>Lights</div>
-        <div style={{ fontFamily: text, fontStyle: "italic", fontSize: 38, color: C.cream, marginTop: 30, ...rise(frame, 1.1) }}>Celebrating Educators Who Shape Generations</div>
-        <div style={{ width: 120, height: 2, background: C.goldDeep, margin: "34px 0 28px", ...rise(frame, 1.3) }} />
-        <div style={{ fontFamily: text, fontSize: 32, color: C.muted, ...rise(frame, 1.4) }}>21 November 2026 · Pangode, Thiruvananthapuram</div>
+        <div style={{ fontFamily: text, fontSize: 50, color: C.gold, marginTop: 36 }}>
+          <div style={wipeIn(frame, 1.1, 0.9)}>Celebrating Educators</div>
+          <div style={wipeIn(frame, 1.8, 0.9)}>Who Shape Generations</div>
+        </div>
+        <div style={{ fontFamily: text, fontSize: 32, color: C.muted, marginTop: 44, ...rise(frame, 2.4) }}>21 November 2026 · Pangode, Thiruvananthapuram</div>
       </AbsoluteFill>
     </AbsoluteFill>
   );

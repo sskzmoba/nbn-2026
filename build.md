@@ -419,6 +419,8 @@ A 3 min 11 s, 16:9 (1920×1080) film of each speaker's key lines, to send to the
   the `guiding-lights-nov-21` worktree) are the daily per-guest Instagram Reels and YouTube Shorts, rather than
   the 20 s guest reels above (those are for WhatsApp Status, if used). Event highlights v4 (`D:\temp\NBN\`) goes
   on YouTube; check the ElevenLabs plan covers public use first.
+- **Instagram Highlight cover** (24 Nov 2026): composition `HighlightCoverGL` (gold "GL / 2026" in a gold ring on navy) and `HighlightCoverNBN` (NBN Sir's portrait), `HighlightCover` in `src/ReelCover.tsx`, 1080×1920 with the design in the centre 760 px circle; outputs `video/out/insta/Guiding Lights 2026 - Highlight cover - GL.jpg` / `- NBN Sir.jpg`. Collaborator invitations to @sskzm_tvm and @obasskzm sent on both Reels (24 Nov).
+- **YouTube channel banner** (24 Nov 2026): composition `YouTubeBanner` (in `src/ReelCover.tsx`, 2560×1440), school photo toned navy, OBA logo, "SSKZM Old Boys Association / Alumni of Sainik School Kazhakootam / Thiruvananthapuram · Keralam" inside the 1546×423 safe area; output `video/out/final/SSKZM OBA - YouTube banner.jpg`. Not event-specific, so it can stay.
 - **YouTube:** the full film is up (https://youtu.be/GicfgyElS9M, 24 Nov 2026), with the custom thumbnail
   `video/out/final/Guiding Lights 2026 - YouTube thumbnail.jpg` (composition `YouTubeThumb`).
 - **Guest reels** (2026-11-24): 9 reels, each 18–25 s.
@@ -430,6 +432,10 @@ A 3 min 11 s, 16:9 (1920×1080) film of each speaker's key lines, to send to the
     08 Kamal, 09 Breeze. Col Vohra has no clip.
   - Output: `video/out/insta/guests/Guiding Lights 2026 - Reel NN - <name>.mp4`.
   - Post one a day with that guest as collaborator, after the coordinator checks the clip.
+- **Highlight reel v3 and Reel covers (24 Nov 2026):** after Capt Breeze the reel cuts to the sliding title (school
+  building panning, "In remembrance of NBN Sir", gold sweep over "Guiding Lights", tagline written in), replacing the
+  still portrait card; same 1:44 timing. Covers 1080×1920 (`src/ReelCover.tsx`, compositions `ReelCoverStory`,
+  `ReelCoverHighlights`), title inside the 3:4 profile-grid crop; `video/out/insta/… Reel cover - ….jpg`. Both covers looked the same on the grid, so the highlights Reel got a photo cover (24 Nov): `ReelCoverHighlightsPhoto` (`ReelCoverPhoto`, honourees with guests, `ph/6795.jpg`, "Highlights" / "Educators who shape generations"), output `… Reel cover - Highlights (photo).jpg`.
 - **7-day release plan and carousels (24 Nov 2026):** plan doc "Guiding Lights 2026 - 7-day social media plan
   (editable)" in the Drive folder "08 Report and press kit" (days, captions, WhatsApp text, tagging list). Three
   carousels, 1080×1350, `video/src/Carousels.tsx` (compositions `CarouselHonoured` 10 slides, `CarouselPanel` 7,
