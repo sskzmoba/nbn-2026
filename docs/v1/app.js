@@ -108,7 +108,7 @@ if (store.get("gl-story") !== "seen" && !location.hash) openOpening();
 
 // ---- Add to calendar: .ics for iPhone/iPad, Google Calendar elsewhere ----
 const isApple = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && "ontouchend" in document;
-if (!isApple) {
+if (!isApple && $("cal-btn")) {  // the button was removed after the event (25 Nov)
   const cal = $("cal-btn");
   const q = new URLSearchParams({
     action: "TEMPLATE",
