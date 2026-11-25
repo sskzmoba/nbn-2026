@@ -253,3 +253,10 @@ section { padding: 64px 16px; }
 .gratitude { text-align: center; }
 .gratitude p { max-width: 36em; margin-left: auto; margin-right: auto; }
 .gratitude__cta { margin-top: 22px; }
+
+/* Follow links in the footer (25 Nov 2026) */
+.footer__follow { margin: 0 0 16px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 10px; }
+.footer__follow a { color: #fff; border: 1px solid rgba(201,154,60,.7); border-radius: 999px; padding: 6px 16px; text-decoration: none; }
+.footer__follow span { flex-basis: 100%; }
+.footer__follow a:hover, .footer__follow a:focus-visible { background: rgba(201,154,60,.18); }
+.live__links .btn { margin: 4px 4px; }
